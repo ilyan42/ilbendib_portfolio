@@ -1,0 +1,426 @@
+/* RESPONSIVE DESIGN */
+
+/* Tablet (768px - 1024px) */
+@media screen and (max-width: 1024px) {
+    nav {
+        width: 70%;
+    }
+    
+    .nav-container {
+        padding: 0 15px;
+    }
+    
+    nav ul {
+        gap: 20px;
+    }
+    
+    nav ul li a {
+        font-size: 0.9rem;
+    }
+    
+    header h1 {
+        font-size: 10rem;
+        letter-spacing: -8px;
+    }
+    
+    .signature {
+        width: 600px;
+        height: 60px;
+    }
+    
+    .signature-text {
+        font-size: 20px;
+    }
+    
+    .experience-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+        padding: 0 15px;
+    }
+    
+    .experience-card {
+        padding: 35px;
+    }
+    
+    .company-logo {
+        width: 55px;
+        height: 55px;
+    }
+    
+    .logo-placeholder {
+        font-size: 13px;
+    }
+    
+    .card-title h3 {
+        font-size: 1.3rem;
+    }
+
+    #website {
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+        gap: 25px;
+    }
+}	
+
+/* Mobile Large (481px - 768px) */
+@media screen and (max-width: 768px) {
+    nav {
+        width: 90%;
+        height: 45px;
+        border-radius: 22px;
+    }
+    
+    .nav-container {
+        padding: 0 10px;
+    }
+    
+    .logo {
+        font-size: 1.2rem;
+    }
+    
+    .logo-icon {
+        width: 25px;
+        height: 25px;
+        font-size: 0.7rem;
+    }
+    
+    .nav-menu {
+        display: none;
+    }
+    
+    .hamburger {
+        display: flex;
+    }
+    
+    .nav-button {
+        font-size: 0.8rem;
+        padding: 6px 12px;
+    }
+    
+    .cta-button {
+        padding: 6px 12px;
+        font-size: 0.75rem;
+        border-radius: 18px;
+    }
+    
+    header h1 {
+        font-size: 7rem;
+        letter-spacing: -6px;
+    }
+    
+    .signature {
+        width: 400px;
+        height: 50px;
+    }
+    .signature-container {
+        top: 55%;
+    }
+    
+    .signature-text {
+        font-size: 20px;
+    }
+    
+    main {
+        padding: 20px 15px;
+    }
+
+    section h2, section h3 {
+        font-size: 0.8rem;
+    }
+    
+    section p {
+        font-size: 0.9rem;
+    }
+    
+    .experience-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 0 10px;
+    }
+    
+    .experience-card {
+        padding: 20px;
+        border-radius: 15px;
+    }
+    
+    .card-header {
+        gap: 12px;
+        margin-bottom: 15px;
+    }
+    
+    .company-logo {
+        width: 50px;
+        height: 50px;
+        border-radius: 10px;
+    }
+    
+    .logo-placeholder {
+        font-size: 12px;
+    }
+    
+    .card-title h3 {
+        font-size: 1.2rem;
+    }
+    
+    .card-title .company {
+        font-size: 0.9rem;
+    }
+    
+    .card-title .duration {
+        font-size: 0.8rem;
+    }
+    
+    .card-content p {
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+    
+    .skill-tag {
+        font-size: 0.8rem;
+        padding: 5px 10px;
+    }
+    
+    /* Projects responsive */
+    .projects-container {
+        padding: 0 15px;
+    }
+    
+    .project-button {
+        padding: 25px 30px;
+        font-size: 3rem;
+        letter-spacing: 3px;
+    }
+    
+    .project-button::after {
+        font-size: 0.7rem;
+    }
+    
+    .projects-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+    }
+    #website {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        max-width: 100%;
+        margin: 40px auto;
+        padding: 0 15px;
+        margin-top: 30%;
+    }
+}
+
+/* Mobile Small (320px - 480px) */
+@media screen and (max-width: 480px) {
+    nav {
+        width: 95%;
+        height: 40px;
+        border-radius: 20px;
+        top: 10px;
+    }
+    
+    .nav-container {
+        padding: 0 8px;
+    }
+    
+    .logo {
+        font-size: 1rem;
+    }
+    
+    .logo-icon {
+        width: 20px;
+        height: 20px;
+        font-size: 0.6rem;
+        margin-right: 5px;
+    }
+    
+    nav ul {
+        display: none;
+    }
+    
+    .hamburger {
+        display: flex;
+    }
+    
+    .nav-button {
+        font-size: 0.7rem;
+        padding: 4px 8px;
+    }
+    
+    .cta-button {
+        padding: 4px 8px;
+        font-size: 0.65rem;
+        border-radius: 15px;
+    }
+
+    
+    header h1 {
+        font-size: 4rem;
+        letter-spacing: -3px;
+    }
+    
+    .signature-container {
+        top: 55%;
+    }
+    
+    .signature {
+        width: 280px;
+        height: 40px;
+    }
+    
+    .signature-text {
+        font-size: 20px;
+    }
+    
+    main {
+        padding: 20px 10px;
+    }
+    
+    section h2, section h3 {
+        font-size: 0.8rem;
+        margin-bottom: 15px;
+    }
+
+    section h2 {
+        margin-top: 65%;
+    }
+    
+    section p {
+        font-size: 0.9rem;
+        line-height: 1.4;
+    }
+    
+    .experience-container {
+        gap: 15px;
+        padding: 0 5px;
+    }
+    
+    .experience-card {
+        padding: 15px;
+        border-radius: 12px;
+    }
+    
+    .card-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 10px;
+    }
+    
+    .card-title {
+        text-align: center;
+    }
+    
+    .company-logo {
+        width: 45px;
+        height: 45px;
+    }
+    
+    .logo-placeholder {
+        font-size: 11px;
+    }
+    
+    .card-title h3 {
+        font-size: 1.1rem;
+    }
+    
+    .skills {
+        justify-content: center;
+        gap: 6px;
+    }
+    
+    .skill-tag {
+        font-size: 0.75rem;
+        padding: 4px 8px;
+    }
+    
+    /* Projects responsive mobile */
+    .projects-container {
+        padding: 0 10px;
+    }
+    
+    .project-button {
+        padding: 20px 15px;
+        font-size: 2rem;
+        letter-spacing: 2px;
+    }
+    
+    .project-button::after {
+        font-size: 0.6rem;
+    }
+    
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .project-card {
+        padding: 20px;
+    }
+    
+    .project-image {
+        height: 120px;
+    }
+    #website h2 {
+        margin-top: 50%;
+    }
+}
+
+/* Very Small Mobile (max 320px) */
+@media screen and (max-width: 320px) {
+    nav ul {
+        gap: 5px;
+    }
+    
+    nav ul li a {
+        font-size: 0.6rem;
+    }
+    
+    .cta-button {
+        padding: 3px 6px;
+        font-size: 0.6rem;
+    }
+    
+    header h1 {
+        font-size: 3rem;
+        letter-spacing: -2px;
+    }
+    
+    .signature {
+        width: 200px;
+        height: 35px;
+    }
+    
+    .signature-text {
+        font-size: 12px;
+    }
+    
+    .experience-card {
+        padding: 12px;
+        margin: 0 5px;
+    }
+    
+    .card-header {
+        gap: 8px;
+    }
+    
+    .company-logo {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .logo-placeholder {
+        font-size: 10px;
+    }
+    
+    .card-title h3 {
+        font-size: 1rem;
+    }
+    
+    .card-content p {
+        font-size: 0.9rem;
+    }
+    
+    .skill-tag {
+        font-size: 0.7rem;
+        padding: 3px 6px;
+    }
+}
