@@ -91,20 +91,78 @@ nav ul li a:hover::after {
 }
 
 .cta-button {
-    background: transparent;
-    border: 2px solid rgba(255, 255, 255, 0.1);
-    color: rgba(255, 255, 255);
-    padding: 4px 16px;
-    border-radius: 20px;
+    color: #ffffff;
     text-decoration: none;
-    font-weight: 500;
-    font-size: 0.85rem;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border-radius: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
     transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
 }
 
 .cta-button:hover {
-    background: #ffffff;
-    color: #000000;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.4);
+    background: rgba(255, 255, 255, 0.15);
+    cursor: pointer;
+}
+
+/* Animation mail icon pour le bouton CTA */
+.cta-button .mail-icon {
+    width: 18px;
+    height: 18px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.cta-button .mail-icon::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../image/mail.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%);
+    transition: all 0.3s ease;
+    opacity: 1;
+}
+
+.cta-button .mail-icon::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../image/mail-open.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%);
+    transition: all 0.3s ease;
+    opacity: 0;
+}
+
+.cta-button:hover .mail-icon::before {
+    opacity: 0;
+    transform: scale(0.8);
+}
+
+.cta-button:hover .mail-icon::after {
+    opacity: 1;
+    transform: scale(1.1);
 }
 
 /* Menu hamburger */
@@ -212,4 +270,142 @@ nav ul li a:hover::after {
 
 .nav-button.active::before {
     width: 80%;
+}
+
+/* Projects navigation with dropdown */
+.projects-nav-item {
+    display: flex;
+    align-items: center;
+    position: relative;
+    /* margin-left: 25px; */
+}
+
+.projects-dropdown-btn {
+    background: transparent;
+    border: none;
+    color: #96efff;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    transform: rotate(0deg);
+}
+
+.projects-dropdown-btn:hover {
+    color: #ffffff;
+    transform: translateY(-1px);
+}
+
+.projects-dropdown-btn.active {
+    transform: rotate(180deg);
+}
+
+/* Dropdown menu */
+.projects-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 10px 0;
+    min-width: 180px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    z-index: 1001;
+    margin-top: 8px;
+}
+
+.projects-dropdown.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.projects-dropdown-item {
+    display: block;
+    padding: 12px 20px;
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: none;
+    background: transparent;
+    width: 100%;
+    text-align: left;
+    font-family: inherit;
+}
+
+.projects-dropdown-item:hover {
+    background: rgba(74, 158, 255, 0.1);
+    color: #ffffff;
+    padding-left: 25px;
+}
+
+/* Mobile responsive for projects dropdown */
+@media (max-width: 768px) {
+    .projects-nav-item {
+        display: block;
+        align-items: center;
+        gap: 5px;
+        position: relative;
+        margin-left: 20px;
+    }
+    
+    .projects-dropdown-btn {
+        font-size: 0.8rem;
+    }
+    
+    .projects-dropdown {
+        position: fixed;
+        top: 70px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 90%;
+        max-width: 320px;
+        min-width: unset;
+        padding: 20px 0;
+        border-radius: 20px;
+        background: rgba(0, 0, 0, 0.98);
+        backdrop-filter: blur(25px);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+    }
+    
+    .projects-dropdown.show {
+        transform: translateX(-50%) translateY(0);
+    }
+    
+    .projects-dropdown-item {
+        font-size: 1rem;
+        padding: 15px 25px;
+        text-align: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    
+    .projects-dropdown-item:last-child {
+        border-bottom: none;
+    }
+    
+    .projects-dropdown-item:hover {
+        background: rgba(74, 158, 255, 0.15);
+        padding-left: 25px;
+        transform: scale(1.02);
+    }
+}
+
+@media (max-width: 480px) {
+    .projects-dropdown {
+        width: 70%;
+        max-width: 280px;
+        top: 180px;
+    }
+    
+    .projects-dropdown-item {
+        font-size: 0.7rem;
+        padding: 18px 20px;
+    }
 }

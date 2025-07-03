@@ -30,10 +30,21 @@
 				<li><button class="nav-button" data-section="home">Home</button></li>
 				<li><button class="nav-button" data-section="about">About Me</button></li>
 				<li><button class="nav-button" data-section="experience">Experience</button></li>
-				<li><button class="nav-button" data-section="projects">Projects</button></li>
+				<li class="projects-nav-item">
+					<button class="nav-button" data-section="projects">Projects</button>
+					<button class="projects-dropdown-btn">▼</button>
+					<div class="projects-dropdown">
+						<button class="projects-dropdown-item" data-section="website">Website Design</button>
+						<button class="projects-dropdown-item" data-section="modeling">3D Modeling</button>
+						<button class="projects-dropdown-item" data-section="game">Game Development</button>
+					</div>
+				</li>
 			</ul>
 			<div class="nav-right">
-				<a href="#contact" class="cta-button">Get In Touch</a>
+				<a class="cta-button">
+					<div class="mail-icon"></div>
+					Get In Touch
+				</a>
 				<div class="hamburger">
 					<span></span>
 					<span></span>
@@ -48,7 +59,10 @@
 			<h2>About Me</h2>
 			<h3>Hi !</h3>
 			<p>Welcome to my portfolio! Here you can find information about my work, projects, and how to contact me. I am a passionate developer with experience in various technologies. I love creating innovative solutions and collaborating with others to bring ideas to life. Feel free to explore my projects and learn more about my skills and experiences. If you have any questions or would like to get in touch, don't hesitate to reach out!</p>
-			<a href="#contact" class="link">Get In Touch</a>
+			<a class="link">
+				<div class="mail-icon"></div>
+				Get In Touch
+			</a>
 		</section>
 		<section id="experience" class="experience-section">
 			<h2>Experience</h2>
@@ -144,7 +158,10 @@
 				<div class="project-image">
 					<img src="image/my_portfolio.png" alt="Website Design Project">
 				</div>
-				<a class="more-info" href="soon" target="_blank">More Info</a>
+				<a class="more-info" href="soon" target="_blank">
+					<img src="image/globe.svg" alt="Video Icon" class="more-info-icon">
+					Live Site
+				</a>
 			</div>
 			<div class="project-details">
 				<p>2025</p>
@@ -152,9 +169,104 @@
 				<div class="project-image">
 					<img src="image/transcendence.png" alt="Website Design Project">
 				</div>
-				<a class="more-info" href="soon" target="_blank">More Info</a>
+				<a class="more-info" href="https://www.youtube.com/watch?v=eY7Edc4XF4c" target="_blank">
+					<img src="image/youtube.svg" alt="Video Icon" class="more-info-icon">
+					Video
+				</a>
 			</div>
 		</section>
+
+		<section id="modeling">
+			<h2>3D Modeling</h2>
+			<p>3D Modeling Design</p>
+			<div class="project-details">
+				<div class="project-image">
+					<img src="image/transcendence.png" alt="Website Design Project">
+				</div>
+			</div>
+			<p>3D Modeling Visualisation</p>
+			<div class="project-details">
+				<div class="project-image">
+				</div>
+			</div>
+		</section>
+
+		<section id="game">
+			<h2>Game Development</h2>
+			<p>Game Development Project</p>
+			<div class="project-details">
+				<div class="project-image">
+					<img src="image/bgPremierJeux.jpg" alt="Game Development Project">
+				</div>
+			</div>
+			<div class="actions-container">
+				<button class="more-info">
+					<div class="more-info-icon"></div>
+					Learn more
+				</button>
+				<a class="more-info" href="https://www.youtube.com/watch?v=eY7Edc4XF4c" target="_blank">
+					<img src="image/youtube.svg" alt="Video Icon" class="more-info-icon">
+					Video
+				</a>
+			</div>
+			<div class="project-details">
+				<div class="project-image">
+					<img src="image/arial.png" alt="Game Development Project">
+				</div>
+			</div>
+			<div class="actions-container">
+				<button class="more-info">
+					<div class="more-info-icon"></div>
+					Learn more
+				</button>
+				<a class="more-info" href="https://www.youtube.com/watch?v=Atx0xDoF8Cw" target="_blank">
+					<img src="image/youtube.svg" alt="Video Icon" class="more-info-icon">
+					Video
+				</a>
+			</div>
+		</section>
+
+
+	<section id="contact">
+		<h2>Contact</h2>
+		<div class="contact-info">
+			<form class="contact-form">
+				<h3>Get In Touch With Me</h3>
+				
+				<div class="form-row">
+					<div class="form-group">
+						<label for="firstName">First name *</label>
+						<input type="text" id="firstName" name="firstName" placeholder="First name" required>
+					</div>
+					<div class="form-group">
+						<label for="lastName">Last name</label>
+						<input type="text" id="lastName" name="lastName" placeholder="Last name">
+					</div>
+				</div>
+
+				<div class="form-row">
+					<div class="form-group">
+						<label for="email">Email *</label>
+						<input type="email" id="email" name="email" placeholder="Email" required>
+					</div>
+					<div class="form-group">
+						<label for="phone">Phone</label>
+						<div class="phone-input">
+							<input type="tel" id="phone" name="phone" placeholder="Phone">
+						</div>
+					</div>
+				</div>
+
+				<div class="form-group full-width">
+					<label for="message">How can I help?</label>
+					<textarea id="message" name="message" placeholder="Feel free to outline your ideas or needs..." required></textarea>
+				</div>
+
+				<button type="submit">Submit</button>
+			</form>
+		</div>
+	</section>
+
 	</main>
 	<footer>
 		<p>&copy; 2025 Ilbendib's Portfolio</p>

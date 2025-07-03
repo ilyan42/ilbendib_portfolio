@@ -20,6 +20,25 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
+    // Close dropdown when hamburger menu closes
+    const dropdownBtn = document.querySelector('.projects-dropdown-btn');
+    const dropdown = document.querySelector('.projects-dropdown');
+    
+    if (dropdownBtn && dropdown) {
+        // Fermer le dropdown quand le menu hamburger se ferme
+        const observer = new MutationObserver(function(mutations) {
+            mutations.forEach(function(mutation) {
+                if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
+                    if (!navMenu.classList.contains('mobile-open')) {
+                        dropdown.classList.remove('show');
+                        dropdownBtn.classList.remove('active');
+                    }
+                }
+            });
+        });
+        observer.observe(navMenu, { attributes: true });
+    }
+    
     // Close menu when clicking outside
     document.addEventListener('click', function(e) {
         if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
@@ -57,7 +76,37 @@ document.addEventListener('DOMContentLoaded', function() {
         
         requestAnimationFrame(animation);
     }
-    
+
+    const ctaButton = document.querySelector('.cta-button');
+    if (ctaButton) {
+        ctaButton.addEventListener('click', function(e) {
+            e.preventDefault();
+
+            // aller sur la section contact
+            const targetSection = 'contact';
+            const section = document.getElementById(targetSection);
+            if (section) {
+                const targetPosition = section.offsetTop + 250; // Offset plus grand pour cacher complètement le header
+                smoothScrollTo(targetPosition, 1500); // 1.5 secondes
+            }
+        });
+    }
+
+    const link = document.querySelector('.link');
+    if (link) {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+
+            // aller sur la section contact
+            const targetSection = 'contact';
+            const section = document.getElementById(targetSection);
+            if (section) {
+                const targetPosition = section.offsetTop + 250; // Offset plus grand pour cacher complètement le header
+                smoothScrollTo(targetPosition, 1500); // 1.5 secondes
+            }
+        });
+    }
+
     navButtons.forEach(button => {
         button.addEventListener('click', function(e) {
             e.preventDefault();
@@ -78,6 +127,19 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+    
+    // Ajouter événement click sur le logo ILYAN pour retourner en haut
+    const logo = document.querySelector('.logo');
+    if (logo) {
+        logo.addEventListener('click', function(e) {
+            e.preventDefault();
+            // Retourner en haut comme pour Home
+            smoothScrollTo(0, 1200); // 1.2 secondes
+        });
+        
+        // Ajouter cursor pointer pour indiquer que c'est cliquable
+        logo.style.cursor = 'pointer';
+    }
 });
 
 // Project buttons scroll functionality
@@ -125,7 +187,7 @@ document.addEventListener('DOMContentLoaded', function() {
             } else if (category === 'modeling') {
                 const section = document.getElementById('modeling');
                 if (section) {
-                    const targetPosition = section.offsetTop;
+                    const targetPosition = section.offsetTop - 150;
                     smoothScrollTo(targetPosition, 1500);
                 }
             } else if (category === 'game') {
@@ -135,6 +197,105 @@ document.addEventListener('DOMContentLoaded', function() {
                     smoothScrollTo(targetPosition, 1500);
                 }
             }
+        });
+    });
+});
+
+// Projects dropdown functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const dropdownBtn = document.querySelector('.projects-dropdown-btn');
+    const dropdown = document.querySelector('.projects-dropdown');
+    const dropdownItems = document.querySelectorAll('.projects-dropdown-item');
+    
+    // Fonction de scroll personnalisée
+    function smoothScrollTo(target, duration = 1500) {
+        const start = window.pageYOffset;
+        const distance = target - start;
+        let startTime = null;
+        
+        function animation(currentTime) {
+            if (startTime === null) startTime = currentTime;
+            const timeElapsed = currentTime - startTime;
+            const run = ease(timeElapsed, start, distance, duration);
+            window.scrollTo(0, run);
+            if (timeElapsed < duration) requestAnimationFrame(animation);
+        }
+        
+        function ease(t, b, c, d) {
+            t /= d / 2;
+            if (t < 1) return c / 2 * t * t + b;
+            t--;
+            return -c / 2 * (t * (t - 2) - 1) + b;
+        }
+        
+        requestAnimationFrame(animation);
+    }
+    
+    // Toggle dropdown
+    if (dropdownBtn && dropdown) {
+        dropdownBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            dropdown.classList.toggle('show');
+            dropdownBtn.classList.toggle('active');
+        });
+    }
+    
+    // Handle dropdown item clicks
+    dropdownItems.forEach(item => {
+    item.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const targetSection = this.getAttribute('data-section');
+        const section = document.getElementById(targetSection);
+        
+        if (section) {
+            let targetPosition;
+            
+            // Ajustements spécifiques selon la section
+            if (targetSection === 'website') {
+                targetPosition = section.offsetTop - 100;
+            } else if (targetSection === 'modeling') {
+                targetPosition = section.offsetTop - 150;
+            } else if (targetSection === 'game') {
+                targetPosition = section.offsetTop - 150; // Ajustement pour le jeu
+            }
+            
+            smoothScrollTo(targetPosition, 1200);
+        }
+        
+        // Fermer le dropdown
+        dropdown.classList.remove('show');
+        dropdownBtn.classList.remove('active');
+        
+        // Fermer AUSSI le menu hamburger principal sur mobile
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        if (hamburger && navMenu) {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('mobile-open');
+        }
+    });
+});
+    
+    // Fermer le dropdown en cliquant à l'extérieur
+    document.addEventListener('click', function(e) {
+        if (!dropdown.contains(e.target) && !dropdownBtn.contains(e.target)) {
+            dropdown.classList.remove('show');
+            dropdownBtn.classList.remove('active');
+        }
+    });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const requirementBtns = document.querySelectorAll('.requirement-btn');
+    
+    requirementBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            // Toggle active class
+            this.classList.toggle('active');
         });
     });
 });

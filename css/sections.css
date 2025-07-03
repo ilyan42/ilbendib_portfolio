@@ -72,10 +72,10 @@ footer {
 }
 
 section .link {
-	color: #ffffff;
-	animation: shimmer 3s ease-in-out infinite;
-	background: linear-gradient(45deg, #e6e6fa, #da70d6, #9932cc, #6a0dad);
-	background-size: 200% 200%;
+    color: #ffffff;
+    animation: shimmer 3s ease-in-out infinite;
+    background: linear-gradient(45deg, #e6e6fa, #da70d6, #9932cc, #6a0dad);
+    background-size: 200% 200%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -84,20 +84,93 @@ section .link {
                  0 0 30px rgba(106, 13, 173, 0.3);
     position: relative;
     filter: drop-shadow(0 0 8px rgba(218, 112, 214, 0.5));
-	text-decoration: none;
-	transition: all 0.3s ease;
-	display: inline-block;
-	padding: 10px 20px;
-	border: 2px solid rgba(255, 255, 255, 0.2);
-	border-radius: 25px;
-	margin: 20px auto 0;
-	transform: translateY(0);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 25px;
+    margin: 20px auto 0;
+    transform: translateY(0);
 }
 
 section .link:hover {
-	transform: translateY(-5px);
-	box-shadow: 0 5px 15px rgba(218, 112, 214, 0.3);
-	border-color: rgba(218, 112, 214, 0.5);
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(218, 112, 214, 0.3);
+    border-color: rgba(218, 112, 214, 0.5);
+    cursor: pointer;
+}
+
+/* Style pour l'icône mail dans le lien contact */
+section .link .more-info-icon {
+    width: 18px;
+    height: 18px;
+    filter: brightness(0) saturate(100%) invert(69%) sepia(100%) saturate(2000%) hue-rotate(270deg) brightness(110%) contrast(110%);
+    transition: all 0.3s ease;
+    background-image: url('image/mail.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* Animation hover pour changer l'icône */
+section .link:hover .more-info-icon {
+    background-image: url('image/mail-open.svg');
+    transform: scale(1.1);
+    filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%);
+}
+
+/* Alternative avec transition plus fluide */
+section .link .mail-icon {
+    width: 18px;
+    height: 18px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+section .link .mail-icon::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../image/mail.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: brightness(0) saturate(100%) invert(69%) sepia(100%) saturate(2000%) hue-rotate(270deg) brightness(110%) contrast(110%);
+    transition: all 0.3s ease;
+    opacity: 1;
+}
+
+section .link .mail-icon::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../image/mail-open.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%);
+    transition: all 0.3s ease;
+    opacity: 0;
+}
+
+section .link:hover .mail-icon::before {
+    opacity: 0;
+    transform: scale(0.8);
+}
+
+section .link:hover .mail-icon::after {
+    opacity: 1;
+    transform: scale(1.1);
 }
 
 
@@ -117,7 +190,7 @@ section .link:hover {
 }
 
 .experience-card {
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.05) !important;
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 20px;
@@ -127,6 +200,13 @@ section .link:hover {
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
     min-height: 380px;
+}
+
+/* Forcer le background pour toutes les cartes */
+.experience-card:first-child,
+.experience-card:first-of-type,
+.experience-card:nth-child(1) {
+    background: rgba(255, 255, 255, 0.05) !important;
 }
 
 .experience-card::before {
@@ -150,6 +230,8 @@ section .link:hover {
     box-shadow: 0 20px 60px rgba(74, 158, 255, 0.2);
     border-color: rgba(74, 158, 255, 0.3);
 }
+
+
 
 .card-header {
     display: flex;
@@ -210,16 +292,13 @@ section .link:hover {
     margin: 0;
 }
 
-.card-content {
-    text-align: left;
-}
-
 .card-content p {
     font-family: 'Montserrat', sans-serif;
     font-size: 1rem;
     line-height: 1.6;
     color: rgba(255, 255, 255, 0.9);
     margin: 0 0 20px 0;
+    text-align: center;
 }
 
 .skills {
@@ -230,7 +309,7 @@ section .link:hover {
 }
 
 .skill-tag {
-    background: linear-gradient(135deg, rgba(74, 158, 255, 0.2), rgba(150, 239, 255, 0.1));
+    background: linear-gradient(135deg, rgba(74, 158, 255, 0.2), rgba(150, 239, 255, 0.1)) !important;
     color: #96efff;
     padding: 6px 12px;
     border-radius: 20px;
@@ -394,7 +473,7 @@ section .link:hover {
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
     backdrop-filter: blur(20px);
     position: relative;
-    height: 445px;
+    height: 475px;
     display: flex;
     flex-direction: column;
     transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -485,8 +564,10 @@ section .link:hover {
     text-decoration: none;
     font-family: 'Montserrat', sans-serif;
     font-size: 0.9rem;
-    display: inline-block;
-    padding: 10px 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 20px;
     border-radius: 20px;
     background: linear-gradient(45deg, #e6e6fa, #da70d6, #9932cc, #6a0dad);
     background-size: 200% 200%;
@@ -504,8 +585,412 @@ section .link:hover {
     margin: 0 0 10px 25px;
 }
 
-.more-info:hover {
+.more-info-icon {
+    width: 18px;
+    height: 18px;
+    filter: brightness(0) saturate(100%) invert(69%) sepia(100%) saturate(2000%) hue-rotate(270deg) brightness(110%) contrast(110%);
+    transition: all 0.3s ease;
+}
+
+.more-info:hover .more-info-icon {
+    transform: scale(1.1);
+    filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%);
+}
+
+button.more-info .more-info-icon {
+    width: 18px;
+    height: 18px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    background: transparent !important; /* Supprime le background hérité */
+    border: none; /* Supprime toute bordure */
+    -webkit-background-clip: initial; /* Réinitialise le background-clip */
+    -webkit-text-fill-color: initial; /* Réinitialise le text-fill-color */
+    background-clip: initial; /* Réinitialise le background-clip */
+    text-shadow: none; /* Supprime le text-shadow */
+    filter: none; /* Supprime les filtres du parent */
+}
+
+button.more-info .more-info-icon::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../image/eye-closed.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: brightness(0) saturate(100%) invert(69%) sepia(100%) saturate(2000%) hue-rotate(270deg) brightness(110%) contrast(110%);
+    transition: all 0.3s ease;
+    opacity: 1;
+}
+
+button.more-info .more-info-icon::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../image/eye.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%);
+    transition: all 0.3s ease;
+    opacity: 0;
+}
+
+button.more-info:hover .more-info-icon::before {
+    opacity: 0;
+    transform: scale(0.8);
+}
+
+button.more-info:hover .more-info-icon::after {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+/* Effet hover sur le bouton */
+button.more-info:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(218, 112, 214, 0.4);
+}
+
+/* .more-info:hover {
     transform: translateY(-5px);
     box-shadow: 0 5px 15px rgba(218, 112, 214, 0.3);
     border-color: rgba(218, 112, 214, 0.5);
+}
+ */
+
+
+#modeling {
+    text-align: left;
+    width: 70%;
+    margin: 0 auto; /* Centre la section horizontalement */
+    justify-content: center;
+}
+
+#modeling h2 {
+    text-align: center; /* Garde le titre centré */
+}
+
+#modeling p {
+    text-align: left;
+    margin-left: 20px; /* Enlève la marge auto qui centre le texte */
+    margin-bottom: 10px;
+    padding-top: 10%;
+}
+
+#modeling .project-details {
+    padding: 0;
+}
+
+#modeling .project-image {
+    padding: 0;
+    height: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+#modeling .project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+    max-width: none;
+    max-height: none;
+    box-shadow: none;
+    border: none;
+}
+
+
+
+#game {
+    text-align: left;
+    width: 70%;
+    margin: 0 auto; /* Centre la section horizontalement */
+    justify-content: center;
+}
+
+#game h2 {
+    text-align: center; /* Garde le titre centré */
+}
+
+#game p {
+    text-align: left;
+    margin-left: 20px; /* Enlève la marge auto qui centre le texte */
+    margin-bottom: 10px;
+    padding-top: 10%;
+}
+
+#game .project-details {
+    padding: 0;
+    margin-bottom: 4%;
+}
+
+#game .project-image {
+    padding: 0;
+    height: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+#game .project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+    max-width: none;
+    max-height: none;
+    box-shadow: none;
+    border: none;
+}
+
+
+.actions-container {
+    display: flex;
+    gap: 15px;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0 25px 25px 25px;
+    margin-bottom: 8%;
+}
+
+.actions-container .more-info {
+    flex: 0 0 auto;
+    margin: 0;
+}
+
+/* Responsive pour mobile */
+@media screen and (max-width: 768px) {
+    .actions-container {
+        flex-direction: column;
+        gap: 10px;
+        align-items: stretch;
+        padding: 0 15px 20px 15px;
+    }
+    
+    .actions-container .more-info {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+#contact {
+    padding: 80px 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-info {
+    width: 100%;
+    max-width: 775px;
+    margin: 0 auto;
+}
+
+.contact-info > p {
+    text-align: center;
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 40px;
+}
+
+.contact-form {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 25px;
+    padding: 40px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.contact-form h3 {
+    color: #ffffff;
+    font-size: 2rem;
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
+.form-row {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+.form-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group.full-width {
+    flex: 100%;
+}
+
+.contact-form label {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+    font-weight: 500;
+    text-align: left;
+}
+
+.contact-form input,
+.contact-form textarea {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+    padding: 15px 18px;
+    color: #ffffff;
+    font-size: 1rem;
+    font-family: 'Montserrat', sans-serif;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: #4a9eff;
+    box-shadow: 0 0 0 3px rgba(74, 158, 255, 0.1);
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.phone-input {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+    padding: 0;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.phone-input:focus-within {
+    border-color: #4a9eff;
+    box-shadow: 0 0 0 3px rgba(74, 158, 255, 0.1);
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.phone-flag {
+    padding: 15px;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.1rem;
+}
+
+.phone-input input {
+    border: none;
+    background: transparent;
+    flex: 1;
+}
+
+.phone-input input:focus {
+    box-shadow: none;
+    border: none;
+}
+
+.requirements {
+    margin: 30px 0;
+}
+
+.requirements p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+
+.requirement-buttons {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.requirement-btn {
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.requirement-btn:hover,
+.requirement-btn.active {
+    background: rgba(74, 158, 255, 0.2);
+    border-color: #4a9eff;
+    color: #4a9eff;
+}
+
+.contact-form textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.contact-form button[type="submit"] {
+    width: 100%;
+    padding: 16px;
+    background: linear-gradient(135deg, #4a9eff, #96efff);
+    border: none;
+    border-radius: 12px;
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+    box-shadow: 0 10px 30px rgba(74, 158, 255, 0.3);
+}
+
+.contact-form button[type="submit"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 40px rgba(74, 158, 255, 0.4);
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+    .contact-form {
+        padding: 30px 20px;
+        margin: 0 20px;
+    }
+    
+    .form-row {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .requirement-buttons {
+        justify-content: center;
+    }
+    .contact-form h3 {
+        font-size: 1rem;
+    }
+    .requirements p {
+        font-size: 0.6rem;
+    }
+    .contact-form input,
+    .contact-form textarea {
+    font-size: 0.7rem;
+    }
+    .contact-form button[type="submit"] {
+        font-size: 0.8rem;
+    }
 }

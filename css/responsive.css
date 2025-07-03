@@ -63,6 +63,7 @@
 
 /* Mobile Large (481px - 768px) */
 @media screen and (max-width: 768px) {
+    
     nav {
         width: 90%;
         height: 45px;
@@ -172,6 +173,7 @@
     .card-content p {
         font-size: 0.95rem;
         line-height: 1.5;
+        text-align: center;
     }
     
     .skill-tag {
@@ -205,6 +207,49 @@
         margin: 40px auto;
         padding: 0 15px;
         margin-top: 30%;
+    }
+
+    #modeling, #game {
+        width: 95%;
+        margin: 0 auto;
+        padding: 0 10px;
+    }
+    
+    #modeling p, #game p {
+        font-size: 1rem;
+        margin-left: 0;
+        margin-bottom: 20px;
+        padding-top: 3%;
+        text-align: center;
+        font-weight: 600;
+        color: #ffffff;
+    }
+    
+    #modeling .project-details, #game .project-details {
+        height: 400px;
+        margin-bottom: 20px;
+        padding: 0;
+        border-radius: 20px;
+        overflow: hidden;
+    }
+    
+    #modeling .project-image, #game .project-image {
+        height: 100%;
+        padding: 0;
+        margin: 0;
+        border-radius: 20px;
+        overflow: hidden;
+    }
+
+    #modeling .project-image img, #game .project-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        border-radius: 20px;
+        margin: 0;
+        padding: 0;
+        display: block;
     }
 }
 
@@ -361,6 +406,12 @@
     }
     #website h2 {
         margin-top: 50%;
+    }
+    #modeling p , #game p {
+        padding-top : 20%;
+    }
+    #modeling .project-details, #game .project-details {
+        height: 350px;
     }
 }
 
