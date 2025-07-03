@@ -299,3 +299,79 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+// Configuration EmailJS
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize EmailJS with your public key
+    emailjs.init("m5Z9uBf-ZPdAITi0y"); // Remplacez par votre vraie clé publique
+    
+    const contactForm = document.getElementById('contact-form');
+    
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Récupérer les données du formulaire
+            const formData = new FormData(contactForm);
+            const templateParams = {
+                firstName: formData.get('firstName'),
+                lastName: formData.get('lastName'),
+                email: formData.get('email'),
+                phone: formData.get('phone'),
+                message: formData.get('message'),
+                to_email: 'ilyanbendib@gmail.com'
+            };
+            
+            // Désactiver le bouton de soumission
+            const submitBtn = contactForm.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'Sending...';
+            submitBtn.disabled = true;
+            
+            // Envoyer l'email
+            emailjs.send('service_oszxbcp', 'template_8gtbsnz', templateParams)
+                .then(function(response) {
+                    console.log('SUCCESS!', response.status, response.text);
+                    
+                    // Afficher un message de succès
+                    showMessage('Message sent successfully! I will get back to you soon.', 'success');
+                    
+                    // Réinitialiser le formulaire
+                    contactForm.reset();
+                }, function(error) {
+                    console.log('FAILED...', error);
+                    
+                    // Afficher un message d'erreur
+                    showMessage('Failed to send message. Please try again or contact me directly.', 'error');
+                })
+                .finally(function() {
+                    // Réactiver le bouton
+                    submitBtn.textContent = originalText;
+                    submitBtn.disabled = false;
+                });
+        });
+    }
+    
+    // Fonction pour afficher les messages
+    function showMessage(message, type) {
+        // Supprimer le message existant s'il y en a un
+        const existingMessage = document.querySelector('.form-message');
+        if (existingMessage) {
+            existingMessage.remove();
+        }
+        
+        // Créer le nouvel élément de message
+        const messageDiv = document.createElement('div');
+        messageDiv.className = `form-message ${type}`;
+        messageDiv.textContent = message;
+        
+        // Insérer le message après le formulaire
+        const contactForm = document.getElementById('contact-form');
+        contactForm.parentNode.insertBefore(messageDiv, contactForm.nextSibling);
+        
+        // Supprimer le message après 5 secondes
+        setTimeout(() => {
+            messageDiv.remove();
+        }, 5000);
+    }
+});

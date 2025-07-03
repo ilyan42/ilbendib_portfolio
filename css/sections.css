@@ -965,32 +965,59 @@ button.more-info:hover {
     box-shadow: 0 15px 40px rgba(74, 158, 255, 0.4);
 }
 
-/* Responsive */
-@media screen and (max-width: 768px) {
-    .contact-form {
-        padding: 30px 20px;
-        margin: 0 20px;
+/* Messages de succès et d'erreur du formulaire */
+.form-message {
+    margin-top: 20px;
+    padding: 15px 20px;
+    border-radius: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    text-align: center;
+    animation: slideIn 0.5s ease-out;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.form-message.success {
+    background: linear-gradient(135deg, 
+        rgba(76, 175, 80, 0.2), 
+        rgba(139, 195, 74, 0.1)
+    );
+    color: #81c784;
+    border-color: rgba(76, 175, 80, 0.3);
+    box-shadow: 0 4px 20px rgba(76, 175, 80, 0.1);
+}
+
+.form-message.error {
+    background: linear-gradient(135deg, 
+        rgba(244, 67, 54, 0.2), 
+        rgba(255, 87, 34, 0.1)
+    );
+    color: #ef5350;
+    border-color: rgba(244, 67, 54, 0.3);
+    box-shadow: 0 4px 20px rgba(244, 67, 54, 0.1);
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
     }
-    
-    .form-row {
-        flex-direction: column;
-        gap: 15px;
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
-    
-    .requirement-buttons {
-        justify-content: center;
-    }
-    .contact-form h3 {
-        font-size: 1rem;
-    }
-    .requirements p {
-        font-size: 0.6rem;
-    }
-    .contact-form input,
-    .contact-form textarea {
-    font-size: 0.7rem;
-    }
-    .contact-form button[type="submit"] {
-        font-size: 0.8rem;
-    }
+}
+
+/* États du bouton submit */
+.contact-form button[type="submit"]:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.contact-form button[type="submit"]:disabled:hover {
+    box-shadow: none;
+    transform: none;
 }
