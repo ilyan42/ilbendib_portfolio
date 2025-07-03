@@ -375,3 +375,71 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 5000);
     }
 });
+
+// Game Project Accordion functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const learnMoreButtons = document.querySelectorAll('.learn-more-btn');
+    
+    learnMoreButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            const projectId = this.getAttribute('data-project');
+            const detailsPanel = document.getElementById(`details-${projectId}`);
+            const allDetailsPanels = document.querySelectorAll('.project-details-expanded');
+            const allButtons = document.querySelectorAll('.learn-more-btn');
+            
+            const isCurrentlyActive = detailsPanel.classList.contains('active');
+            
+            // Ajouter une classe temporaire pour éviter les conflits de scroll
+            document.body.classList.add('accordion-opening');
+            
+            // Fermer tous les autres panneaux
+            allDetailsPanels.forEach(panel => {
+                if (panel !== detailsPanel) {
+                    panel.classList.remove('active');
+                }
+            });
+            
+            // Désactiver tous les autres boutons
+            allButtons.forEach(btn => {
+                if (btn !== this) {
+                    btn.classList.remove('active');
+                }
+            });
+            
+            // Toggle le panneau actuel
+            if (isCurrentlyActive) {
+                detailsPanel.classList.remove('active');
+                this.classList.remove('active');
+                
+                // Retirer la classe après l'animation
+                setTimeout(() => {
+                    document.body.classList.remove('accordion-opening');
+                }, 600);
+            } else {
+                detailsPanel.classList.add('active');
+                this.classList.add('active');
+                
+                // Scroll intelligent vers le projet après l'animation
+                setTimeout(() => {
+                    const gameProject = this.closest('.game-project');
+                    const rect = gameProject.getBoundingClientRect();
+                    const isVisible = rect.top >= 0 && rect.top <= window.innerHeight * 0.3;
+                    
+                    // Seulement faire le scroll si le projet n'est pas déjà bien visible
+                    if (!isVisible) {
+                        gameProject.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                    
+                    // Retirer la classe après l'animation
+                    document.body.classList.remove('accordion-opening');
+                }, 600);
+            }
+        });
+    });
+});
