@@ -1021,3 +1021,33 @@ button.more-info:hover {
     box-shadow: none;
     transform: none;
 }
+
+
+@media screen and (max-width: 768px) {
+    .contact-form {
+        padding: 30px 20px;
+        margin: 0 20px;
+    }
+    
+    .form-row {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .requirement-buttons {
+        justify-content: center;
+    }
+    .contact-form h3 {
+        font-size: 1rem;
+    }
+    .requirements p {
+        font-size: 0.6rem;
+    }
+    .contact-form input,
+    .contact-form textarea {
+    font-size: 0.7rem;
+    }
+    .contact-form button[type="submit"] {
+        font-size: 0.8rem;
+    }
+}
