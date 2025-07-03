@@ -302,25 +302,35 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Configuration EmailJS
 document.addEventListener('DOMContentLoaded', function() {
+    console.log('EmailJS init démarré...');
+    
     // Initialize EmailJS with your public key
-    emailjs.init("m5Z9uBf-ZPdAITi0y"); // Remplacez par votre vraie clé publique
+    emailjs.init("m5Z9uBf-ZPdAITi0y");
+    
+    console.log('EmailJS initialisé');
     
     const contactForm = document.getElementById('contact-form');
     
     if (contactForm) {
+        console.log('Formulaire trouvé !');
+        
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
+            console.log('Formulaire soumis !');
             
             // Récupérer les données du formulaire
             const formData = new FormData(contactForm);
+            
+            // Préparer les paramètres pour EmailJS
             const templateParams = {
-                firstName: formData.get('firstName'),
-                lastName: formData.get('lastName'),
-                email: formData.get('email'),
+                from_name: formData.get('firstName') + ' ' + formData.get('lastName'),
+                from_email: formData.get('email'),
                 phone: formData.get('phone'),
                 message: formData.get('message'),
-                to_email: 'ilyanbendib@gmail.com'
+                to_email: 'ilyanbendib@gmail.com' // Adresse de destination
             };
+            
+            console.log('Envoi des données:', templateParams);
             
             // Désactiver le bouton de soumission
             const submitBtn = contactForm.querySelector('button[type="submit"]');
@@ -329,6 +339,7 @@ document.addEventListener('DOMContentLoaded', function() {
             submitBtn.disabled = true;
             
             // Envoyer l'email
+            console.log('Tentative d\'envoi...');
             emailjs.send('service_oszxbcp', 'template_8gtbsnz', templateParams)
                 .then(function(response) {
                     console.log('SUCCESS!', response.status, response.text);
@@ -340,6 +351,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     contactForm.reset();
                 }, function(error) {
                     console.log('FAILED...', error);
+                    console.log('Détails de l\'erreur:', error.text, error.status);
                     
                     // Afficher un message d'erreur
                     showMessage('Failed to send message. Please try again or contact me directly.', 'error');
@@ -350,6 +362,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     submitBtn.disabled = false;
                 });
         });
+    } else {
+        console.log('ERREUR: Formulaire non trouvé !');
     }
     
     // Fonction pour afficher les messages
