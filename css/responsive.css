@@ -239,6 +239,8 @@
         margin: 0;
         border-radius: 20px;
         overflow: hidden;
+        min-height: 150px;
+        max-height: 250px;
     }
 
     #modeling .project-image img, #game .project-image img {
@@ -250,6 +252,8 @@
         margin: 0;
         padding: 0;
         display: block;
+        min-height: 150px;
+        max-height: 250px;
     }
 }
 
@@ -411,7 +415,7 @@
         padding-top : 20%;
     }
     #modeling .project-details, #game .project-details {
-        height: 350px;
+        height: 250px;
     }
 }
 
@@ -473,5 +477,11 @@
     .skill-tag {
         font-size: 0.7rem;
         padding: 3px 6px;
+    }
+    #modeling p , #game p {
+        padding-top : 20%;
+    }
+    #modeling .project-details, #game .project-details {
+        height: 150px;
     }
 }
