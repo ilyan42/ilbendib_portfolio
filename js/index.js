@@ -92,9 +92,9 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    const link = document.querySelector('.link');
-    if (link) {
-        link.addEventListener('click', function(e) {
+    const contactLink = document.querySelector('.contact-link');
+    if (contactLink) {
+        contactLink.addEventListener('click', function(e) {
             e.preventDefault();
 
             // aller sur la section contact
