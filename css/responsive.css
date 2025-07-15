@@ -59,6 +59,14 @@
         grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
         gap: 25px;
     }
+    
+    .coming-soon {
+        min-height: 180px;
+    }
+    
+    .coming-soon-text {
+        font-size: 1.3rem;
+    }
 }	
 
 /* Mobile Large (481px - 768px) */
@@ -417,6 +425,14 @@
     #modeling .project-details, #game .project-details {
         height: 250px;
     }
+    
+    .coming-soon {
+        min-height: 150px;
+    }
+    
+    .coming-soon-text {
+        font-size: 1.1rem;
+    }
 }
 
 /* Very Small Mobile (max 320px) */
@@ -483,5 +499,16 @@
     }
     #modeling .project-details, #game .project-details {
         height: 150px;
+    }
+    
+    .coming-soon {
+        min-height: 120px;
+        margin: 10px 0;
+    }
+    
+    .coming-soon-text {
+        font-size: 1rem;
+        padding: 0 10px;
+        text-align: center;
     }
 }
