@@ -1498,3 +1498,35 @@ section .link:hover .linkedin-icon::before {
         min-width: 200px;
     }
 }
+
+/* Coming Soon styles for 3D Modeling section */
+.coming-soon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(74, 158, 255, 0.1);
+    border: 2px solid rgba(74, 158, 255, 0.3);
+    border-radius: 8px;
+    min-height: 200px;
+    position: relative;
+}
+
+.coming-soon-text {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #4a9eff;
+    text-shadow: 0 0 10px rgba(74, 158, 255, 0.5);
+    animation: pulse 2s ease-in-out infinite;
+	font-family: 'Montserrat', sans-serif;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 0.8;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+}
