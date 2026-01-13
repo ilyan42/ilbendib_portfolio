@@ -701,14 +701,25 @@
 /* ============================= */
 
 .project-nav {
-    display: flex;
+    /* display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 30px 40px;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     margin-top: 60px;
     gap: 20px;
-    flex-wrap: wrap;
+    flex-wrap: wrap; */
+	background: transparent;
+    border: none;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1rem;
+    font-weight: 400;
+    font-family: inherit;
+    cursor: pointer;
+    padding: 8px 16px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
 }
 
 .nav-link {
