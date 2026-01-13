@@ -1,6 +1,6 @@
 (function () {
 
-    const DURATION = 800;
+    const DURATION = 1400;
     const HOLD = 200; // pause rideau plein écran
 
     function initTransition() {

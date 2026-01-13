@@ -14,22 +14,96 @@
     width: 100%;
     height: 100%;
     background: linear-gradient(
-        135deg,
-        #1a1a2e 0%,
-        #0f3460 50%,
-        #16213e 100%
+        180deg,
+        #001a33 0%,
+        #000d1a 15%,
+        #000000 30%,
+        #000000 100%
     );
     transform: translateY(100%);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Texte au centre de la transition */
+.transition-text {
+    font-size: 4rem;
+    font-weight: 700;
+    color: #FFD700;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+    opacity: 0;
+    transform: translateY(20px);
+    text-shadow: 
+        0 0 10px rgba(255, 215, 0, 0.5),
+        0 0 20px rgba(255, 215, 0, 0.3),
+        0 0 30px rgba(255, 215, 0, 0.2);
+    z-index: 10;
+}
+
+/* Effet de ligne lumineuse qui se déplace */
+.transition-layer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 200%;
+    height: 3px;
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        transparent 40%,
+        #00d4ff 50%,
+        transparent 60%,
+        transparent 100%
+    );
+    box-shadow: 0 0 20px #00d4ff, 0 0 40px rgba(0, 212, 255, 0.5);
+    z-index: 1;
+}
+
+/* Effet de lueur diffuse en haut */
+.transition-layer::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: radial-gradient(
+        ellipse at center top,
+        rgba(0, 212, 255, 0.15) 0%,
+        transparent 70%
+    );
+    z-index: 1;
 }
 
 /* FERMETURE : le rideau monte depuis le bas */
 body.closing .transition-layer {
-    animation: curtainIn 0.8s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+    animation: curtainIn 0.6s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+}
+
+body.closing .transition-layer::before {
+    animation: lightSweep 1.4s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+}
+
+body.closing .transition-text {
+    animation: textFadeIn 1.4s cubic-bezier(0.77, 0, 0.175, 1) forwards;
 }
 
 /* OUVERTURE : le rideau repart vers le haut */
 body.opening .transition-layer {
-    animation: curtainOut 0.8s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+    animation: curtainOut 0.6s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+}
+
+body.opening .transition-layer::before {
+    animation: lightSweepOut 1.4s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+}
+
+body.opening .transition-text {
+    animation: textFadeOut 1.4s cubic-bezier(0.77, 0, 0.175, 1) forwards;
 }
 
 @keyframes curtainIn {
@@ -47,5 +121,65 @@ body.opening .transition-layer {
     }
     to {
         transform: translateY(-100%);
+    }
+}
+
+@keyframes lightSweep {
+    from {
+        left: -100%;
+    }
+    to {
+        left: 100%;
+    }
+}
+
+@keyframes lightSweepOut {
+    from {
+        left: -100%;
+    }
+    to {
+        left: 100%;
+    }
+}
+
+@keyframes textFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    25% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    35% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    85% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes textFadeOut {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    15% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    75% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-20px);
     }
 }
