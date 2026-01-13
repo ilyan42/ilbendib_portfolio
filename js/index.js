@@ -191,7 +191,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     offset: -150
                 },
                 game: {
-                    redirect: 'Games.html'
+                    redirect: 'projects/Games.html'
                 }
             };
 
@@ -231,7 +231,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     offset: -150
                 },
                 game: {
-                    redirect: 'Games.html'
+                    redirect: 'projects/Games.html'
                 }
             };
 
