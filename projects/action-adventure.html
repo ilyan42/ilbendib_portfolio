@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../css/index.css">
+	<link rel="stylesheet" href="../css/responsive.css">
+	<link rel="stylesheet" href="../css/transition.css">
+	<link rel="stylesheet" href="../css/games.css">
+	<script src="../js/transition.js"></script>
+	<script src="../js/index.js"></script>
+	<title>Action-Adventure - Portfolio</title>
+</head>
+<body class="opening page-jeux theme-action-adventure">
+	<div class="page-transition">
+		<div class="transition-layer"></div>
+	</div>
+
+	<!-- Hero Section -->
+	<section class="project-detail-hero">
+		<span class="back-link" onclick="navigateTo('../Games.html')">Back to Projects</span>
+		<span class="hero-badge in-dev">In Development</span>
+		<h1 class="hero-title-gradient">Action-Adventure</h1>
+		<p class="hero-subtitle">3D Third-Person Open World Game</p>
+		<div class="hero-tech">
+			<span>Unreal Engine 5</span>
+			<span>C++</span>
+			<span>Blueprints</span>
+			<span>Open World</span>
+		</div>
+	</section>
+
+	<!-- Project Content -->
+	<main class="project-content">
+		
+		<!-- Gallery -->
+		<section class="project-gallery">
+			<div class="gallery-main">
+				<img src="../image/ImageCouverture.png" alt="Action-Adventure Main" id="mainImage">
+			</div>
+			<div class="gallery-thumbnails">
+				<img src="../image/ImageCouverture.png" alt="Cover" class="active" onclick="changeImage(this)">
+				<img src="../image/ImageCouverture.png" alt="Gameplay 1" onclick="changeImage(this)">
+				<img src="../image/ImageCouverture.png" alt="Gameplay 2" onclick="changeImage(this)">
+				<img src="../image/ImageCouverture.png" alt="Gameplay 3" onclick="changeImage(this)">
+			</div>
+		</section>
+
+		<!-- Technical Details -->
+		<div class="tech-details">
+			<div class="tech-card">
+				<h4>Engine</h4>
+				<p>Unreal Engine 5</p>
+			</div>
+			<div class="tech-card">
+				<h4>Language</h4>
+				<p>C++ / Blueprints</p>
+			</div>
+			<div class="tech-card">
+				<h4>Status</h4>
+				<p>In Development</p>
+			</div>
+		</div>
+
+		<!-- Description -->
+		<section class="project-description">
+			<h2 class="section-title-gradient">About This Project</h2>
+			<p>
+				A third-person action-adventure game inspired by The Legend of Zelda: Breath of the Wild. 
+				The player embodies a skilled adventurer exploring vast open landscapes filled with secrets, 
+				puzzles, and dynamic enemies.
+			</p>
+			<p>
+				Currently in active development with new features being added regularly. The game focuses on 
+				exploration, combat mechanics, and an immersive world that rewards curiosity and creativity.
+			</p>
+		</section>
+
+		<!-- Features -->
+		<section class="features-section">
+			<h2 class="section-title-gradient">Key Features</h2>
+			<div class="features-table">
+				<div class="feature-row">
+					<div class="feature-cell">
+						<span class="feature-label">Exploration</span>
+						<span class="feature-value">Open World</span>
+					</div>
+					<div class="feature-cell">
+						<span class="feature-label">Combat</span>
+						<span class="feature-value">Dynamic System</span>
+					</div>
+				</div>
+				<div class="feature-row">
+					<div class="feature-cell">
+						<span class="feature-label">Puzzles</span>
+						<span class="feature-value">Environmental</span>
+					</div>
+					<div class="feature-cell">
+						<span class="feature-label">Camera</span>
+						<span class="feature-value">Third-Person</span>
+					</div>
+				</div>
+				<div class="feature-row">
+					<div class="feature-cell">
+						<span class="feature-label">Movement</span>
+						<span class="feature-value">Fluid Mechanics</span>
+					</div>
+					<div class="feature-cell">
+						<span class="feature-label">Progression</span>
+						<span class="feature-value">Skill System</span>
+					</div>
+				</div>
+				<div class="feature-row">
+					<div class="feature-cell">
+						<span class="feature-label">Quests</span>
+						<span class="feature-value">Dynamic Objectives</span>
+					</div>
+					<div class="feature-cell">
+						<span class="feature-label">Visuals</span>
+						<span class="feature-value">Stylized Art</span>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Video Section -->
+		<section class="video-section">
+			<h2 class="section-title-gradient">DevLog Video</h2>
+			<div class="video-container">
+				<iframe 
+					src="https://www.youtube.com/embed/eeNVm4Hf1g0" 
+					title="Action-Adventure DevLog #1"
+					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+					allowfullscreen>
+				</iframe>
+			</div>
+		</section>
+
+		<!-- Navigation -->
+		<nav class="project-nav">
+			<a href="javascript:void(0)" onclick="navigateTo('shards-of-ylena.html')" class="nav-link prev">
+				<span class="nav-arrow">←</span>
+				<div class="nav-text">
+					<span>Previous Project</span>
+					<strong>Shards of Ylena</strong>
+				</div>
+			</a>
+			<a href="javascript:void(0)" onclick="navigateTo('warfront-legacy.html')" class="nav-link next">
+				<div class="nav-text">
+					<span>Next Project</span>
+					<strong>WarFront-Legacy</strong>
+				</div>
+				<span class="nav-arrow">→</span>
+			</a>
+		</nav>
+
+	</main>
+
+	<footer>
+		<p>&copy; 2025 Ilbendib's Portfolio</p>
+	</footer>
+
+	<script>
+		function changeImage(thumbnail) {
+			const mainImage = document.getElementById('mainImage');
+			mainImage.src = thumbnail.src;
+			
+			document.querySelectorAll('.gallery-thumbnails img').forEach(img => {
+				img.classList.remove('active');
+			});
+			thumbnail.classList.add('active');
+		}
+	</script>
+</body>
+</html>

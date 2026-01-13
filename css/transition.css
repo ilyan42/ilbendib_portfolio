@@ -1,0 +1,51 @@
+/* ============================= */
+/* TRANSITION RIDEAU PLEIN ÉCRAN */
+/* ============================= */
+
+.page-transition {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+/* ÉTAT PAR DÉFAUT : rideau caché en bas */
+.transition-layer {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        135deg,
+        #1a1a2e 0%,
+        #0f3460 50%,
+        #16213e 100%
+    );
+    transform: translateY(100%);
+}
+
+/* FERMETURE : le rideau monte depuis le bas */
+body.closing .transition-layer {
+    animation: curtainIn 0.8s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+}
+
+/* OUVERTURE : le rideau repart vers le haut */
+body.opening .transition-layer {
+    animation: curtainOut 0.8s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+}
+
+@keyframes curtainIn {
+    from {
+        transform: translateY(100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes curtainOut {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-100%);
+    }
+}

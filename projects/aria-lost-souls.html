@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../css/index.css">
+	<link rel="stylesheet" href="../css/responsive.css">
+	<link rel="stylesheet" href="../css/transition.css">
+	<link rel="stylesheet" href="../css/games.css">
+	<script src="../js/transition.js"></script>
+	<script src="../js/index.js"></script>
+	<title>Aria and the Lost Souls - Portfolio</title>
+</head>
+<body class="opening page-jeux theme-aria">
+	<div class="page-transition">
+		<div class="transition-layer"></div>
+	</div>
+
+	<!-- Hero Section -->
+	<section class="project-detail-hero">
+		<span class="back-link" onclick="navigateTo('../Games.html')">Back to Projects</span>
+		<span class="hero-badge">Unity</span>
+		<h1 class="hero-title-gradient">Aria and the Lost Souls</h1>
+		<p class="hero-subtitle">2D Adventure Game</p>
+		<div class="hero-tech">
+			<span>Unity</span>
+			<span>C#</span>
+			<span>2D Platformer</span>
+			<span>Adventure</span>
+		</div>
+	</section>
+
+	<!-- Project Content -->
+	<main class="project-content">
+		
+		<!-- Gallery -->
+		<section class="project-gallery">
+			<div class="gallery-main">
+				<img src="../image/arial.png" alt="Aria Main" id="mainImage">
+			</div>
+			<div class="gallery-thumbnails">
+				<img src="../image/arial.png" alt="Menu" class="active" onclick="changeImage(this)">
+				<img src="../image/gameplay.png" alt="Gameplay" onclick="changeImage(this)">
+				<img src="../image/dialogue.png" alt="Dialogue" onclick="changeImage(this)">
+				<img src="../image/arial.png" alt="Scene" onclick="changeImage(this)">
+			</div>
+		</section>
+
+		<!-- Technical Details -->
+		<div class="tech-details">
+			<div class="tech-card">
+				<h4>Engine</h4>
+				<p>Unity</p>
+			</div>
+			<div class="tech-card">
+				<h4>Language</h4>
+				<p>C#</p>
+			</div>
+			<div class="tech-card">
+				<h4>Genre</h4>
+				<p>2D Adventure</p>
+			</div>
+		</div>
+
+		<!-- Description -->
+		<section class="project-description">
+			<h2 class="section-title-gradient">About This Project</h2>
+			<p>
+				Aria and the Lost Souls is a 2D adventure game that combines platforming mechanics with puzzle-solving elements. 
+				Players embark on a mystical journey through beautifully crafted environments.
+			</p>
+			<p>
+				During development, I originally created a full first level that included AI-driven enemy combat, 
+				moving platforms, and trap-based environmental mechanics. The game features an immersive storyline 
+				with an interactive dialogue system.
+			</p>
+		</section>
+
+		<!-- Features -->
+		<section class="features-section">
+			<h2 class="section-title-gradient">Key Features</h2>
+			<div class="features-table">
+				<div class="feature-row">
+					<div class="feature-cell">
+						<span class="feature-label">Story</span>
+						<span class="feature-value">Immersive Narrative</span>
+					</div>
+					<div class="feature-cell">
+						<span class="feature-label">Animations</span>
+						<span class="feature-value">Hand-crafted</span>
+					</div>
+				</div>
+				<div class="feature-row">
+					<div class="feature-cell">
+						<span class="feature-label">Audio</span>
+						<span class="feature-value">Original Soundtrack</span>
+					</div>
+					<div class="feature-cell">
+						<span class="feature-label">Difficulty</span>
+						<span class="feature-value">Multiple Levels</span>
+					</div>
+				</div>
+				<div class="feature-row">
+					<div class="feature-cell">
+						<span class="feature-label">Combat</span>
+						<span class="feature-value">Enemy AI System</span>
+					</div>
+					<div class="feature-cell">
+						<span class="feature-label">Health</span>
+						<span class="feature-value">Visual Feedback</span>
+					</div>
+				</div>
+				<div class="feature-row">
+					<div class="feature-cell">
+						<span class="feature-label">Respawn</span>
+						<span class="feature-value">Checkpoint System</span>
+					</div>
+					<div class="feature-cell">
+						<span class="feature-label">Dialogue</span>
+						<span class="feature-value">Interactive NPCs</span>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Video Section -->
+		<section class="video-section">
+			<h2>Gameplay Video</h2>
+			<div class="video-container">
+				<iframe 
+					src="https://www.youtube.com/embed/Atx0xDoF8Cw" 
+					title="Aria and the Lost Souls Gameplay"
+					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+					allowfullscreen>
+				</iframe>
+			</div>
+		</section>
+
+		<!-- Navigation -->
+		<nav class="project-nav">
+			<a href="javascript:void(0)" onclick="navigateTo('warfront-legacy.html')" class="nav-link prev">
+				<span class="nav-arrow">←</span>
+				<div class="nav-text">
+					<span>Previous Project</span>
+					<strong>WarFront-Legacy</strong>
+				</div>
+			</a>
+			<a href="javascript:void(0)" onclick="navigateTo('shards-of-ylena.html')" class="nav-link next">
+				<div class="nav-text">
+					<span>Next Project</span>
+					<strong>Shards of Ylena</strong>
+				</div>
+				<span class="nav-arrow">→</span>
+			</a>
+		</nav>
+
+	</main>
+
+	<footer>
+		<p>&copy; 2025 Ilbendib's Portfolio</p>
+	</footer>
+
+	<script>
+		function changeImage(thumbnail) {
+			const mainImage = document.getElementById('mainImage');
+			mainImage.src = thumbnail.src;
+			
+			document.querySelectorAll('.gallery-thumbnails img').forEach(img => {
+				img.classList.remove('active');
+			});
+			thumbnail.classList.add('active');
+		}
+	</script>
+</body>
+</html>

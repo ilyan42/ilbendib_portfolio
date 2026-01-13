@@ -1,4 +1,5 @@
 // Menu hamburger functionality
+
 document.addEventListener('DOMContentLoaded', function() {
     const hamburger = document.querySelector('.hamburger');
     const navMenu = document.querySelector('.nav-menu');
@@ -170,36 +171,108 @@ document.addEventListener('DOMContentLoaded', function() {
         
         requestAnimationFrame(animation);
     }
+
+    const projectsDropdownItems = document.querySelectorAll('.projects-dropdown-item');
     
     projectButtons.forEach(button => {
-        button.addEventListener('click', function(e) {
+        button.addEventListener('click', function (e) {
             e.preventDefault();
-            
-            const category = this.getAttribute('data-category');
-            
-            // Défiler vers la section correspondante
-            if (category === 'website') {
-                const section = document.getElementById('website');
-                if (section) {
-                    const targetPosition = section.offsetTop + 100;
-                    smoothScrollTo(targetPosition, 1500);
+
+            const category = this.dataset.category;
+
+            // Configuration par catégorie
+            const actions = {
+                website: {
+                    targetId: 'website',
+                    offset: 100
+                },
+                modeling: {
+                    targetId: 'modeling',
+                    offset: -150
+                },
+                game: {
+                    redirect: 'Games.html'
                 }
-            } else if (category === 'modeling') {
-                const section = document.getElementById('modeling');
-                if (section) {
-                    const targetPosition = section.offsetTop - 150;
-                    smoothScrollTo(targetPosition, 1500);
-                }
-            } else if (category === 'game') {
-                const section = document.getElementById('game');
-                if (section) {
-                    const targetPosition = section.offsetTop;
-                    smoothScrollTo(targetPosition, 1500);
-                }
+            };
+
+            const action = actions[category];
+            if (!action) return;
+
+            // 🔁 Redirection vers une autre page
+            if (action.redirect) {
+                navigateWithCurtain(() => {
+                    window.location.href = action.redirect;
+                });
+                return;
             }
+
+            // ⬇️ Scroll animé
+            const section = document.getElementById(action.targetId);
+            if (!section) return;
+
+            const targetPosition = section.offsetTop + action.offset;
+            smoothScrollTo(targetPosition, 1500);
         });
     });
+
+    projectsDropdownItems.forEach(item => {
+        item.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            const category = this.dataset.section;
+            // Configuration par catégorie
+            const actions = {
+                website: {
+                    targetId: 'website',
+                    offset: 100
+                },
+                modeling: {
+                    targetId: 'modeling',
+                    offset: -150
+                },
+                game: {
+                    redirect: 'Games.html'
+                }
+            };
+
+            const action = actions[category];
+            if (!action) return;
+
+            // 🔁 Redirection vers une autre page
+            if (action.redirect) {
+                navigateWithCurtain(() => {
+                    window.location.href = action.redirect;
+                });
+                return;
+            }
+
+            // ⬇️ Scroll animé
+            const section = document.getElementById(action.targetId);
+            if (!section) return;
+
+            const targetPosition = section.offsetTop + action.offset;
+            smoothScrollTo(targetPosition, 1500);
+        });
+    });
+
+
+
 });
+
+// const projectButtons = document.querySelectorAll('.project-button');
+
+// projectButtons.forEach(button => {
+//     button.addEventListener('click', function(e) {
+//         e.preventDefault();
+
+//         const category = this.dataset.category;
+
+//         if (category === 'game') {
+//             navigateWithCurtain('Games.html'); // 🚀 transition + chargement simultané
+//         }
+//     });
+// });
+
 
 // Projects dropdown functionality
 document.addEventListener('DOMContentLoaded', function() {

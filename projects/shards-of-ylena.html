@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../css/index.css">
+	<link rel="stylesheet" href="../css/responsive.css">
+	<link rel="stylesheet" href="../css/transition.css">
+	<link rel="stylesheet" href="../css/games.css">
+	<script src="../js/transition.js"></script>
+	<script src="../js/index.js"></script>
+	<title>Shards of Ylena - Portfolio</title>
+</head>
+<body class="opening page-jeux theme-shards">
+	<div class="page-transition">
+		<div class="transition-layer"></div>
+	</div>
+
+	<!-- Hero Section -->
+	<section class="project-detail-hero">
+		<span class="back-link" onclick="navigateTo('../Games.html')">Back to Projects</span>
+		<span class="hero-badge">Prototype</span>
+		<h1 class="hero-title-gradient">Shards of Ylena</h1>
+		<p class="hero-subtitle">3D Action-Adventure Prototype</p>
+		<div class="hero-tech">
+			<span>Unreal Engine</span>
+			<span>C++</span>
+			<span>Blueprints</span>
+			<span>Archery Combat</span>
+		</div>
+	</section>
+
+	<!-- Project Content -->
+	<main class="project-content">
+		
+		<!-- Gallery -->
+		<section class="project-gallery">
+			<div class="gallery-main">
+				<img src="../image/paragon.jpg" alt="Shards of Ylena Main" id="mainImage">
+			</div>
+			<div class="gallery-thumbnails">
+				<img src="../image/paragon.jpg" alt="Character" class="active" onclick="changeImage(this)">
+				<img src="../image/Sparrow.png" alt="Environment" onclick="changeImage(this)">
+				<img src="../image/FireArrow.png" alt="Fire Arrow" onclick="changeImage(this)">
+				<img src="../image/Flying.png" alt="Flying" onclick="changeImage(this)">
+			</div>
+		</section>
+
+		<!-- Technical Details -->
+		<div class="tech-details">
+			<div class="tech-card">
+				<h4>Engine</h4>
+				<p>Unreal Engine</p>
+			</div>
+			<div class="tech-card">
+				<h4>Language</h4>
+				<p>C++ / Blueprints</p>
+			</div>
+			<div class="tech-card">
+				<h4>Status</h4>
+				<p>Prototype</p>
+			</div>
+		</div>
+
+		<!-- Description -->
+		<section class="project-description">
+			<h2 class="section-title-gradient">About This Project</h2>
+			<p>
+				Shards of Ylena is a solo action-adventure game prototype in which the player takes on the role of an agile archer. 
+				The development has focused on building core player gameplay, including fluid movement mechanics and a responsive 
+				archery system at the heart of the experience.
+			</p>
+			<p>
+				This prototype explores the possibilities of ranged combat in a third-person perspective, with special attention 
+				to the feel of movement and the satisfaction of landing accurate shots. The fantasy setting provides a rich 
+				backdrop for future development.
+			</p>
+		</section>
+
+		<!-- Features -->
+		<section class="features-section">
+			<h2 class="section-title-gradient">Key Features</h2>
+			<div class="features-table">
+				<div class="feature-row">
+					<div class="feature-cell">
+						<span class="feature-label">Genre</span>
+						<span class="feature-value">3D Action-Adventure</span>
+					</div>
+					<div class="feature-cell">
+						<span class="feature-label">Movement</span>
+						<span class="feature-value">Fluid Mechanics</span>
+					</div>
+				</div>
+				<div class="feature-row">
+					<div class="feature-cell">
+						<span class="feature-label">Combat</span>
+						<span class="feature-value">Archery System</span>
+					</div>
+					<div class="feature-cell">
+						<span class="feature-label">Camera</span>
+						<span class="feature-value">Third-Person</span>
+					</div>
+				</div>
+				<div class="feature-row">
+					<div class="feature-cell">
+						<span class="feature-label">Levels</span>
+						<span class="feature-value">Test Environment</span>
+					</div>
+					<div class="feature-cell">
+						<span class="feature-label">Arrows</span>
+						<span class="feature-value">Elemental Types</span>
+					</div>
+				</div>
+				<div class="feature-row">
+					<div class="feature-cell">
+						<span class="feature-label">Animation</span>
+						<span class="feature-value">Blueprint System</span>
+					</div>
+					<div class="feature-cell">
+						<span class="feature-label">World</span>
+						<span class="feature-value">Fantasy Setting</span>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Navigation -->
+		<nav class="project-nav">
+			<a href="javascript:void(0)" onclick="navigateTo('aria-lost-souls.html')" class="nav-link prev">
+				<span class="nav-arrow">←</span>
+				<div class="nav-text">
+					<span>Previous Project</span>
+					<strong>Aria and the Lost Souls</strong>
+				</div>
+			</a>
+			<a href="javascript:void(0)" onclick="navigateTo('action-adventure.html')" class="nav-link next">
+				<div class="nav-text">
+					<span>Next Project</span>
+					<strong>Action-Adventure</strong>
+				</div>
+				<span class="nav-arrow">→</span>
+			</a>
+		</nav>
+
+	</main>
+
+	<footer>
+		<p>&copy; 2025 Ilbendib's Portfolio</p>
+	</footer>
+
+	<script>
+		function changeImage(thumbnail) {
+			const mainImage = document.getElementById('mainImage');
+			mainImage.src = thumbnail.src;
+			
+			document.querySelectorAll('.gallery-thumbnails img').forEach(img => {
+				img.classList.remove('active');
+			});
+			thumbnail.classList.add('active');
+		}
+	</script>
+</body>
+</html>
