@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="Expires" content="0">
+	<link rel="stylesheet" href="../css/index.css?v=2">
+	<link rel="stylesheet" href="../css/responsive.css?v=2">
+	<link rel="stylesheet" href="../css/transition.css?v=4">
+	<link rel="stylesheet" href="../css/games.css?v=2">
+	<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+	<script src="../js/transition.js?v=4"></script>
+	<script src="../js/index.js?v=2"></script>
+	<title>Web Development - Portfolio</title>
+</head>
+<body class="opening page-web">
+
+	<!-- Hero Section -->
+	<section class="games-hero">
+		<span class="back-link" onclick="navigateTo('../index.html')">Back to Portfolio</span>
+		<h1>Web Development</h1>
+		<p class="subtitle">Design • Code • Deploy</p>
+	</section>
+
+	<!-- Projects Section -->
+	<main class="projects-main">
+		<div class="projects-container">
+			
+			<!-- Project 1 - LEFT -->
+			<a href="javascript:void(0)" onclick="navigateTo('portfolio.html')" class="project-item left">
+				<div class="project-image">
+					<img src="../image/my_portfolio.png" alt="Portfolio Website">
+					<div class="project-overlay">
+						<span class="view-project">View Project →</span>
+					</div>
+				</div>
+				<div class="project-info">
+					<span class="project-badge web">Personal</span>
+					<h3>My Portfolio</h3>
+					<p>Personal Website • HTML/CSS/JS</p>
+				</div>
+			</a>
+
+			<!-- Project 2 - RIGHT -->
+			<a href="javascript:void(0)" onclick="navigateTo('transcendence.html')" class="project-item right">
+				<div class="project-image">
+					<img src="../image/transcendence.png" alt="Transcendence">
+					<div class="project-overlay">
+						<span class="view-project">View Project →</span>
+					</div>
+				</div>
+				<div class="project-info">
+					<span class="project-badge school">42 Project</span>
+					<h3>Transcendence</h3>
+					<p>Full-Stack Web App • Django & JS</p>
+				</div>
+			</a>
+
+		</div>
+	</main>
+
+	<footer>
+		<p>&copy; 2025 Ilbendib's Portfolio</p>
+	</footer>
+</body>
+</html>

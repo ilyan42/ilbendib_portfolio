@@ -8,7 +8,11 @@
         overlay.className = 'page-transition';
         overlay.innerHTML = `
             <div class="transition-layer">
-                <div class="transition-text">ILBENDIB</div>
+                <div class="transition-content">
+                    <div class="transition-title">PORTFOLIO</div>
+                    <div class="transition-line"></div>
+                    <div class="transition-author">ILBENDIB</div>
+                </div>
                 <div class="transition-loader">
                     <div class="loader-spinner"></div>
                     <div class="loader-text">Loading...</div>

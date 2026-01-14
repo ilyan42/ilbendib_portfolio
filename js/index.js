@@ -183,8 +183,8 @@ document.addEventListener('DOMContentLoaded', function() {
             // Configuration par catégorie
             const actions = {
                 website: {
-                    targetId: 'website',
-                    offset: 100
+                    redirect: 'projects/Web.html'
+                    
                 },
                 modeling: {
                     targetId: 'modeling',
@@ -223,8 +223,8 @@ document.addEventListener('DOMContentLoaded', function() {
             // Configuration par catégorie
             const actions = {
                 website: {
-                    targetId: 'website',
-                    offset: 100
+                    redirect: 'projects/Web.html'
+                    
                 },
                 modeling: {
                     targetId: 'modeling',
