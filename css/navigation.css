@@ -530,7 +530,7 @@ nav ul li a:hover::after {
     align-items: center;
     gap: 12px;
     width: 100%;
-    padding: 12px 16px;
+    padding: 12px 40px 12px 16px;
     background: transparent;
     border: none;
     border-radius: 10px;
@@ -609,17 +609,34 @@ body {
     }
     
     .lang-dropdown {
-        min-width: 145px;
+        left: 0;
+        transform: translateX(0) translateY(-8px) scale(0.95);
+        min-width: 155px;
         padding: 8px;
         border-radius: 14px;
     }
     
+    .lang-dropdown.show {
+        transform: translateX(0) translateY(0) scale(1);
+    }
+    
+    .lang-dropdown::before {
+        left: 20px;
+        transform: rotate(45deg);
+    }
+    
     .lang-option {
-        padding: 10px 14px;
+        padding: 10px 40px 10px 14px;
         font-size: 0.9rem;
+        gap: 10px;
     }
     
     .lang-option .lang-flag {
         font-size: 1.25rem;
+    }
+    
+    .lang-option.active::after {
+        right: 12px;
+        font-size: 0.75rem;
     }
 }
