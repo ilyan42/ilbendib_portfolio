@@ -6,17 +6,18 @@
 	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 	<meta http-equiv="Pragma" content="no-cache">
 	<meta http-equiv="Expires" content="0">
-	<link rel="stylesheet" href="css/index.css?v=2">
-	<link rel="stylesheet" href="css/responsive.css?v=2">
+	<link rel="stylesheet" href="css/index.css?v=4">
+	<link rel="stylesheet" href="css/responsive.css?v=4">
 	<link rel="stylesheet" href="css/transition.css?v=4">
+	<script src="js/lang.js?v=2" defer></script>
 	<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-	<script src="js/transition.js?v=4"></script>
-	<script src="js/index.js?v=2"></script>
-	<title>Portfolio</title>
+	<script src="js/transition.js?v=4" defer></script>
+	<script src="js/index.js?v=2" defer></script>
+	<title data-i18n="title">Portfolio</title>
 </head>
 <body>
 	<header>
-		<h1>PORTFOLIO</h1>
+		<h1 data-i18n="header.title">PORTFOLIO</h1>
 		<div class="signature-container">
 			<svg class="signature" viewBox="0 0 800 80" xmlns="http://www.w3.org/2000/svg">
 				<path id="signature-path" d="M50,40 Q100,10 150,40 Q200,70 250,40 Q300,10 350,40 Q400,70 450,40 Q500,10 550,40 Q600,70 650,40 Q700,10 750,40" 
@@ -26,30 +27,48 @@
 		</div>
 	<nav>
 		<div class="nav-container">
-			<div class="logo">
-				<div class="logo-icon">
-					<img src="image/pp.png" alt="Profile Picture" class="logo-img">
+			<div class="nav-left">
+				<!-- Language Toggle - Separate from logo -->
+				<div class="lang-toggle-wrapper">
+					<button id="lang-toggle" class="lang-toggle" title="Change language">
+						<span class="flag">🇬🇧</span>
+					</button>
+					<div class="lang-dropdown" id="lang-dropdown">
+						<button class="lang-option" data-lang="en">
+							<span class="lang-flag">🇬🇧</span>
+							<span class="lang-name">English</span>
+						</button>
+						<button class="lang-option" data-lang="fr">
+							<span class="lang-flag">🇫🇷</span>
+							<span class="lang-name">Français</span>
+						</button>
+					</div>
 				</div>
-				ILYAN
+				<div class="logo">
+					<div class="logo-icon">
+						<img src="image/pp.png" alt="Profile Picture" class="logo-img">
+					</div>
+					ILYAN
+				</div>
 			</div>
 			<ul class="nav-menu">
-				<li><button class="nav-button" data-section="home">Home</button></li>
-				<li><button class="nav-button" data-section="about">About Me</button></li>
-				<li><button class="nav-button" data-section="experience">Experience</button></li>
+				<li><button class="nav-button" data-section="home" data-i18n="nav.home">Home</button></li>
+				<li><button class="nav-button" data-section="about" data-i18n="nav.about">About Me</button></li>
+				<li><button class="nav-button" data-section="experience" data-i18n="nav.experience">Experience</button></li>
 				<li class="projects-nav-item">
-					<button class="nav-button" data-section="projects">Projects</button>
+					<button class="nav-button" data-section="projects" data-i18n="nav.projects">Projects</button>
 					<button class="projects-dropdown-btn">▼</button>
 					<div class="projects-dropdown">
-						<button class="projects-dropdown-item" data-section="website">Website Design</button>
+						<button class="projects-dropdown-item" data-section="website" data-i18n="nav.website">Website Design</button>
 						<!-- <button class="projects-dropdown-item" data-section="modeling">3D Modeling</button> -->
-						<button class="projects-dropdown-item" data-section="game">Game Development</button>
+						<button class="projects-dropdown-item" data-section="game" data-i18n="nav.game">Game Development</button>
 					</div>
 				</li>
 			</ul>
 			<div class="nav-right">
 				<a class="cta-button">
 					<div class="mail-icon"></div>
-					Get In Touch
+					<span data-i18n="nav.contact">Get In Touch</span>
 				</a>
 				<div class="hamburger">
 					<span></span>
@@ -62,9 +81,9 @@
 	</header>
 	<main>
 		<section id="about">
-			<h2>About Me</h2>
-			<h3>Hi !</h3>
-			<p>Welcome to my portfolio! Here you can find information about my work, projects, and how to contact me. I am a passionate developer with experience in various technologies. I love creating innovative solutions and collaborating with others to bring ideas to life. Feel free to explore my projects and learn more about my skills and experiences. If you have any questions or would like to get in touch, don't hesitate to reach out!</p>
+			<h2 data-i18n="about.title">About Me</h2>
+			<h3 data-i18n="about.greeting">Hi !</h3>
+			<p data-i18n="about.description">Welcome to my portfolio! Here you can find information about my work, projects, and how to contact me. I am a passionate developer with experience in various technologies. I love creating innovative solutions and collaborating with others to bring ideas to life. Feel free to explore my projects and learn more about my skills and experiences. If you have any questions or would like to get in touch, don't hesitate to reach out!</p>
 			
 			<div class="social-links">
 				<a class="link social-link" href="https://github.com/ilyan42" target="_blank">
@@ -83,11 +102,11 @@
 			
 			<a class="link contact-link">
 				<div class="mail-icon"></div>
-				Get In Touch
+				<span data-i18n="nav.contact">Get In Touch</span>
 			</a>
 		</section>
 		<section id="experience" class="experience-section">
-			<h2>Experience</h2>
+			<h2 data-i18n="experience.title">Experience</h2>
 			<div class="experience-container">
 				<div class="experience-card">
 					<div class="card-header">
@@ -95,16 +114,16 @@
 							<div class="logo-placeholder">42</div>
 						</div>
 						<div class="card-title">
-							<h3>Student</h3>
-							<p class="company">42 School</p>
-							<p class="duration">2023 - Present</p>
+							<h3 data-i18n="exp1.role">Student</h3>
+							<p class="company" data-i18n="exp1.company">42 School</p>
+							<p class="duration" data-i18n="exp1.duration">2023 - Present</p>
 						</div>
 					</div>
 					<div class="card-content">
-						<p>Intensive programming curriculum focusing on peer-to-peer learning and project-based education. Developed strong problem-solving skills and mastered multiple programming languages including C, C++, and Python.</p>
+						<p data-i18n="exp1.description">Intensive programming curriculum focusing on peer-to-peer learning and project-based education. Developed strong problem-solving skills and mastered multiple programming languages including C, C++, and Python.</p>
 						<div class="skills">
 							<span class="skill-tag">C / C++ / JavaScript / HTML / CSS</span>
-							<span class="skill-tag">Algorithms</span>
+							<span class="skill-tag" data-i18n="skills.algorithms">Algorithms</span>
 							<span class="skill-tag">Unix/Linux</span>
 							<span class="skill-tag">Git</span>
 						</div>
@@ -117,13 +136,13 @@
 							<div class="logo-placeholder">GAME</div>
 						</div>
 						<div class="card-title">
-							<h3>Indie Game Developer</h3>
-							<p class="company">Personal Projects</p>
-							<p class="duration">2022 - Present</p>
+							<h3 data-i18n="exp2.role">Indie Game Developer</h3>
+							<p class="company" data-i18n="exp2.company">Personal Projects</p>
+							<p class="duration" data-i18n="exp2.duration">2022 - Present</p>
 						</div>
 					</div>
 					<div class="card-content">
-						<p>Developed small indie games as personal projects during free time. Focused on learning game mechanics, basic graphics programming, and user interaction design. Passionate about creating engaging gameplay experiences and exploring different game genres.</p>
+						<p data-i18n="exp2.description">Developed small indie games as personal projects during free time. Focused on learning game mechanics, basic graphics programming, and user interaction design. Passionate about creating engaging gameplay experiences and exploring different game genres.</p>
 						<div class="skills">
 							<span class="skill-tag">JavaScript</span>
 							<span class="skill-tag">Blender</span>
@@ -139,18 +158,18 @@
 							<div class="logo-placeholder">3D / WEB</div>
 						</div>
 						<div class="card-title">
-							<h3>3D modeling & Web Developer</h3>
-							<p class="company">Side Projects</p>
-							<p class="duration">2023 - Present</p>
+							<h3 data-i18n="exp3.role">3D modeling & Web Developer</h3>
+							<p class="company" data-i18n="exp3.company">Side Projects</p>
+							<p class="duration" data-i18n="exp3.duration">2023 - Present</p>
 						</div>
 					</div>
 					<div class="card-content">
-						<p>Learning 3D modeling and web development through hands-on projects. Experimenting with Blender for 3D content creation and building websites to explore modern web technologies and design principles.</p>
+						<p data-i18n="exp3.description">Learning 3D modeling and web development through hands-on projects. Experimenting with Blender for 3D content creation and building websites to explore modern web technologies and design principles.</p>
 						<div class="skills">
 							<span class="skill-tag">Blender</span>
 							<span class="skill-tag">HTML/CSS</span>
 							<span class="skill-tag">JavaScript</span>
-							<span class="skill-tag">3D Modeling</span>
+							<span class="skill-tag" data-i18n="skills.3dmodeling">3D Modeling</span>
 						</div>
 					</div>
 				</div>
@@ -158,16 +177,16 @@
 		</section>
 		
 		<section id="projects" class="projects-section">
-			<h2>Projects</h2>
+			<h2 data-i18n="projects.title">Projects</h2>
 			<div class="projects-container">
 				<button class="project-button" data-category="website">
-					<span class="project-text">WEBSITE DESIGN</span>
+					<span class="project-text" data-i18n="projects.website">WEBSITE DESIGN</span>
 				</button>
 				<!-- <button class="project-button" data-category="modeling">
 					<span class="project-text">3D MODELING</span>
 				</button> -->
 				<button class="project-button" data-category="game">
-					<span class="project-text">GAME DEVELOPMENT</span>
+					<span class="project-text" data-i18n="projects.game">GAME DEVELOPMENT</span>
 				</button>
 			</div>
 		</section>
@@ -203,48 +222,48 @@
 
 
 	<section id="contact">
-		<h2>Contact</h2>
+		<h2 data-i18n="contact.title">Contact</h2>
 		<div class="contact-info">
 			<form id="contact-form" class="contact-form">
-				<h3>Get In Touch With Me</h3>
+				<h3 data-i18n="contact.subtitle">Get In Touch With Me</h3>
 				
 				<div class="form-row">
 					<div class="form-group">
-						<label for="firstName">First name *</label>
-						<input type="text" id="firstName" name="firstName" placeholder="First name" required>
+						<label for="firstName" data-i18n="contact.firstname">First name *</label>
+						<input type="text" id="firstName" name="firstName" data-i18n-placeholder="contact.firstname_ph" placeholder="First name" required>
 					</div>
 					<div class="form-group">
-						<label for="lastName">Last name</label>
-						<input type="text" id="lastName" name="lastName" placeholder="Last name">
+						<label for="lastName" data-i18n="contact.lastname">Last name</label>
+						<input type="text" id="lastName" name="lastName" data-i18n-placeholder="contact.lastname_ph" placeholder="Last name">
 					</div>
 				</div>
 
 				<div class="form-row">
 					<div class="form-group">
-						<label for="email">Email *</label>
+						<label for="email" data-i18n="contact.email">Email *</label>
 						<input type="email" id="email" name="email" placeholder="Email" required>
 					</div>
 					<div class="form-group">
-						<label for="phone">Phone</label>
+						<label for="phone" data-i18n="contact.phone">Phone</label>
 						<div class="phone-input">
-							<input type="tel" id="phone" name="phone" placeholder="Phone">
+							<input type="tel" id="phone" name="phone" data-i18n-placeholder="contact.phone_ph" placeholder="Phone">
 						</div>
 					</div>
 				</div>
 
 				<div class="form-group full-width">
-					<label for="message">How can I help?</label>
-					<textarea id="message" name="message" placeholder="Feel free to outline your ideas or needs..." required></textarea>
+					<label for="message" data-i18n="contact.message">How can I help?</label>
+					<textarea id="message" name="message" data-i18n-placeholder="contact.message_ph" placeholder="Feel free to outline your ideas or needs..." required></textarea>
 				</div>
 
-				<button type="submit">Submit</button>
+				<button type="submit" data-i18n="contact.submit">Submit</button>
 			</form>
 		</div>
 	</section>
 
 	</main>
 	<footer>
-		<p>&copy; 2025 Ilbendib's Portfolio</p>
+		<p data-i18n="footer.copyright">&copy; 2025 Ilbendib's Portfolio</p>
 	</footer>
 </body>
 </html>

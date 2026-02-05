@@ -3,22 +3,22 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="../css/index.css">
-	<link rel="stylesheet" href="../css/responsive.css">
-	<link rel="stylesheet" href="../css/transition.css">
-	<link rel="stylesheet" href="../css/games.css">
-	<script src="../js/transition.js"></script>
-	<script src="../js/index.js"></script>
-	<title>Transcendence - Web Development</title>
+	<link rel="stylesheet" href="../css/index.css?v=3">
+	<link rel="stylesheet" href="../css/responsive.css?v=3">
+	<link rel="stylesheet" href="../css/transition.css?v=4">
+	<link rel="stylesheet" href="../css/games.css?v=3">
+	<script src="../js/transition.js?v=4" defer></script>
+	<script src="../js/index.js?v=2" defer></script>
+	<title data-i18n="transcendence.title">Transcendence - Web Development</title>
 </head>
 <body class="opening page-web theme-transcendence">
 
 	<!-- Hero Section -->
 	<section class="project-detail-hero">
-		<span class="back-link" onclick="navigateTo('Web.html')">Back to Projects</span>
-		<span class="hero-badge school">42 Project</span>
+		<span class="back-link" onclick="navigateTo('Web.html')" data-i18n="back.projects">Back to Projects</span>
+		<span class="hero-badge school" data-i18n="badge.42project">42 Project</span>
 		<h1 class="hero-title-gradient">Transcendence</h1>
-		<p class="hero-subtitle">Full-Stack Web Application</p>
+		<p class="hero-subtitle" data-i18n="transcendence.subtitle">Full-Stack Web Application</p>
 		<div class="hero-tech">
 			<span>Django</span>
 			<span>JavaScript</span>
@@ -48,20 +48,20 @@
 				<p>JavaScript / CSS</p>
 			</div>
 			<div class="tech-card">
-				<h4>Database</h4>
+				<h4 data-i18n="tech.database">Database</h4>
 				<p>PostgreSQL</p>
 			</div>
 		</div>
 
 		<!-- Description -->
 		<section class="project-description">
-			<h2 class="section-title-gradient">About This Project</h2>
-			<p>
+			<h2 class="section-title-gradient" data-i18n="project.about">About This Project</h2>
+			<p data-i18n="transcendence.desc1">
 				Transcendence is the final project of the 42 School common core curriculum. It's a full-stack 
 				web application featuring a real-time multiplayer Pong game with user authentication, 
 				chat functionality, and tournament management.
 			</p>
-			<p>
+			<p data-i18n="transcendence.desc2">
 				This project was developed as a team effort, where I contributed to both frontend and backend 
 				development. We implemented real-time WebSocket communication for smooth gameplay, OAuth 
 				authentication, and a comprehensive user management system.
@@ -70,12 +70,12 @@
 
 		<!-- Features -->
 		<section class="features-section">
-			<h2 class="section-title-gradient">Key Features</h2>
+			<h2 class="section-title-gradient" data-i18n="project.features">Key Features</h2>
 			<div class="features-table">
 				<div class="feature-row">
 					<div class="feature-cell">
-						<span class="feature-label">Multiplayer</span>
-						<span class="feature-value">Real-time Pong</span>
+						<span class="feature-label" data-i18n="feature.multiplayer">Multiplayer</span>
+						<span class="feature-value" data-i18n="feature.realtimepong">Real-time Pong</span>
 					</div>
 					<div class="feature-cell">
 						<span class="feature-label">Auth</span>
@@ -85,30 +85,30 @@
 				<div class="feature-row">
 					<div class="feature-cell">
 						<span class="feature-label">Chat</span>
-						<span class="feature-value">Live Messaging</span>
+						<span class="feature-value" data-i18n="feature.livemsg">Live Messaging</span>
 					</div>
 					<div class="feature-cell">
-						<span class="feature-label">Tournament</span>
-						<span class="feature-value">Bracket System</span>
-					</div>
-				</div>
-				<div class="feature-row">
-					<div class="feature-cell">
-						<span class="feature-label">Profiles</span>
-						<span class="feature-value">User Dashboard</span>
-					</div>
-					<div class="feature-cell">
-						<span class="feature-label">Friends</span>
-						<span class="feature-value">Social System</span>
+						<span class="feature-label" data-i18n="feature.tournament">Tournament</span>
+						<span class="feature-value" data-i18n="feature.bracket">Bracket System</span>
 					</div>
 				</div>
 				<div class="feature-row">
 					<div class="feature-cell">
-						<span class="feature-label">Deploy</span>
+						<span class="feature-label" data-i18n="feature.profiles">Profiles</span>
+						<span class="feature-value" data-i18n="feature.dashboard">User Dashboard</span>
+					</div>
+					<div class="feature-cell">
+						<span class="feature-label" data-i18n="feature.friends">Friends</span>
+						<span class="feature-value" data-i18n="feature.social">Social System</span>
+					</div>
+				</div>
+				<div class="feature-row">
+					<div class="feature-cell">
+						<span class="feature-label" data-i18n="feature.deploy">Deploy</span>
 						<span class="feature-value">Docker Compose</span>
 					</div>
 					<div class="feature-cell">
-						<span class="feature-label">Security</span>
+						<span class="feature-label" data-i18n="feature.security">Security</span>
 						<span class="feature-value">HTTPS & CSRF</span>
 					</div>
 				</div>
@@ -117,7 +117,7 @@
 
 		<!-- Video Section -->
 		<section class="video-section">
-			<h2 class="section-title-gradient">Demo Video</h2>
+			<h2 class="section-title-gradient" data-i18n="project.demo">Demo Video</h2>
 			<div class="video-container">
 				<iframe 
 					src="https://www.youtube.com/embed/eY7Edc4XF4c" 
@@ -128,20 +128,11 @@
 			</div>
 		</section>
 
-		<!-- Navigation -->
-		<nav class="project-nav">
-			<a href="javascript:void(0)" onclick="navigateTo('portfolio.html')" class="nav-link prev">
-				<span class="nav-arrow">←</span>
-				<div class="nav-text">
-					<span>Previous Project</span>
-					<strong>My Portfolio</strong>
-				</div>
-			</a>
-		</nav>
 	</main>
 
 	<footer>
-		<p>&copy; 2025 Ilbendib's Portfolio</p>
+		<p data-i18n="footer.copyright">&copy; 2025 Ilbendib's Portfolio</p>
 	</footer>
+	<script src="../js/lang.js?v=6"></script>
 </body>
 </html>

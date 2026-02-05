@@ -3,27 +3,27 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="../css/index.css">
-	<link rel="stylesheet" href="../css/responsive.css">
-	<link rel="stylesheet" href="../css/transition.css">
-	<link rel="stylesheet" href="../css/games.css">
-	<script src="../js/transition.js"></script>
-	<script src="../js/index.js"></script>
-	<title>My Portfolio - Web Development</title>
+	<link rel="stylesheet" href="../css/index.css?v=3">
+	<link rel="stylesheet" href="../css/responsive.css?v=3">
+	<link rel="stylesheet" href="../css/transition.css?v=4">
+	<link rel="stylesheet" href="../css/games.css?v=3">
+	<script src="../js/transition.js?v=4" defer></script>
+	<script src="../js/index.js?v=2" defer></script>
+	<title data-i18n="portfolio.title">My Portfolio - Web Development</title>
 </head>
 <body class="opening page-web theme-portfolio">
 
 	<!-- Hero Section -->
 	<section class="project-detail-hero">
-		<span class="back-link" onclick="navigateTo('Web.html')">Back to Projects</span>
-		<span class="hero-badge">Personal Project</span>
-		<h1 class="hero-title-gradient">My Portfolio</h1>
-		<p class="hero-subtitle">Personal Portfolio Website</p>
+		<span class="back-link" onclick="navigateTo('Web.html')" data-i18n="back.projects">Back to Projects</span>
+		<span class="hero-badge" data-i18n="badge.personal">Personal Project</span>
+		<h1 class="hero-title-gradient" data-i18n="portfolio.name">My Portfolio</h1>
+		<p class="hero-subtitle" data-i18n="portfolio.subtitle">Personal Portfolio Website</p>
 		<div class="hero-tech">
 			<span>HTML5</span>
 			<span>CSS3</span>
 			<span>JavaScript</span>
-			<span>Responsive Design</span>
+			<span data-i18n="tech.responsive">Responsive Design</span>
 		</div>
 	</section>
 
@@ -44,24 +44,24 @@
 				<p>HTML / CSS / JS</p>
 			</div>
 			<div class="tech-card">
-				<h4>Hosting</h4>
+				<h4 data-i18n="tech.hosting">Hosting</h4>
 				<p>GitHub Pages</p>
 			</div>
 			<div class="tech-card">
-				<h4>Year</h4>
+				<h4 data-i18n="tech.year">Year</h4>
 				<p>2025</p>
 			</div>
 		</div>
 
 		<!-- Description -->
 		<section class="project-description">
-			<h2 class="section-title-gradient">About This Project</h2>
-			<p>
+			<h2 class="section-title-gradient" data-i18n="project.about">About This Project</h2>
+			<p data-i18n="portfolio.desc1">
 				This portfolio website showcases my skills, projects, and experiences as a developer. 
 				Built entirely from scratch using vanilla HTML, CSS, and JavaScript, it demonstrates 
 				my understanding of modern web development practices.
 			</p>
-			<p>
+			<p data-i18n="portfolio.desc2">
 				The site features smooth page transitions, responsive design for all devices, 
 				interactive elements, and a clean, professional aesthetic. It serves as both a 
 				showcase of my work and a demonstration of my front-end development capabilities.
@@ -70,46 +70,46 @@
 
 		<!-- Features -->
 		<section class="features-section">
-			<h2 class="section-title-gradient">Key Features</h2>
+			<h2 class="section-title-gradient" data-i18n="project.features">Key Features</h2>
 			<div class="features-table">
 				<div class="feature-row">
 					<div class="feature-cell">
 						<span class="feature-label">Design</span>
-						<span class="feature-value">Modern UI/UX</span>
+						<span class="feature-value" data-i18n="feature.modernui">Modern UI/UX</span>
 					</div>
 					<div class="feature-cell">
 						<span class="feature-label">Responsive</span>
-						<span class="feature-value">All Devices</span>
+						<span class="feature-value" data-i18n="feature.alldevices">All Devices</span>
 					</div>
 				</div>
 				<div class="feature-row">
 					<div class="feature-cell">
 						<span class="feature-label">Transitions</span>
-						<span class="feature-value">Smooth Animations</span>
+						<span class="feature-value" data-i18n="feature.animations">Smooth Animations</span>
 					</div>
 					<div class="feature-cell">
 						<span class="feature-label">Performance</span>
-						<span class="feature-value">Optimized Loading</span>
+						<span class="feature-value" data-i18n="feature.optimized">Optimized Loading</span>
 					</div>
 				</div>
 				<div class="feature-row">
 					<div class="feature-cell">
 						<span class="feature-label">Contact</span>
-						<span class="feature-value">Email Integration</span>
+						<span class="feature-value" data-i18n="feature.email">Email Integration</span>
 					</div>
 					<div class="feature-cell">
 						<span class="feature-label">Navigation</span>
-						<span class="feature-value">Intuitive Menu</span>
+						<span class="feature-value" data-i18n="feature.menu">Intuitive Menu</span>
 					</div>
 				</div>
 				<div class="feature-row">
 					<div class="feature-cell">
 						<span class="feature-label">Code</span>
-						<span class="feature-value">Clean & Modular</span>
+						<span class="feature-value" data-i18n="feature.code">Clean & Modular</span>
 					</div>
 					<div class="feature-cell">
 						<span class="feature-label">SEO</span>
-						<span class="feature-value">Optimized</span>
+						<span class="feature-value" data-i18n="feature.seo">Optimized</span>
 					</div>
 				</div>
 			</div>
@@ -117,22 +117,23 @@
 
 		<!-- Live Site Link -->
 		<section class="links-section">
-			<h2 class="section-title-gradient">View Project</h2>
+			<h2 class="section-title-gradient" data-i18n="project.viewproject">View Project</h2>
 			<div class="project-links">
 				<a href="https://ilyan42.github.io/ilbendib_portfolio/" target="_blank" class="project-link-btn">
 					<span class="link-icon">🌐</span>
-					<span>Live Site</span>
+					<span data-i18n="link.livesite">Live Site</span>
 				</a>
 				<a href="https://github.com/ilyan42/ilbendib_portfolio" target="_blank" class="project-link-btn secondary">
 					<span class="link-icon">📂</span>
-					<span>Source Code</span>
+					<span data-i18n="link.sourcecode">Source Code</span>
 				</a>
 			</div>
 		</section>
 	</main>
 
 	<footer>
-		<p>&copy; 2025 Ilbendib's Portfolio</p>
+		<p data-i18n="footer.copyright">&copy; 2025 Ilbendib's Portfolio</p>
 	</footer>
+	<script src="../js/lang.js?v=6"></script>
 </body>
 </html>

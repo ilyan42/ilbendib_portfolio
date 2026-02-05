@@ -6,13 +6,13 @@
 	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 	<meta http-equiv="Pragma" content="no-cache">
 	<meta http-equiv="Expires" content="0">
-	<link rel="stylesheet" href="../css/index.css?v=2">
-	<link rel="stylesheet" href="../css/responsive.css?v=2">
+	<link rel="stylesheet" href="../css/index.css?v=3">
+	<link rel="stylesheet" href="../css/responsive.css?v=3">
 	<link rel="stylesheet" href="../css/transition.css?v=4">
-	<link rel="stylesheet" href="../css/games.css?v=2">
-	<script src="../js/transition.js?v=4"></script>
-	<script src="../js/index.js?v=2"></script>
-	<title>Action-Adventure - Portfolio</title>
+	<link rel="stylesheet" href="../css/games.css?v=3">
+	<script src="../js/transition.js?v=4" defer></script>
+	<script src="../js/index.js?v=2" defer></script>
+	<title data-i18n="actionadv.title">Action-Adventure - Portfolio</title>
 </head>
 <body class="opening page-jeux theme-action-adventure">
 	<div class="page-transition">
@@ -23,15 +23,15 @@
 
 	<!-- Hero Section -->
 	<section class="project-detail-hero">
-		<span class="back-link" onclick="navigateTo('Games.html')">Back to Projects</span>
-		<span class="hero-badge in-dev">In Development</span>
+		<span class="back-link" onclick="navigateTo('Games.html')" data-i18n="back.projects">Back to Projects</span>
+		<span class="hero-badge in-dev" data-i18n="badge.indev">In Development</span>
 		<h1 class="hero-title-gradient">Action-Adventure</h1>
-		<p class="hero-subtitle">3D Third-Person Open World Game</p>
+		<p class="hero-subtitle" data-i18n="actionadv.subtitle">3D Third-Person Open World Game</p>
 		<div class="hero-tech">
 			<span>Unreal Engine 5</span>
 			<span>C++</span>
 			<span>Blueprints</span>
-			<span>Open World</span>
+			<span data-i18n="tech.openworld">Open World</span>
 		</div>
 	</section>
 
@@ -54,28 +54,28 @@
 		<!-- Technical Details -->
 		<div class="tech-details">
 			<div class="tech-card">
-				<h4>Engine</h4>
+				<h4 data-i18n="tech.engine">Engine</h4>
 				<p>Unreal Engine 5</p>
 			</div>
 			<div class="tech-card">
-				<h4>Language</h4>
+				<h4 data-i18n="tech.language">Language</h4>
 				<p>C++ / Blueprints</p>
 			</div>
 			<div class="tech-card">
-				<h4>Status</h4>
-				<p>In Development</p>
+				<h4 data-i18n="tech.status">Status</h4>
+				<p data-i18n="status.indev">In Development</p>
 			</div>
 		</div>
 
 		<!-- Description -->
 		<section class="project-description">
-			<h2 class="section-title-gradient">About This Project</h2>
-			<p>
+			<h2 class="section-title-gradient" data-i18n="project.about">About This Project</h2>
+			<p data-i18n="actionadv.desc1">
 				A third-person action-adventure game inspired by The Legend of Zelda: Breath of the Wild. 
 				The player embodies a skilled adventurer exploring vast open landscapes filled with secrets, 
 				puzzles, and dynamic enemies.
 			</p>
-			<p>
+			<p data-i18n="actionadv.desc2">
 				Currently in active development with new features being added regularly. The game focuses on 
 				exploration, combat mechanics, and an immersive world that rewards curiosity and creativity.
 			</p>
@@ -83,46 +83,46 @@
 
 		<!-- Features -->
 		<section class="features-section">
-			<h2 class="section-title-gradient">Key Features</h2>
+			<h2 class="section-title-gradient" data-i18n="project.features">Key Features</h2>
 			<div class="features-table">
 				<div class="feature-row">
 					<div class="feature-cell">
-						<span class="feature-label">Exploration</span>
-						<span class="feature-value">Open World</span>
+						<span class="feature-label" data-i18n="feature.exploration">Exploration</span>
+						<span class="feature-value" data-i18n="tech.openworld">Open World</span>
 					</div>
 					<div class="feature-cell">
-						<span class="feature-label">Combat</span>
-						<span class="feature-value">Dynamic System</span>
-					</div>
-				</div>
-				<div class="feature-row">
-					<div class="feature-cell">
-						<span class="feature-label">Puzzles</span>
-						<span class="feature-value">Environmental</span>
-					</div>
-					<div class="feature-cell">
-						<span class="feature-label">Camera</span>
-						<span class="feature-value">Third-Person</span>
+						<span class="feature-label" data-i18n="feature.combat">Combat</span>
+						<span class="feature-value" data-i18n="feature.dynamicsys">Dynamic System</span>
 					</div>
 				</div>
 				<div class="feature-row">
 					<div class="feature-cell">
-						<span class="feature-label">Movement</span>
-						<span class="feature-value">Fluid Mechanics</span>
+						<span class="feature-label" data-i18n="feature.puzzles">Puzzles</span>
+						<span class="feature-value" data-i18n="feature.environmental">Environmental</span>
 					</div>
 					<div class="feature-cell">
-						<span class="feature-label">Progression</span>
-						<span class="feature-value">Skill System</span>
+						<span class="feature-label" data-i18n="feature.camera">Camera</span>
+						<span class="feature-value" data-i18n="feature.thirdperson">Third-Person</span>
 					</div>
 				</div>
 				<div class="feature-row">
 					<div class="feature-cell">
-						<span class="feature-label">Quests</span>
-						<span class="feature-value">Dynamic Objectives</span>
+						<span class="feature-label" data-i18n="feature.movement">Movement</span>
+						<span class="feature-value" data-i18n="feature.fluidmech">Fluid Mechanics</span>
 					</div>
 					<div class="feature-cell">
-						<span class="feature-label">Visuals</span>
-						<span class="feature-value">Stylized Art</span>
+						<span class="feature-label" data-i18n="feature.progression">Progression</span>
+						<span class="feature-value" data-i18n="feature.skillsys">Skill System</span>
+					</div>
+				</div>
+				<div class="feature-row">
+					<div class="feature-cell">
+						<span class="feature-label" data-i18n="feature.quests">Quests</span>
+						<span class="feature-value" data-i18n="feature.dynamicobj">Dynamic Objectives</span>
+					</div>
+					<div class="feature-cell">
+						<span class="feature-label" data-i18n="feature.visuals">Visuals</span>
+						<span class="feature-value" data-i18n="feature.stylizedart">Stylized Art</span>
 					</div>
 				</div>
 			</div>
@@ -130,7 +130,7 @@
 
 		<!-- Video Section -->
 		<section class="video-section">
-			<h2 class="section-title-gradient">DevLog Video</h2>
+			<h2 class="section-title-gradient" data-i18n="project.devlog">DevLog Video</h2>
 			<div class="video-container">
 				<iframe 
 					src="https://www.youtube.com/embed/eeNVm4Hf1g0" 
@@ -144,28 +144,10 @@
 			</div>
 		</section>
 
-		<!-- Navigation -->
-		<!-- <nav class="project-nav">
-			<a href="javascript:void(0)" onclick="navigateTo('shards-of-ylena.html')" class="nav-link prev">
-				<span class="nav-arrow">←</span>
-				<div class="nav-text">
-					<span>Previous Project</span>
-					<strong>Shards of Ylena</strong>
-				</div>
-			</a>
-			<a href="javascript:void(0)" onclick="navigateTo('warfront-legacy.html')" class="nav-link next">
-				<div class="nav-text">
-					<span>Next Project</span>
-					<strong>WarFront-Legacy</strong>
-				</div>
-				<span class="nav-arrow">→</span>
-			</a>
-		</nav> -->
-
 	</main>
 
 	<footer>
-		<p>&copy; 2025 Ilbendib's Portfolio</p>
+		<p data-i18n="footer.copyright">&copy; 2025 Ilbendib's Portfolio</p>
 	</footer>
 
 	<script>
@@ -179,5 +161,6 @@
 			thumbnail.classList.add('active');
 		}
 	</script>
+	<script src="../js/lang.js?v=6"></script>
 </body>
 </html>

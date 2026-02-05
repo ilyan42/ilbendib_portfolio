@@ -6,14 +6,14 @@
 	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 	<meta http-equiv="Pragma" content="no-cache">
 	<meta http-equiv="Expires" content="0">
-	<link rel="stylesheet" href="../css/index.css?v=2">
-	<link rel="stylesheet" href="../css/responsive.css?v=2">
+	<link rel="stylesheet" href="../css/index.css?v=3">
+	<link rel="stylesheet" href="../css/responsive.css?v=3">
 	<link rel="stylesheet" href="../css/transition.css?v=4">
-	<link rel="stylesheet" href="../css/games.css?v=2">
+	<link rel="stylesheet" href="../css/games.css?v=3">
 	<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-	<script src="../js/transition.js?v=4"></script>
-	<script src="../js/index.js?v=2"></script>
-	<title>Games - Portfolio</title>
+	<script src="../js/transition.js?v=4" defer></script>
+	<script src="../js/index.js?v=2" defer></script>
+	<title data-i18n="games.title">Games - Portfolio</title>
 </head>
 <body class="opening page-jeux">
 	<div class="page-transition">
@@ -24,9 +24,9 @@
 
 	<!-- Hero Section -->
 	<section class="games-hero">
-		<span class="back-link" onclick="navigateTo('../index.html')">Back to Portfolio</span>
-		<h1>Game Development</h1>
-		<p class="subtitle">Passion • Creativity • Code</p>
+		<span class="back-link" onclick="navigateTo('../index.html')" data-i18n="back">Back to Portfolio</span>
+		<h1 data-i18n="games.hero">Game Development</h1>
+		<p class="subtitle" data-i18n="games.subtitle">Passion • Creativity • Code</p>
 	</section>
 
 	<!-- Projects Section -->
@@ -38,13 +38,13 @@
 				<div class="project-image">
 					<img src="../image/ImageCouverture.png" alt="Action-Adventure Game">
 					<div class="project-overlay">
-						<span class="view-project">View Project →</span>
+						<span class="view-project" data-i18n="viewproject">View Project →</span>
 					</div>
 				</div>
 				<div class="project-info">
-					<span class="project-badge in-dev">In Development</span>
+					<span class="project-badge in-dev" data-i18n="badge.indev">In Development</span>
 					<h3>Action-Adventure</h3>
-					<p>3D Third-Person Game • Unreal Engine</p>
+					<p data-i18n="games.proj1.desc">3D Third-Person Game • Unreal Engine</p>
 				</div>
 			</a>
 
@@ -53,13 +53,13 @@
 				<div class="project-image">
 					<img src="../image/bgPremierJeux.jpg" alt="WarFront-Legacy">
 					<div class="project-overlay">
-						<span class="view-project">View Project →</span>
+						<span class="view-project" data-i18n="viewproject">View Project →</span>
 					</div>
 				</div>
 				<div class="project-info">
 					<span class="project-badge unreal">Unreal Engine</span>
 					<h3>WarFront-Legacy</h3>
-					<p>3D FPS Multiplayer • C++</p>
+					<p data-i18n="games.proj2.desc">3D FPS Multiplayer • C++</p>
 				</div>
 			</a>
 
@@ -68,13 +68,13 @@
 				<div class="project-image">
 					<img src="../image/arial.png" alt="Aria and the Lost Souls">
 					<div class="project-overlay">
-						<span class="view-project">View Project →</span>
+						<span class="view-project" data-i18n="viewproject">View Project →</span>
 					</div>
 				</div>
 				<div class="project-info">
 					<span class="project-badge unity">Unity</span>
 					<h3>Aria and the Lost Souls</h3>
-					<p>2D Adventure Game • C#</p>
+					<p data-i18n="games.proj3.desc">2D Adventure Game • C#</p>
 				</div>
 			</a>
 
@@ -83,13 +83,13 @@
 				<div class="project-image">
 					<img src="../image/paragon.jpg" alt="Shards of Ylena">
 					<div class="project-overlay">
-						<span class="view-project">View Project →</span>
+						<span class="view-project" data-i18n="viewproject">View Project →</span>
 					</div>
 				</div>
 				<div class="project-info">
-					<span class="project-badge prototype">Prototype</span>
+					<span class="project-badge prototype" data-i18n="badge.prototype">Prototype</span>
 					<h3>Shards of Ylena</h3>
-					<p>3D Action-Adventure • Unreal Engine</p>
+					<p data-i18n="games.proj4.desc">3D Action-Adventure • Unreal Engine</p>
 				</div>
 			</a>
 
@@ -97,7 +97,8 @@
 	</main>
 
 	<footer>
-		<p>&copy; 2025 Ilbendib's Portfolio</p>
+		<p data-i18n="footer.copyright">&copy; 2025 Ilbendib's Portfolio</p>
 	</footer>
+	<script src="../js/lang.js?v=6"></script>
 </body>
 </html>

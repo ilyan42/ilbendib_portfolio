@@ -6,13 +6,13 @@
 	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 	<meta http-equiv="Pragma" content="no-cache">
 	<meta http-equiv="Expires" content="0">
-	<link rel="stylesheet" href="../css/index.css?v=2">
-	<link rel="stylesheet" href="../css/responsive.css?v=2">
+	<link rel="stylesheet" href="../css/index.css?v=3">
+	<link rel="stylesheet" href="../css/responsive.css?v=3">
 	<link rel="stylesheet" href="../css/transition.css?v=4">
-	<link rel="stylesheet" href="../css/games.css?v=2">
-	<script src="../js/transition.js?v=4"></script>
-	<script src="../js/index.js?v=2"></script>
-	<title>Aria and the Lost Souls - Portfolio</title>
+	<link rel="stylesheet" href="../css/games.css?v=3">
+	<script src="../js/transition.js?v=4" defer></script>
+	<script src="../js/index.js?v=2" defer></script>
+	<title data-i18n="aria.title">Aria and the Lost Souls - Portfolio</title>
 </head>
 <body class="opening page-jeux theme-aria">
 	<div class="page-transition">
@@ -21,17 +21,18 @@
 		</div>
 	</div>
 
+
 	<!-- Hero Section -->
 	<section class="project-detail-hero">
-		<span class="back-link" onclick="navigateTo('Games.html')">Back to Projects</span>
+		<span class="back-link" onclick="navigateTo('Games.html')" data-i18n="back.projects">Back to Projects</span>
 		<span class="hero-badge">Unity</span>
 		<h1 class="hero-title-gradient">Aria and the Lost Souls</h1>
-		<p class="hero-subtitle">2D Adventure Game</p>
+		<p class="hero-subtitle" data-i18n="aria.subtitle">2D Adventure Game</p>
 		<div class="hero-tech">
 			<span>Unity</span>
 			<span>C#</span>
-			<span>2D Platformer</span>
-			<span>Adventure</span>
+			<span data-i18n="tech.2dplatformer">2D Platformer</span>
+			<span data-i18n="tech.adventure">Adventure</span>
 		</div>
 	</section>
 
@@ -54,27 +55,27 @@
 		<!-- Technical Details -->
 		<div class="tech-details">
 			<div class="tech-card">
-				<h4>Engine</h4>
+				<h4 data-i18n="tech.engine">Engine</h4>
 				<p>Unity</p>
 			</div>
 			<div class="tech-card">
-				<h4>Language</h4>
+				<h4 data-i18n="tech.language">Language</h4>
 				<p>C#</p>
 			</div>
 			<div class="tech-card">
-				<h4>Genre</h4>
-				<p>2D Adventure</p>
+				<h4 data-i18n="tech.genre">Genre</h4>
+				<p data-i18n="type.2dadventure">2D Adventure</p>
 			</div>
 		</div>
 
 		<!-- Description -->
 		<section class="project-description">
-			<h2 class="section-title-gradient">About This Project</h2>
-			<p>
+			<h2 class="section-title-gradient" data-i18n="project.about">About This Project</h2>
+			<p data-i18n="aria.desc1">
 				Aria and the Lost Souls is a 2D adventure game that combines platforming mechanics with puzzle-solving elements. 
 				Players embark on a mystical journey through beautifully crafted environments.
 			</p>
-			<p>
+			<p data-i18n="aria.desc2">
 				During development, I originally created a full first level that included AI-driven enemy combat, 
 				moving platforms, and trap-based environmental mechanics. The game features an immersive storyline 
 				with an interactive dialogue system.
@@ -83,46 +84,46 @@
 
 		<!-- Features -->
 		<section class="features-section">
-			<h2 class="section-title-gradient">Key Features</h2>
+			<h2 class="section-title-gradient" data-i18n="project.features">Key Features</h2>
 			<div class="features-table">
 				<div class="feature-row">
 					<div class="feature-cell">
-						<span class="feature-label">Story</span>
-						<span class="feature-value">Immersive Narrative</span>
+						<span class="feature-label" data-i18n="feature.story">Story</span>
+						<span class="feature-value" data-i18n="feature.narrative">Immersive Narrative</span>
 					</div>
 					<div class="feature-cell">
 						<span class="feature-label">Animations</span>
-						<span class="feature-value">Hand-crafted</span>
+						<span class="feature-value" data-i18n="feature.handcrafted">Hand-crafted</span>
 					</div>
 				</div>
 				<div class="feature-row">
 					<div class="feature-cell">
 						<span class="feature-label">Audio</span>
-						<span class="feature-value">Original Soundtrack</span>
+						<span class="feature-value" data-i18n="feature.ost">Original Soundtrack</span>
 					</div>
 					<div class="feature-cell">
-						<span class="feature-label">Difficulty</span>
-						<span class="feature-value">Multiple Levels</span>
-					</div>
-				</div>
-				<div class="feature-row">
-					<div class="feature-cell">
-						<span class="feature-label">Combat</span>
-						<span class="feature-value">Enemy AI System</span>
-					</div>
-					<div class="feature-cell">
-						<span class="feature-label">Health</span>
-						<span class="feature-value">Visual Feedback</span>
+						<span class="feature-label" data-i18n="feature.difficulty">Difficulty</span>
+						<span class="feature-value" data-i18n="feature.multilevels">Multiple Levels</span>
 					</div>
 				</div>
 				<div class="feature-row">
 					<div class="feature-cell">
-						<span class="feature-label">Respawn</span>
-						<span class="feature-value">Checkpoint System</span>
+						<span class="feature-label" data-i18n="feature.combat">Combat</span>
+						<span class="feature-value" data-i18n="feature.enemyai">Enemy AI System</span>
 					</div>
 					<div class="feature-cell">
-						<span class="feature-label">Dialogue</span>
-						<span class="feature-value">Interactive NPCs</span>
+						<span class="feature-label" data-i18n="feature.health">Health</span>
+						<span class="feature-value" data-i18n="feature.visualfeedback">Visual Feedback</span>
+					</div>
+				</div>
+				<div class="feature-row">
+					<div class="feature-cell">
+						<span class="feature-label" data-i18n="feature.respawn">Respawn</span>
+						<span class="feature-value" data-i18n="feature.checkpoint">Checkpoint System</span>
+					</div>
+					<div class="feature-cell">
+						<span class="feature-label" data-i18n="feature.dialogue">Dialogue</span>
+						<span class="feature-value" data-i18n="feature.interactivenpc">Interactive NPCs</span>
 					</div>
 				</div>
 			</div>
@@ -130,7 +131,7 @@
 
 		<!-- Video Section -->
 		<section class="video-section">
-			<h2 class="section-title-gradient">Gameplay Video</h2>
+			<h2 class="section-title-gradient" data-i18n="project.gameplay">Gameplay Video</h2>
 			<div class="video-container">
 				<iframe 
 					src="https://www.youtube.com/embed/Atx0xDoF8Cw" 
@@ -144,28 +145,10 @@
 			</div>
 		</section>
 
-		<!-- Navigation -->
-		<!-- <nav class="project-nav">
-			<a href="javascript:void(0)" onclick="navigateTo('warfront-legacy.html')" class="nav-link prev">
-				<span class="nav-arrow">←</span>
-				<div class="nav-text">
-					<span>Previous Project</span>
-					<strong>WarFront-Legacy</strong>
-				</div>
-			</a>
-			<a href="javascript:void(0)" onclick="navigateTo('shards-of-ylena.html')" class="nav-link next">
-				<div class="nav-text">
-					<span>Next Project</span>
-					<strong>Shards of Ylena</strong>
-				</div>
-				<span class="nav-arrow">→</span>
-			</a>
-		</nav> -->
-
 	</main>
 
 	<footer>
-		<p>&copy; 2025 Ilbendib's Portfolio</p>
+		<p data-i18n="footer.copyright">&copy; 2025 Ilbendib's Portfolio</p>
 	</footer>
 
 	<script>
@@ -179,5 +162,6 @@
 			thumbnail.classList.add('active');
 		}
 	</script>
+	<script src="../js/lang.js?v=6"></script>
 </body>
 </html>

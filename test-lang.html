@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test Language Toggle</title>
+    <style>
+        body {
+            background: #1a1a2e;
+            color: white;
+            font-family: Arial, sans-serif;
+            padding: 50px;
+        }
+        .lang-toggle-wrapper {
+            position: relative;
+            display: inline-block;
+        }
+        .lang-toggle {
+            background: #4a9eff;
+            border: none;
+            border-radius: 10px;
+            padding: 15px 25px;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        .lang-dropdown {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: #2a2a4e;
+            border-radius: 10px;
+            padding: 10px;
+            margin-top: 10px;
+            display: none;
+        }
+        .lang-dropdown.show {
+            display: block;
+        }
+        .lang-option {
+            display: block;
+            background: none;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 18px;
+            width: 100%;
+            text-align: left;
+        }
+        .lang-option:hover {
+            background: #4a9eff;
+            border-radius: 5px;
+        }
+        #log {
+            margin-top: 30px;
+            padding: 20px;
+            background: #2a2a4e;
+            border-radius: 10px;
+            min-height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Test du bouton de langue</h1>
+    
+    <div class="lang-toggle-wrapper">
+        <button id="lang-toggle" class="lang-toggle">🇬🇧</button>
+        <div class="lang-dropdown" id="lang-dropdown">
+            <button class="lang-option" data-lang="en">🇬🇧 English</button>
+            <button class="lang-option" data-lang="fr">🇫🇷 Français</button>
+        </div>
+    </div>
+    
+    <div id="log">
+        <strong>Logs:</strong><br>
+    </div>
+    
+    <script>
+        const logDiv = document.getElementById('log');
+        
+        function log(msg) {
+            console.log(msg);
+            logDiv.innerHTML += msg + '<br>';
+        }
+        
+        log('Script started');
+        
+        const langToggle = document.getElementById('lang-toggle');
+        const langDropdown = document.getElementById('lang-dropdown');
+        
+        log('langToggle: ' + (langToggle ? 'found' : 'NOT FOUND'));
+        log('langDropdown: ' + (langDropdown ? 'found' : 'NOT FOUND'));
+        
+        if (langToggle && langDropdown) {
+            langToggle.addEventListener('click', function(e) {
+                log('Button clicked!');
+                e.preventDefault();
+                e.stopPropagation();
+                langDropdown.classList.toggle('show');
+                log('Dropdown is now: ' + (langDropdown.classList.contains('show') ? 'VISIBLE' : 'HIDDEN'));
+            });
+            
+            document.querySelectorAll('.lang-option').forEach(option => {
+                option.addEventListener('click', function(e) {
+                    const lang = this.getAttribute('data-lang');
+                    log('Selected: ' + lang);
+                    langDropdown.classList.remove('show');
+                });
+            });
+            
+            log('Event listeners added');
+        }
+    </script>
+</body>
+</html>
