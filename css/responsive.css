@@ -3,19 +3,37 @@
 /* Tablet (768px - 1024px) */
 @media screen and (max-width: 1024px) {
     nav {
-        width: 70%;
+        width: 90%;
     }
     
     .nav-container {
         padding: 0 15px;
     }
     
-    nav ul {
-        gap: 20px;
+    .nav-menu {
+        gap: 5px;
     }
     
-    nav ul li a {
-        font-size: 0.9rem;
+    .nav-button {
+        font-size: 0.85rem;
+        padding: 6px 10px;
+    }
+    
+    .cta-button span {
+        display: none;
+    }
+    
+    .cta-button {
+        padding: 8px 12px;
+        min-width: unset;
+    }
+
+    .lang-toggle-wrapper {
+        margin-right: 8px;
+    }
+
+    .projects-dropdown-btn {
+        font-size: 0.7rem;
     }
     
     header h1 {
@@ -69,17 +87,41 @@
     }
 }	
 
+/* Tablet small - switch to hamburger (769px - 900px) */
+@media screen and (max-width: 900px) {
+    nav {
+        width: 92%;
+    }
+
+    nav .nav-menu {
+        display: none;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .cta-button span {
+        display: inline;
+    }
+
+    .cta-button {
+        padding: 8px 16px;
+        font-size: 0.8rem;
+    }
+}
+
 /* Mobile Large (481px - 768px) */
 @media screen and (max-width: 768px) {
     
     nav {
-        width: 90%;
-        height: 45px;
-        border-radius: 22px;
+        width: 92%;
+        height: 50px;
+        border-radius: 25px;
     }
     
     .nav-container {
-        padding: 0 10px;
+        padding: 0 15px;
     }
     
     .logo {
@@ -87,12 +129,12 @@
     }
     
     .logo-icon {
-        width: 25px;
-        height: 25px;
+        width: 28px;
+        height: 28px;
         font-size: 0.7rem;
     }
     
-    .nav-menu {
+    nav .nav-menu {
         display: none;
     }
     
@@ -100,15 +142,14 @@
         display: flex;
     }
     
-    .nav-button {
-        font-size: 0.8rem;
-        padding: 6px 12px;
-    }
-    
     .cta-button {
-        padding: 6px 12px;
-        font-size: 0.75rem;
+        padding: 8px 14px;
+        font-size: 0.8rem;
         border-radius: 18px;
+    }
+
+    .cta-button span {
+        display: inline;
     }
     
     header h1 {
@@ -269,13 +310,13 @@
 @media screen and (max-width: 480px) {
     nav {
         width: 95%;
-        height: 40px;
-        border-radius: 20px;
+        height: 46px;
+        border-radius: 23px;
         top: 10px;
     }
     
     .nav-container {
-        padding: 0 8px;
+        padding: 0 10px;
     }
     
     .logo {
@@ -283,29 +324,38 @@
     }
     
     .logo-icon {
-        width: 20px;
-        height: 20px;
+        width: 24px;
+        height: 24px;
         font-size: 0.6rem;
-        margin-right: 5px;
-    }
-    
-    nav ul {
-        display: none;
+        margin-right: 6px;
     }
     
     .hamburger {
         display: flex;
     }
     
-    .nav-button {
-        font-size: 0.7rem;
-        padding: 4px 8px;
-    }
-    
     .cta-button {
-        padding: 4px 8px;
-        font-size: 0.65rem;
-        border-radius: 15px;
+        padding: 6px 10px;
+        font-size: 0.75rem;
+        border-radius: 16px;
+    }
+
+    .cta-button span {
+        display: none;
+    }
+
+    .lang-toggle {
+        width: 36px;
+        height: 30px;
+        border-radius: 8px;
+    }
+
+    .lang-toggle .flag {
+        font-size: 1.05rem;
+    }
+
+    .lang-toggle-wrapper {
+        margin-right: 6px;
     }
 
     

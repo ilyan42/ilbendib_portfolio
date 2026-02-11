@@ -6,8 +6,9 @@
 	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 	<meta http-equiv="Pragma" content="no-cache">
 	<meta http-equiv="Expires" content="0">
-	<link rel="stylesheet" href="../css/index.css?v=3">
-	<link rel="stylesheet" href="../css/responsive.css?v=3">
+	<link rel="stylesheet" href="../css/index.css?v=6">
+	<link rel="stylesheet" href="../css/navigation.css?v=6">
+	<link rel="stylesheet" href="../css/responsive.css?v=6">
 	<link rel="stylesheet" href="../css/transition.css?v=4">
 	<link rel="stylesheet" href="../css/games.css?v=3">
 	<script src="../js/transition.js?v=4" defer></script>
@@ -40,14 +41,21 @@
 		
 		<!-- Gallery -->
 		<section class="project-gallery">
-			<div class="gallery-main">
-				<img src="../image/ImageCouverture.png" alt="Action-Adventure Main" id="mainImage">
+			<div class="gallery-main" id="galleryContainer">
+				<img src="../image/AdventureGameImage.png" alt="Action-Adventure Main" id="mainImage">
 			</div>
 			<div class="gallery-thumbnails">
-				<img src="../image/ImageCouverture.png" alt="Cover" class="active" onclick="changeImage(this)">
-				<img src="../image/ImageCouverture.png" alt="Gameplay 1" onclick="changeImage(this)">
-				<img src="../image/ImageCouverture.png" alt="Gameplay 2" onclick="changeImage(this)">
-				<img src="../image/ImageCouverture.png" alt="Gameplay 3" onclick="changeImage(this)">
+				<img src="../image/AdventureGameImage.png" alt="Cover" class="active" onclick="changeImage(this)">
+				<img src="../image/AdventureGameShop.png" alt="Shop System" onclick="changeImage(this)">
+				
+				<!-- Miniature Splitée (Mini Game 1 + 2) -->
+				<div class="thumb-split" onclick="showMiniGames(this)" title="Mini Games Collection">
+					<div class="thumb-half" style="background-image: url('../image/AdventureGameMiniGame1.png')"></div>
+					<div class="thumb-half" style="background-image: url('../image/AdventureGameMiniGame2.png')"></div>
+					<span class="thumb-icon">🎮</span>
+				</div>
+
+				<img src="../image/AdventureGameMainVillage.png" alt="Main Character" onclick="changeImage(this)">
 			</div>
 		</section>
 
@@ -130,17 +138,79 @@
 
 		<!-- Video Section -->
 		<section class="video-section">
-			<h2 class="section-title-gradient" data-i18n="project.devlog">DevLog Video</h2>
-			<div class="video-container">
-				<iframe 
-					src="https://www.youtube.com/embed/eeNVm4Hf1g0" 
-					title="Action-Adventure DevLog #1"
-					frameborder="0"
-					loading="lazy"
-					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-					referrerpolicy="strict-origin-when-cross-origin"
-					allowfullscreen>
-				</iframe>
+			<h2 class="section-title-gradient" data-i18n="project.videos">Videos</h2>
+			
+			<div class="video-tabs">
+				<button class="video-tab active" data-video="demo">
+					<span class="tab-icon">🎮</span>
+					<span class="tab-label">Gameplay Demo</span>
+				</button>
+				<button class="video-tab" data-video="devlog">
+					<span class="tab-icon">🛠️</span>
+					<span class="tab-label">DevLog</span>
+				</button>
+			</div>
+
+			<div class="video-panels">
+				<!-- Gameplay Demo (default) -->
+				<div class="video-panel active" id="demo">
+					<div class="video-panel-header">
+						<h3>Gameplay Demo</h3>
+						<span class="video-duration">Demo Highlights</span>
+					</div>
+					<div class="video-container">
+						<iframe 
+							data-src="https://www.youtube.com/embed/naj5ixPf8GI" 
+							src="https://www.youtube.com/embed/naj5ixPf8GI" 
+							title="Action-Adventure Gameplay Demo"
+							frameborder="0"
+							loading="lazy"
+							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+							referrerpolicy="strict-origin-when-cross-origin"
+							allowfullscreen>
+						</iframe>
+					</div>
+				</div>
+
+				<!-- DevLog -->
+				<div class="video-panel" id="devlog">
+					<div class="video-panel-header">
+						<h3>DevLog</h3>
+						<span class="video-badge">2 videos</span>
+					</div>
+					<div class="video-grid">
+						<div class="video-grid-item">
+							<span class="video-episode">EP. 01</span>
+							<div class="video-container">
+								<iframe 
+									data-src="https://www.youtube.com/embed/eeNVm4Hf1g0" 
+									src="https://www.youtube.com/embed/eeNVm4Hf1g0" 
+									title="Action-Adventure DevLog #1"
+									frameborder="0"
+									loading="lazy"
+									allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+									referrerpolicy="strict-origin-when-cross-origin"
+									allowfullscreen>
+								</iframe>
+							</div>
+						</div>
+						<div class="video-grid-item">
+							<span class="video-episode">EP. 02</span>
+							<div class="video-container">
+								<iframe 
+									data-src="https://www.youtube.com/embed/J4eD3TWE4kU" 
+									src="https://www.youtube.com/embed/J4eD3TWE4kU" 
+									title="Action-Adventure DevLog #2"
+									frameborder="0"
+									loading="lazy"
+									allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+									referrerpolicy="strict-origin-when-cross-origin"
+									allowfullscreen>
+								</iframe>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</section>
 
@@ -152,14 +222,74 @@
 
 	<script>
 		function changeImage(thumbnail) {
-			const mainImage = document.getElementById('mainImage');
-			mainImage.src = thumbnail.src;
+			const container = document.getElementById('galleryContainer');
 			
-			document.querySelectorAll('.gallery-thumbnails img').forEach(img => {
-				img.classList.remove('active');
+			// Si on clique sur une image normale (pas split)
+			if (!thumbnail.hasAttribute('data-type')) {
+				// Remettre l'image normale si ce n'est pas déjà fait (si on vient de la vue split)
+				if (!document.getElementById('mainImage')) {
+					container.innerHTML = '<img src="" alt="Main Image" id="mainImage">';
+				}
+				
+				const mainImage = document.getElementById('mainImage');
+				mainImage.src = thumbnail.src;
+			}
+			
+			// Mise à jour des classes actives (supporte img et div)
+			document.querySelectorAll('.gallery-thumbnails > *').forEach(el => {
+				el.classList.remove('active');
 			});
 			thumbnail.classList.add('active');
 		}
+
+		function showMiniGames(thumbnail) {
+			const container = document.getElementById('galleryContainer');
+			
+			// Créer la vue splitée
+			container.innerHTML = `
+				<div class="gallery-split-view">
+					<div class="split-item">
+						<img src="../image/AdventureGameMiniGame1.png" alt="Mini Game 1">
+					</div>
+					<div class="split-item">
+						<img src="../image/AdventureGameMiniGame2.png" alt="Mini Game 2">
+					</div>
+				</div>
+			`;
+
+			// Mise à jour des classes actives
+			document.querySelectorAll('.gallery-thumbnails > *').forEach(el => {
+				el.classList.remove('active');
+			});
+			thumbnail.classList.add('active');
+		}
+
+		// Video Tabs System
+		document.querySelectorAll('.video-tab').forEach(tab => {
+			tab.addEventListener('click', () => {
+				const targetId = tab.getAttribute('data-video');
+
+				// Update active tab
+				document.querySelectorAll('.video-tab').forEach(t => t.classList.remove('active'));
+				tab.classList.add('active');
+
+				// Stop videos in panels we're leaving
+				document.querySelectorAll('.video-panel.active iframe').forEach(iframe => {
+					iframe.src = '';
+				});
+
+				// Update active panel
+				document.querySelectorAll('.video-panel').forEach(panel => panel.classList.remove('active'));
+				const targetPanel = document.getElementById(targetId);
+				if (targetPanel) {
+					targetPanel.classList.add('active');
+					// Restore iframes in the new active panel
+					targetPanel.querySelectorAll('iframe').forEach(iframe => {
+						iframe.src = iframe.getAttribute('data-src');
+					});
+				}
+			});
+		});
 	</script>
 	<script src="../js/lang.js?v=6"></script>
 </body>
