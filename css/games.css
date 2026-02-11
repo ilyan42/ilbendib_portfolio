@@ -1255,7 +1255,8 @@
         height: 250px;
     }
     
-    .gallery-thumbnails img {
+    .gallery-thumbnails img,
+    .gallery-thumbnails .thumb-split {
         height: 80px;
     }
 }
