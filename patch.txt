@@ -1,0 +1,4 @@
+					<div class="feature-cell">
+						<span class="feature-label" data-i18n="feature.controls">Controls</span>
+						<span class="feature-value" data-i18n="roadtotemehani.feat.controller">Full Controller Support</span>
+					</div>

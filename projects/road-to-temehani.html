@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="Expires" content="0">
+	<link rel="stylesheet" href="../css/index.css?v=6">
+	<link rel="stylesheet" href="../css/navigation.css?v=6">
+	<link rel="stylesheet" href="../css/responsive.css?v=6">
+	<link rel="stylesheet" href="../css/transition.css?v=4">
+	<link rel="stylesheet" href="../css/games.css?v=4">
+	<script src="../js/transition.js?v=4" defer></script>
+	<script src="../js/index.js?v=3" defer></script>
+	<title data-i18n="roadtotemehani.title">RoadToTemehani - Portfolio</title>
+</head>
+<body class="opening page-jeux theme-road-to-temehani">
+	<div class="page-transition">
+		<div class="transition-layer">
+			<span class="transition-text">ILBENDIB</span>
+		</div>
+	</div>
+
+	<!-- Hero Section -->
+	<section class="project-detail-hero">
+		<span class="back-link" onclick="navigateTo('Games.html')" data-i18n="back.projects">Back to Projects</span>
+		<span class="hero-badge finished" data-i18n="badge.finished">Finished</span>
+		<h1 class="hero-title-gradient">RoadToTemehani</h1>
+		<p class="hero-subtitle" data-i18n="roadtotemehani.subtitle">2D Adventure Game</p>
+		<div class="hero-tech">
+			<span>Unreal Engine</span>
+			<span>2D</span>
+			<span data-i18n="tech.adventure">Adventure</span>
+		</div>
+	</section>
+
+	<!-- Project Content -->
+	<main class="project-content">
+		
+		<!-- Gallery -->
+		<section class="project-gallery">
+			<div class="gallery-main" id="galleryContainer">
+				<img src="../image/RTT_MainMenu.png" alt="RoadToTemehani Main" id="mainImage">
+			</div>
+			<div class="gallery-thumbnails">
+				<img src="../image/RTT_MainMenu.png" alt="Main Menu" class="active" onclick="changeImage(this)">
+
+				<!-- Gameplay Split (3 images) -->
+				<div class="thumb-split" onclick="showGameplay(this)" title="Gameplay">
+					<div class="thumb-third" style="background-image: url('../image/RTT_gameplayBeach.png')"></div>
+					<div class="thumb-third" style="background-image: url('../image/RTT_GamplayJungle.png')"></div>
+					<div class="thumb-third" style="background-image: url('../image/RTT_GamplayLavalCave.png')"></div>
+					<span class="thumb-icon">🎮</span>
+				</div>
+                
+				<!-- Enemies Split (4 images) -->
+				<div class="thumb-split" onclick="showEnemies(this)" title="Enemies">
+                    <div class="thumb-quad" style="background-image: url('../image/RTT_Enemie-Bird.png')"></div>
+					<div class="thumb-quad" style="background-image: url('../image/Ape.png')"></div>
+					<div class="thumb-quad" style="background-image: url('../image/RTT_EnemieGecko.png')"></div>
+					<div class="thumb-quad" style="background-image: url('../image/RTT_Enemie_Plant.png')"></div>
+					<span class="thumb-icon">👾</span>
+				</div>
+                
+                <img src="../image/RTT_EndScreen.png" alt="End Screen" onclick="changeImage(this)">
+			</div>
+		</section>
+
+		<!-- Technical Details -->
+		<div class="tech-details">
+			<div class="tech-card">
+				<h4 data-i18n="tech.engine">Engine</h4>
+				<p>Unreal Engine</p>
+			</div>
+			<div class="tech-card">
+				<h4 data-i18n="tech.language">Language</h4>
+				<p>Blueprints</p>
+			</div>
+			<div class="tech-card">
+				<h4 data-i18n="tech.status">Status</h4>
+				<p data-i18n="status.finished">Finished</p>
+			</div>
+		</div>
+
+		<!-- Description -->
+		<section class="project-description">
+			<h2 class="section-title-gradient" data-i18n="project.about">About This Project</h2>
+			<p data-i18n="roadtotemehani.desc1">
+				RoadToTemehani is a 2D adventure game built with Unreal Engine. 
+				The player takes on the role of a mother who embarks on a daring adventure across a mysterious island, 
+				driven by a single goal: to find the legendary Temehani.
+			</p>
+			<p data-i18n="roadtotemehani.desc2">
+				Through lush landscapes and challenging obstacles, the journey unfolds as an emotional and captivating 
+				exploration of courage, perseverance, and the unbreakable bond of a mother's determination.
+			</p>
+		</section>
+
+		<!-- Features -->
+		<section class="features-section">
+			<h2 class="section-title-gradient" data-i18n="project.features">Key Features</h2>
+			<div class="features-table">
+				<div class="feature-row">
+					<div class="feature-cell">
+						<span class="feature-label" data-i18n="feature.exploration">Exploration</span>
+						<span class="feature-value" data-i18n="roadtotemehani.feat.island">Island Adventure</span>
+					</div>
+					<div class="feature-cell">
+						<span class="feature-label" data-i18n="feature.controls">Controls</span>
+						<span class="feature-value" data-i18n="roadtotemehani.feat.controller">Full Controller Support</span>
+					</div>
+				</div>
+				<div class="feature-row">
+					<div class="feature-cell">
+						<span class="feature-label" data-i18n="feature.movement">Movement</span>
+						<span class="feature-value" data-i18n="roadtotemehani.feat.dynmovement">Dynamic Movement</span>
+					</div>
+					<div class="feature-cell">
+						<span class="feature-label" data-i18n="feature.collectibles">Collectibles</span>
+						<span class="feature-value" data-i18n="roadtotemehani.feat.collectibles">Collectible Items</span>
+					</div>
+				</div>
+				<div class="feature-row">
+					<div class="feature-cell">
+						<span class="feature-label" data-i18n="feature.cinematics">Cinematics</span>
+						<span class="feature-value" data-i18n="roadtotemehani.feat.cinematics">Cinematics</span>
+					</div>
+					<div class="feature-cell">
+						<span class="feature-label" data-i18n="feature.camera">Camera</span>
+						<span class="feature-value" data-i18n="roadtotemehani.feat.itemcamera">Item Camera Effects</span>
+					</div>
+				</div>
+				<div class="feature-row">
+					<div class="feature-cell">
+						<span class="feature-label" data-i18n="feature.camera">Camera</span>
+						<span class="feature-value">2D Side-View</span>
+					</div>
+					<div class="feature-cell">
+						<span class="feature-label" data-i18n="tech.engine">Engine</span>
+						<span class="feature-value">Unreal Engine</span>
+					</div>
+				</div>
+				<div class="feature-row">
+					<div class="feature-cell">
+						<span class="feature-label" data-i18n="feature.vfx">VFX</span>
+						<span class="feature-value" data-i18n="roadtotemehani.feat.vfx">Visual Effects</span>
+					</div>
+					<div class="feature-cell">
+						<span class="feature-label" data-i18n="feature.ui">UI & Menus</span>
+						<span class="feature-value" data-i18n="roadtotemehani.feat.menus">Complete Menu System</span>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Video Section -->
+		<section class="video-section">
+			<h2 class="section-title-gradient" data-i18n="project.gameplay">Gameplay Video</h2>
+			<div class="video-container">
+				<iframe 
+					src="https://www.youtube.com/embed/o5g2i_TR0cs" 
+					title="RoadToTemehani Gameplay"
+					frameborder="0"
+					loading="lazy"
+					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+					referrerpolicy="strict-origin-when-cross-origin"
+					allowfullscreen>
+				</iframe>
+			</div>
+		</section>
+
+	</main>
+
+	<footer>
+		<p data-i18n="footer.copyright">&copy; 2025 Ilbendib's Portfolio</p>
+	</footer>
+
+	<script>
+		function changeImage(thumbnail) {
+			const container = document.getElementById('galleryContainer');
+			
+			// Si on vient d'une vue splitée, remettre l'image normale
+			if (!document.getElementById('mainImage')) {
+				container.innerHTML = '<img src="" alt="Main Image" id="mainImage">';
+			}
+			
+			const mainImage = document.getElementById('mainImage');
+			mainImage.src = thumbnail.src;
+			
+			document.querySelectorAll('.gallery-thumbnails > *').forEach(el => {
+				el.classList.remove('active');
+			});
+			thumbnail.classList.add('active');
+		}
+
+		function showGameplay(thumbnail) {
+			const container = document.getElementById('galleryContainer');
+			
+			container.innerHTML = `
+				<div class="gallery-split-view">
+					<div class="split-item">
+						<img src="../image/RTT_gameplayBeach.png" alt="Beach">
+						<span class="split-label">Beach</span>
+					</div>
+					<div class="split-item">
+						<img src="../image/RTT_GamplayJungle.png" alt="Jungle">
+						<span class="split-label">Jungle</span>
+					</div>
+					<div class="split-item">
+						<img src="../image/RTT_GamplayLavalCave.png" alt="Lava Cave">
+						<span class="split-label">Lava Cave</span>
+					</div>
+				</div>
+			`;
+
+			document.querySelectorAll('.gallery-thumbnails > *').forEach(el => {
+				el.classList.remove('active');
+			});
+			thumbnail.classList.add('active');
+		}
+
+		function showEnemies(thumbnail) {
+			const container = document.getElementById('galleryContainer');
+			
+			container.innerHTML = `
+				<div class="gallery-split-view gallery-split-quad">
+					<div class="split-item">
+						<img src="../image/RTT_Enemie-Bird.png" alt="Bird">
+						<span class="split-label">Bird</span>
+					</div>
+					<div class="split-item">
+						<img src="../image/RTT_EnemieApe.png" alt="Ape">
+						<span class="split-label">Ape</span>
+					</div>
+					<div class="split-item">
+						<img src="../image/RTT_EnemieGecko.png" alt="Gecko">
+						<span class="split-label">Gecko</span>
+					</div>
+					<div class="split-item">
+						<img src="../image/RTT_Enemie_Plant.png" alt="Plant">
+						<span class="split-label">Plant</span>
+					</div>
+				</div>
+			`;
+
+			document.querySelectorAll('.gallery-thumbnails > *').forEach(el => {
+				el.classList.remove('active');
+			});
+			thumbnail.classList.add('active');
+		}
+	</script>
+	<script src="../js/lang.js?v=6"></script>
+</body>
+</html>

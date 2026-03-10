@@ -636,9 +636,10 @@ const translations = {
         "games.hero": "Game Development",
         "games.subtitle": "Passion • Creativity • Code",
         "games.proj1.desc": "3D Third-Person Game • Unreal Engine",
-        "games.proj2.desc": "3D FPS Multiplayer • C++",
-        "games.proj3.desc": "2D Adventure Game • C#",
-        "games.proj4.desc": "3D Action-Adventure • Unreal Engine",
+        "games.proj2.desc": "2D Adventure • Unreal Engine",
+        "games.proj3.desc": "3D FPS Multiplayer • C++",
+        "games.proj4.desc": "2D Adventure Game • C#",
+        "games.proj5.desc": "3D Action-Adventure • Unreal Engine",
         
         // Web page
         "web.title": "Web Development - Portfolio",
@@ -652,6 +653,7 @@ const translations = {
         "badge.personal": "Personal",
         "badge.42project": "42 Project",
         "badge.indev": "In Development",
+        "badge.finished": "Finished",
         "badge.prototype": "Prototype",
         
         // Tech labels
@@ -672,6 +674,7 @@ const translations = {
         
         // Status
         "status.indev": "In Development",
+        "status.finished": "Finished",
         
         // Types
         "type.multiplayerfps": "Multiplayer FPS",
@@ -709,6 +712,20 @@ const translations = {
         "aria.desc1": "Aria and the Lost Souls is a 2D adventure game that combines platforming mechanics with puzzle-solving elements. Players embark on a mystical journey through beautifully crafted environments.",
         "aria.desc2": "During development, I originally created a full first level that included AI-driven enemy combat, moving platforms, and trap-based environmental mechanics. The game features an immersive storyline with an interactive dialogue system.",
         
+        // RoadToTemehani project
+        "roadtotemehani.title": "RoadToTemehani - Portfolio",
+        "roadtotemehani.subtitle": "2D Adventure Game",
+        "roadtotemehani.desc1": "RoadToTemehani is a 2D adventure game built with Unreal Engine. The player takes on the role of a mother who embarks on a daring adventure across a mysterious island, driven by a single goal: to find the legendary Temehani.",
+        "roadtotemehani.desc2": "Through lush landscapes and challenging obstacles, the journey unfolds as an emotional and captivating exploration of courage, perseverance, and the unbreakable bond of a mother's determination.",
+        "roadtotemehani.feat.island": "Island Adventure",
+        "roadtotemehani.feat.controller": "Full Controller Support",
+        "roadtotemehani.feat.dynmovement": "Dynamic Movement",
+        "roadtotemehani.feat.collectibles": "Collectible Items",
+        "roadtotemehani.feat.cinematics": "Cinematics",
+        "roadtotemehani.feat.itemcamera": "Item Camera Effects",
+        "roadtotemehani.feat.vfx": "Visual Effects",
+        "roadtotemehani.feat.menus": "Complete Menu System",
+        
         // Shards project
         "shards.title": "Shards of Ylena - Portfolio",
         "shards.subtitle": "3D Action-Adventure Prototype",
@@ -741,6 +758,8 @@ const translations = {
         "feature.puzzles": "Puzzles",
         "feature.environmental": "Environmental",
         "feature.camera": "Camera",
+        "feature.vfx": "VFX",
+        "feature.ui": "UI & Menus",
         "feature.thirdperson": "Third-Person",
         "feature.movement": "Movement",
         "feature.fluidmech": "Fluid Mechanics",
@@ -763,6 +782,7 @@ const translations = {
         "feature.survival": "Survival",
         "feature.healtharmor": "Health & Armor",
         "feature.story": "Story",
+        "feature.controls": "Controls",
         "feature.narrative": "Immersive Narrative",
         "feature.handcrafted": "Hand-crafted",
         "feature.ost": "Original Soundtrack",
@@ -783,6 +803,9 @@ const translations = {
         "feature.blueprintsys": "Blueprint System",
         "feature.world": "World",
         "feature.fantasy": "Fantasy Setting",
+        "feature.collectibles": "Collectibles",
+        "feature.cinematics": "Cinematics",
+        "feature.itemcamera": "Item Camera",
         
         // Links
         "link.livesite": "Live Site",
@@ -872,9 +895,10 @@ const translations = {
         "games.hero": "Développement de Jeux",
         "games.subtitle": "Passion • Créativité • Code",
         "games.proj1.desc": "Jeu 3D Troisième Personne • Unreal Engine",
-        "games.proj2.desc": "FPS 3D Multijoueur • C++",
-        "games.proj3.desc": "Jeu d'Aventure 2D • C#",
-        "games.proj4.desc": "Action-Aventure 3D • Unreal Engine",
+        "games.proj2.desc": "Aventure 2D • Unreal Engine",
+        "games.proj3.desc": "FPS 3D Multijoueur • C++",
+        "games.proj4.desc": "Jeu d'Aventure 2D • C#",
+        "games.proj5.desc": "Action-Aventure 3D • Unreal Engine",
         
         // Web page
         "web.title": "Développement Web - Portfolio",
@@ -888,6 +912,7 @@ const translations = {
         "badge.personal": "Personnel",
         "badge.42project": "Projet 42",
         "badge.indev": "En Développement",
+        "badge.finished": "Terminé",
         "badge.prototype": "Prototype",
         
         // Tech labels
@@ -908,6 +933,7 @@ const translations = {
         
         // Status
         "status.indev": "En Développement",
+        "status.finished": "Terminé",
         
         // Types
         "type.multiplayerfps": "FPS Multijoueur",
@@ -945,6 +971,20 @@ const translations = {
         "aria.desc1": "Aria and the Lost Souls est un jeu d'aventure 2D qui combine des mécaniques de plateforme avec des éléments de résolution d'énigmes. Les joueurs embarquent pour un voyage mystique à travers des environnements magnifiquement conçus.",
         "aria.desc2": "Pendant le développement, j'ai créé un premier niveau complet incluant du combat ennemi basé sur l'IA, des plateformes mobiles et des mécaniques environnementales basées sur les pièges. Le jeu présente une histoire immersive avec un système de dialogue interactif.",
         
+        // RoadToTemehani project
+        "roadtotemehani.title": "RoadToTemehani - Portfolio",
+        "roadtotemehani.subtitle": "Jeu d'Aventure 2D",
+        "roadtotemehani.desc1": "RoadToTemehani est un jeu d'aventure 2D réalisé avec Unreal Engine. Le joueur incarne une mère qui part à l'aventure sur une île mystérieuse, animée par un seul objectif : retrouver le légendaire Temehani.",
+        "roadtotemehani.desc2": "À travers des paysages luxuriants et des obstacles redoutables, le voyage se déploie comme une exploration émouvante et captivante du courage, de la persévérance et du lien inébranlable d'une mère déterminée.",
+        "roadtotemehani.feat.island": "Aventure sur l'Île",
+        "roadtotemehani.feat.controller": "Jeu 100% jouable à la manette",
+        "roadtotemehani.feat.dynmovement": "Mouvement Dynamique",
+        "roadtotemehani.feat.collectibles": "Objets à Collecter",
+        "roadtotemehani.feat.cinematics": "Cinématiques",
+        "roadtotemehani.feat.itemcamera": "Effets Caméra d'Objet",
+        "roadtotemehani.feat.vfx": "Effets Visuels",
+        "roadtotemehani.feat.menus": "Système de Menu Complet",
+        
         // Shards project
         "shards.title": "Shards of Ylena - Portfolio",
         "shards.subtitle": "Prototype Action-Aventure 3D",
@@ -977,6 +1017,8 @@ const translations = {
         "feature.puzzles": "Énigmes",
         "feature.environmental": "Environnemental",
         "feature.camera": "Caméra",
+        "feature.vfx": "VFX",
+        "feature.ui": "UI & Menus",
         "feature.thirdperson": "Troisième Personne",
         "feature.movement": "Mouvement",
         "feature.fluidmech": "Mécaniques Fluides",
@@ -999,6 +1041,7 @@ const translations = {
         "feature.survival": "Survie",
         "feature.healtharmor": "Vie & Armure",
         "feature.story": "Histoire",
+        "feature.controls": "Commandes",
         "feature.narrative": "Narration Immersive",
         "feature.handcrafted": "Fait Main",
         "feature.ost": "Bande Son Originale",
@@ -1019,6 +1062,9 @@ const translations = {
         "feature.blueprintsys": "Système Blueprint",
         "feature.world": "Monde",
         "feature.fantasy": "Univers Fantasy",
+        "feature.collectibles": "Collectibles",
+        "feature.cinematics": "Cinématiques",
+        "feature.itemcamera": "Caméra d'Objet",
         
         // Links
         "link.livesite": "Site Live",
