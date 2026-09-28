@@ -1,168 +1,95 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="fr" class="is-loading">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-	<meta http-equiv="Pragma" content="no-cache">
-	<meta http-equiv="Expires" content="0">
-	<link rel="stylesheet" href="../css/index.css?v=6">
-	<link rel="stylesheet" href="../css/navigation.css?v=6">
-	<link rel="stylesheet" href="../css/responsive.css?v=6">
-	<link rel="stylesheet" href="../css/transition.css?v=4">
-	<link rel="stylesheet" href="../css/games.css?v=3">
-	<script src="../js/transition.js?v=4" defer></script>
-	<script src="../js/index.js?v=2" defer></script>
-	<title data-i18n="warfront.title">WarFront-Legacy - Portfolio</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WarFront-Legacy — Ilyan Bendib</title>
+<meta name="description" content="WarFront-Legacy : FPS multijoueur 3D. Un jeu de Ilyan Bendib.">
+<meta property="og:title" content="WarFront-Legacy — Ilyan Bendib">
+<meta property="og:description" content="WarFront-Legacy : FPS multijoueur 3D. Un jeu de Ilyan Bendib.">
+<meta property="og:locale" content="fr_FR">
+<meta name="theme-color" content="#0a0a0a">
+<link rel="alternate" hreflang="fr" href="../projects/warfront-legacy.html">
+<link rel="alternate" hreflang="en" href="../en/projects/warfront-legacy.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" href="../image/favicon-64.png" type="image/png">
+<link rel="apple-touch-icon" href="../image/favicon-180.png">
+<link rel="preload" href="../fonts/cinzel-700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../css/site.css">
+<noscript><style>.loader{display:none} html.is-loading,html.is-loading body{overflow:auto}</style></noscript>
 </head>
-<body class="opening page-jeux theme-warfront">
-	<div class="page-transition">
-		<div class="transition-layer">
-			<span class="transition-text">ILBENDIB</span>
-		</div>
-	</div>
+<body>
+<div class="loader" id="loader" aria-hidden="true">
+  <svg class="ld-mono" viewBox="40 10 120 100"><g class="ld-g">
+    <text class="ld-txt ld-i" x="104" y="94" text-anchor="end">I</text>
+    <text class="ld-txt ld-b" x="94" y="94" text-anchor="start">B</text>
+  </g></svg>
+</div>
 
-	<!-- Hero Section -->
-	<section class="project-detail-hero">
-		<span class="back-link" onclick="navigateTo('Games.html')" data-i18n="back.projects">Back to Projects</span>
-		<span class="hero-badge">Unreal Engine</span>
-		<h1 class="hero-title-gradient">WarFront-Legacy</h1>
-		<p class="hero-subtitle" data-i18n="warfront.subtitle">3D FPS Multiplayer Game</p>
-		<div class="hero-tech">
-			<span>Unreal Engine</span>
-			<span>C++</span>
-			<span data-i18n="tech.multiplayer">Multiplayer</span>
-			<span data-i18n="tech.networking">Networking</span>
-		</div>
-	</section>
+<nav class="nav" aria-label="Navigation principale">
+  <a href="../index.html" class="logo"><span class="logo-full">ILYAN<span>.</span>BENDIB</span><span class="logo-short">IB</span></a>
+  <div class="nav-links">
+    <button id="gamesBtn" aria-expanded="false" aria-controls="gamesPanel">Jeux<span class="caret">▼</span></button>
+    <a href="../index.html#apropos" class="hide-sm">À propos</a>
+    <a href="../index.html#contact" class="hide-xs">Contact</a>
+    <span class="lang-switch" role="group" aria-label="Langue"><a href="../projects/warfront-legacy.html" hreflang="fr" lang="fr" class=on aria-current=true>FR</a><a href="../en/projects/warfront-legacy.html" hreflang="en" lang="en">EN</a></span>
+  </div>
+</nav>
+<div class="panel" id="gamesPanel" aria-label="Mes jeux">
+  <div class="panel-row">
+    <a class="cover-card" href="../index.html#projet"><div class="cover"><div class="ph" data-ph="Jaquette à venir"></div></div><span class="cc-txt"><b>Tower Defense</b><small>Tower Defense RTS</small></span></a>
+    <a class="cover-card" href="../projects/action-adventure.html" style="--pos:50% center"><div class="cover"><img src="../image/web/aa-key.webp" alt="Action-Adventure" loading="lazy"></div><span class="cc-txt"><b>Action-Adventure</b><small>Action-aventure 3e personne</small></span></a>
+    <a class="cover-card" href="../projects/road-to-temehani.html" style="--pos:12% center"><div class="cover"><img src="../image/web/rtt-splash.webp" alt="RoadToTemehani" loading="lazy"></div><span class="cc-txt"><b>RoadToTemehani</b><small>Aventure 2D · Plateforme</small></span></a>
+    <a class="cover-card" href="../projects/warfront-legacy.html" style="--pos:30% center"><div class="cover"><img src="../image/web/wf-key.webp" alt="WarFront-Legacy" loading="lazy"></div><span class="cc-txt"><b>WarFront-Legacy</b><small>FPS multijoueur 3D</small></span></a>
+  </div>
+</div>
 
-	<!-- Project Content -->
-	<main class="project-content">
-		
-		<!-- Gallery -->
-		<section class="project-gallery">
-			<div class="gallery-main">
-				<img src="../image/bgPremierJeux.jpg" alt="WarFront-Legacy Main" id="mainImage">
-			</div>
-			<div class="gallery-thumbnails">
-				<img src="../image/bgPremierJeux.jpg" alt="Cover" class="active" onclick="changeImage(this)">
-				<img src="../image/photo1.PNG" alt="Main Menu" onclick="changeImage(this)">
-				<img src="../image/photo2.PNG" alt="Lobby" onclick="changeImage(this)">
-				<img src="../image/Photo3.PNG" alt="Gameplay" onclick="changeImage(this)">
-			</div>
-		</section>
+<main>
+<header class="g-head wrap">
+  <a class="back" href="../index.html#jeux">← Tous les jeux</a>
+  <h1 class="h-xl">WarFront-Legacy</h1>
+  <div class="specs">Unreal Engine<i>·</i>C++<i>·</i>FPS multijoueur 3D</div>
+  <p>Un FPS multijoueur compétitif : mon premier vrai projet de jeu.</p>
+</header>
 
-		<!-- Technical Details -->
-		<div class="tech-details">
-			<div class="tech-card">
-				<h4 data-i18n="tech.engine">Engine</h4>
-				<p>Unreal Engine</p>
-			</div>
-			<div class="tech-card">
-				<h4 data-i18n="tech.language">Language</h4>
-				<p>C++</p>
-			</div>
-			<div class="tech-card">
-				<h4>Type</h4>
-				<p data-i18n="type.multiplayerfps">Multiplayer FPS</p>
-			</div>
-		</div>
+<section class="wrap">
+  <div class="video g-video"><div class="yt" data-id="nSPxv2Ojajs" data-title="WarFront-Legacy — Gameplay" role="button" tabindex="0" aria-label="Lire la vidéo : WarFront-Legacy — Gameplay"><img alt="" src="../image/web/wf-key.webp" loading="lazy"><div class="play"><i></i><span>Gameplay</span></div></div></div>
+  <div class="rows">
+    <div class="row reveal">
+      <div class="row-media"><img src="../image/web/wf-combat.webp" alt="Combat multijoueur" loading="lazy"></div>
+      <div class="row-text"><span class="label">Le jeu</span><h3>Combat multijoueur</h3><p>Des combats nerveux, des interactions entre joueurs en temps réel et des environnements 3D pensés pour l'affrontement.</p></div>
+    </div>
+    <div class="row rev reveal">
+      <div class="row-media"><img src="../image/web/wf-lobby.webp" alt="Réseau et architecture" loading="lazy"></div>
+      <div class="row-text"><span class="label">Apprentissage</span><h3>Réseau et architecture</h3><p>Ce projet m'a appris les bases du réseau, de l'architecture d'un jeu et de la synchronisation multijoueur en temps réel.</p></div>
+    </div>
+  </div>
+</section>
 
-		<!-- Description -->
-		<section class="project-description">
-			<h2 class="section-title-gradient" data-i18n="project.about">About This Project</h2>
-			<p data-i18n="warfront.desc1">
-				This is my first real game development project - a competitive multiplayer FPS created using Unreal Engine. 
-				The game features fast-paced combat mechanics, real-time player interactions, and immersive 3D environments 
-				designed for intense multiplayer battles.
-			</p>
-			<p data-i18n="warfront.desc2">
-				The project was a significant learning experience in networking, game architecture, and creating 
-				engaging multiplayer experiences. It taught me the fundamentals of FPS game design and real-time 
-				multiplayer synchronization.
-			</p>
-		</section>
+<section class="block wrap" style="padding-top:110px">
+  <div class="feat reveal"><div><small>Réseau</small><b>Multijoueur temps réel</b></div><div><small>Combat</small><b>Armes multiples</b></div><div><small>Physique</small><b>Balistique réaliste</b></div><div><small>Survie</small><b>Santé & armure</b></div></div>
+</section>
 
-		<!-- Features -->
-		<section class="features-section">
-			<h2 class="section-title-gradient" data-i18n="project.features">Key Features</h2>
-			<div class="features-table">
-				<div class="feature-row">
-					<div class="feature-cell">
-						<span class="feature-label" data-i18n="tech.networking">Networking</span>
-						<span class="feature-value" data-i18n="feature.realtimemulti">Real-time Multiplayer</span>
-					</div>
-					<div class="feature-cell">
-						<span class="feature-label" data-i18n="feature.combat">Combat</span>
-						<span class="feature-value" data-i18n="feature.multiweapons">Multiple Weapons</span>
-					</div>
-				</div>
-				<div class="feature-row">
-					<div class="feature-cell">
-						<span class="feature-label" data-i18n="feature.physics">Physics</span>
-						<span class="feature-value" data-i18n="feature.ballistics">Realistic Ballistics</span>
-					</div>
-					<div class="feature-cell">
-						<span class="feature-label" data-i18n="feature.environment">Environment</span>
-						<span class="feature-value" data-i18n="feature.dynamicmaps">Dynamic Maps</span>
-					</div>
-				</div>
-				<div class="feature-row">
-					<div class="feature-cell">
-						<span class="feature-label">Interface</span>
-						<span class="feature-value" data-i18n="feature.intuitivehud">Intuitive HUD</span>
-					</div>
-					<div class="feature-cell">
-						<span class="feature-label">Animation</span>
-						<span class="feature-value" data-i18n="feature.playersys">Player System</span>
-					</div>
-				</div>
-				<div class="feature-row">
-					<div class="feature-cell">
-						<span class="feature-label" data-i18n="feature.resources">Resources</span>
-						<span class="feature-value" data-i18n="feature.scoreammo">Score & Ammo</span>
-					</div>
-					<div class="feature-cell">
-						<span class="feature-label" data-i18n="feature.survival">Survival</span>
-						<span class="feature-value" data-i18n="feature.healtharmor">Health & Armor</span>
-					</div>
-				</div>
-			</div>
-		</section>
+<section class="block wrap">
+  <div class="sec-title reveal"><span class="label">Portfolio</span><h2 class="h-xl">Autres jeux</h2></div>
+  <div class="covers reveal"><a class="cover-card" href="../index.html#projet"><div class="cover"><div class="ph" data-ph="Jaquette à venir"></div></div><span class="cc-txt"><b>Tower Defense</b><small>Tower Defense RTS</small></span></a><a class="cover-card" href="../projects/action-adventure.html" style="--pos:50% center"><div class="cover"><img src="../image/web/aa-key.webp" alt="Action-Adventure" loading="lazy"></div><span class="cc-txt"><b>Action-Adventure</b><small>Action-aventure 3e personne · Unreal Engine 5</small></span></a><a class="cover-card" href="../projects/road-to-temehani.html" style="--pos:12% center"><div class="cover"><img src="../image/web/rtt-splash.webp" alt="RoadToTemehani" loading="lazy"></div><span class="cc-txt"><b>RoadToTemehani</b><small>Aventure 2D · Plateforme · Unreal Engine</small></span></a></div>
+</section>
+</main>
 
-		<!-- Video Section -->
-		<section class="video-section">
-			<h2 class="section-title-gradient" data-i18n="project.gameplay">Gameplay Video</h2>
-			<div class="video-container">
-				<iframe 
-					src="https://www.youtube.com/embed/nSPxv2Ojajs" 
-					title="WarFront-Legacy Gameplay"
-					frameborder="0"
-					loading="lazy"
-					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-					referrerpolicy="strict-origin-when-cross-origin"
-					allowfullscreen>
-				</iframe>
-			</div>
-		</section>
+<section class="contact" id="contact">
+  <span class="label reveal">Contact</span>
+  <h2 class="h-xl reveal">Travaillons<br><span>ensemble</span></h2>
+  <a class="mail reveal" href="mailto:ilyanbendib@gmail.com">ilyanbendib@gmail.com</a>
+  <div class="socials reveal">
+    <a class="btn ghost" href="https://www.linkedin.com/in/ilyan-bendib-6788b7332/" target="_blank" rel="noopener">LinkedIn</a>
+    <a class="btn ghost" href="https://github.com/ilyan42" target="_blank" rel="noopener">GitHub</a>
+    <a class="btn ghost" href="https://x.com/Ilbendib" target="_blank" rel="noopener">X / Twitter</a>
+  </div>
+  <footer class="footer"><span>© 2026 Ilyan Bendib</span><span>Gameplay Programmer · Unreal Engine 5</span></footer>
+</section>
 
-	</main>
-
-	<footer>
-		<p data-i18n="footer.copyright">&copy; 2025 Ilbendib's Portfolio</p>
-	</footer>
-
-	<script>
-		function changeImage(thumbnail) {
-			const mainImage = document.getElementById('mainImage');
-			mainImage.src = thumbnail.src;
-			
-			document.querySelectorAll('.gallery-thumbnails img').forEach(img => {
-				img.classList.remove('active');
-			});
-			thumbnail.classList.add('active');
-		}
-	</script>
-	<script src="../js/lang.js?v=6"></script>
+<script src="../js/site.js"></script>
 </body>
 </html>

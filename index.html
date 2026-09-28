@@ -1,293 +1,141 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="fr" class="is-loading">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-	<meta http-equiv="Pragma" content="no-cache">
-	<meta http-equiv="Expires" content="0">
-	<link rel="stylesheet" href="css/index.css?v=11">
-	<link rel="stylesheet" href="css/navigation.css?v=11">
-	<link rel="stylesheet" href="css/responsive.css?v=11">
-	<link rel="stylesheet" href="css/transition.css?v=4">
-	<script src="js/lang.js?v=2" defer></script>
-	<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-	<script src="js/transition.js?v=4" defer></script>
-	<script src="js/index.js?v=2" defer></script>
-	<title data-i18n="title">Portfolio</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ilyan Bendib — Gameplay Programmer</title>
+<meta name="description" content="Portfolio de Ilyan Bendib, gameplay programmer sur Unreal Engine 5 et C++.">
+<meta property="og:title" content="Ilyan Bendib — Gameplay Programmer">
+<meta property="og:description" content="Portfolio de Ilyan Bendib, gameplay programmer sur Unreal Engine 5 et C++.">
+<meta property="og:locale" content="fr_FR">
+<meta name="theme-color" content="#0a0a0a">
+<link rel="alternate" hreflang="fr" href="index.html">
+<link rel="alternate" hreflang="en" href="en/index.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" href="image/favicon-64.png" type="image/png">
+<link rel="apple-touch-icon" href="image/favicon-180.png">
+<link rel="preload" href="fonts/cinzel-700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/site.css">
+<noscript><style>.loader{display:none} html.is-loading,html.is-loading body{overflow:auto}</style></noscript>
 </head>
 <body>
-	<header>
-		<h1 data-i18n="header.title">PORTFOLIO</h1>
-		<div class="signature-container">
-			<svg class="signature" viewBox="0 0 800 80" xmlns="http://www.w3.org/2000/svg">
-				<path id="signature-path" d="M50,40 Q100,10 150,40 Q200,70 250,40 Q300,10 350,40 Q400,70 450,40 Q500,10 550,40 Q600,70 650,40 Q700,10 750,40" 
-					  stroke="#FFD700" stroke-width="3" fill="none" stroke-linecap="round"/>
-				<text class="signature-text" x="90%" y="80%" text-anchor="middle" dominant-baseline="middle">Ilbendib</text>
-			</svg>
-		</div>
-	<nav>
-		<div class="nav-container">
-			<div class="nav-left">
-				<!-- Language Toggle - Separate from logo -->
-				<div class="lang-toggle-wrapper">
-					<button id="lang-toggle" class="lang-toggle" title="Change language">
-						<span class="flag">🇬🇧</span>
-					</button>
-					<div class="lang-dropdown" id="lang-dropdown">
-						<button class="lang-option" data-lang="en">
-							<span class="lang-flag">🇬🇧</span>
-							<span class="lang-name">English</span>
-						</button>
-						<button class="lang-option" data-lang="fr">
-							<span class="lang-flag">🇫🇷</span>
-							<span class="lang-name">Français</span>
-						</button>
-					</div>
-				</div>
-				<div class="logo">
-					<div class="logo-icon">
-						<img src="image/pp.png" alt="Profile Picture" class="logo-img">
-					</div>
-					ILYAN
-				</div>
-			</div>
-			<ul class="nav-menu">
-				<li><button class="nav-button" data-section="home" data-i18n="nav.home">Home</button></li>
-				<li><button class="nav-button" data-section="about" data-i18n="nav.about">About Me</button></li>
-				<li><button class="nav-button" data-section="experience" data-i18n="nav.experience">Experience</button></li>
-				<li class="projects-nav-item">
-					<button class="nav-button" data-section="projects" data-i18n="nav.projects">Projects</button>
-					<button class="projects-dropdown-btn">▼</button>
-					<div class="projects-dropdown">
-						<button class="projects-dropdown-item" data-section="website" data-i18n="nav.website">Website Design</button>
-						<!-- <button class="projects-dropdown-item" data-section="modeling">3D Modeling</button> -->
-						<button class="projects-dropdown-item" data-section="game" data-i18n="nav.game">Game Development</button>
-					</div>
-				</li>
-			</ul>
-			<div class="nav-right">
-				<a class="cta-button">
-					<div class="mail-icon"></div>
-					<span data-i18n="nav.contact">Get In Touch</span>
-				</a>
-				<div class="hamburger">
-					<span></span>
-					<span></span>
-					<span></span>
-				</div>
-			</div>
-		</div>
-	</nav>
-	</header>
-	<main>
-		<section id="about">
-			<h2 data-i18n="about.title">About Me</h2>
-			<h3 data-i18n="about.greeting">Hi !</h3>
-			<p data-i18n="about.description">Welcome to my portfolio! Here you can find information about my work, projects, and how to contact me. I am a passionate developer with experience in various technologies. I love creating innovative solutions and collaborating with others to bring ideas to life. Feel free to explore my projects and learn more about my skills and experiences. If you have any questions or would like to get in touch, don't hesitate to reach out!</p>
-			
-			<div class="social-links">
-				<a class="link social-link" href="https://github.com/ilyan42" target="_blank">
-					<div class="github-icon"></div>
-					GitHub
-				</a>
-				<a class="link social-link" href="https://x.com/Ilbendib" target="_blank">
-					<div class="twitter-icon"></div>
-					Twitter / X
-				</a>
-				<a class="link social-link" href="https://www.linkedin.com/in/ilyan-bendib-6788b7332/" target="_blank">
-					<div class="linkedin-icon"></div>
-					LinkedIn
-				</a>
-			</div>
-			
-			<a class="link contact-link">
-				<div class="mail-icon"></div>
-				<span data-i18n="nav.contact">Get In Touch</span>
-			</a>
-		</section>
-		<section id="experience" class="experience-section">
-			<h2 data-i18n="experience.title">Experience</h2>
-			<div class="experience-container">
-				<div class="experience-card">
-					<div class="card-header">
-						<div class="company-logo">
-							<div class="logo-placeholder">42</div>
-						</div>
-						<div class="card-title">
-							<h3 data-i18n="exp1.role">Student</h3>
-							<p class="company" data-i18n="exp1.company">42 School</p>
-							<p class="duration" data-i18n="exp1.duration">2023 - Present</p>
-						</div>
-					</div>
-					<div class="card-content">
-						<p data-i18n="exp1.description">Intensive programming curriculum focusing on peer-to-peer learning and project-based education. Developed strong problem-solving skills and mastered multiple programming languages including C, C++, and Python.</p>
-						<div class="skills">
-							<span class="skill-tag">C / C++ / JavaScript / HTML / CSS</span>
-							<span class="skill-tag" data-i18n="skills.algorithms">Algorithms</span>
-							<span class="skill-tag">Unix/Linux</span>
-							<span class="skill-tag">Git</span>
-						</div>
-					</div>
-				</div>
+<div class="loader" id="loader" aria-hidden="true">
+  <svg class="ld-mono" viewBox="40 10 120 100"><g class="ld-g">
+    <text class="ld-txt ld-i" x="104" y="94" text-anchor="end">I</text>
+    <text class="ld-txt ld-b" x="94" y="94" text-anchor="start">B</text>
+  </g></svg>
+</div>
 
-				<div class="experience-card">
-					<div class="card-header">
-						<div class="company-logo">
-							<div class="logo-placeholder">GAME</div>
-						</div>
-						<div class="card-title">
-							<h3 data-i18n="exp2.role">Indie Game Developer</h3>
-							<p class="company" data-i18n="exp2.company">Personal Projects</p>
-							<p class="duration" data-i18n="exp2.duration">2022 - Present</p>
-						</div>
-					</div>
-					<div class="card-content">
-						<p data-i18n="exp2.description">Developed small indie games as personal projects during free time. Focused on learning game mechanics, basic graphics programming, and user interaction design. Passionate about creating engaging gameplay experiences and exploring different game genres.</p>
-						<div class="skills">
-							<span class="skill-tag">JavaScript</span>
-							<span class="skill-tag">Blender</span>
-							<span class="skill-tag">Unity</span>
-							<span class="skill-tag">Unreal Engine</span>
-						</div>
-					</div>
-				</div>
+<nav class="nav home" aria-label="Navigation principale">
+  <a href="#top" class="logo"><span class="logo-full">ILYAN<span>.</span>BENDIB</span><span class="logo-short">IB</span></a>
+  <div class="nav-links">
+    <button id="gamesBtn" aria-expanded="false" aria-controls="gamesPanel">Jeux<span class="caret">▼</span></button>
+    <a href="#apropos" class="hide-sm">À propos</a>
+    <a href="#contact" class="hide-xs">Contact</a>
+    <span class="lang-switch" role="group" aria-label="Langue"><a href="index.html" hreflang="fr" lang="fr" class=on aria-current=true>FR</a><a href="en/index.html" hreflang="en" lang="en">EN</a></span>
+  </div>
+</nav>
+<div class="panel" id="gamesPanel" aria-label="Mes jeux">
+  <div class="panel-row">
+    <a class="cover-card" href="#projet"><div class="cover"><div class="ph" data-ph="Jaquette à venir"></div></div><span class="cc-txt"><b>Tower Defense</b><small>Tower Defense RTS</small></span></a>
+    <a class="cover-card" href="projects/action-adventure.html" style="--pos:50% center"><div class="cover"><img src="image/web/aa-key.webp" alt="Action-Adventure" loading="lazy"></div><span class="cc-txt"><b>Action-Adventure</b><small>Action-aventure 3e personne</small></span></a>
+    <a class="cover-card" href="projects/road-to-temehani.html" style="--pos:12% center"><div class="cover"><img src="image/web/rtt-splash.webp" alt="RoadToTemehani" loading="lazy"></div><span class="cc-txt"><b>RoadToTemehani</b><small>Aventure 2D · Plateforme</small></span></a>
+    <a class="cover-card" href="projects/warfront-legacy.html" style="--pos:30% center"><div class="cover"><img src="image/web/wf-key.webp" alt="WarFront-Legacy" loading="lazy"></div><span class="cc-txt"><b>WarFront-Legacy</b><small>FPS multijoueur 3D</small></span></a>
+  </div>
+</div>
 
-				<div class="experience-card">
-					<div class="card-header">
-						<div class="company-logo">
-							<div class="logo-placeholder">3D / WEB</div>
-						</div>
-						<div class="card-title">
-							<h3 data-i18n="exp3.role">3D modeling & Web Developer</h3>
-							<p class="company" data-i18n="exp3.company">Side Projects</p>
-							<p class="duration" data-i18n="exp3.duration">2023 - Present</p>
-						</div>
-					</div>
-					<div class="card-content">
-						<p data-i18n="exp3.description">Learning 3D modeling and web development through hands-on projects. Experimenting with Blender for 3D content creation and building websites to explore modern web technologies and design principles.</p>
-						<div class="skills">
-							<span class="skill-tag">Blender</span>
-							<span class="skill-tag">HTML/CSS</span>
-							<span class="skill-tag">JavaScript</span>
-							<span class="skill-tag" data-i18n="skills.3dmodeling">3D Modeling</span>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-		
-		<section id="projects" class="projects-section">
-			<h2 data-i18n="projects.title">Projects</h2>
-			<div class="projects-container">
-				<button class="project-button" data-category="website">
-					<span class="project-text" data-i18n="projects.website">WEBSITE DESIGN</span>
-				</button>
-				<!-- <button class="project-button" data-category="modeling">
-					<span class="project-text">3D MODELING</span>
-				</button> -->
-				<button class="project-button" data-category="game">
-					<span class="project-text" data-i18n="projects.game">GAME DEVELOPMENT</span>
-				</button>
-			</div>
-		</section>
+<header class="hero" id="top">
+  <div class="reel" aria-hidden="true">
+    <img src="image/web/aa-village.webp" alt="" class=on>
+    <img src="image/web/rtt-jungle.webp" alt="">
+    <img src="image/web/wf-key.webp" alt="">
+    <img src="image/web/aa-archery.webp" alt="">
+    <img src="image/web/rtt-lava.webp" alt="">
+    <img src="image/web/wf-combat.webp" alt="">
+  </div>
+  <div class="hero-in">
+    <div>
+      <span class="label">Portfolio · Jeux vidéo</span>
+      <h1 class="h-xl">Ilyan<br><em>Bendib</em></h1>
+      <div class="role"><b>Gameplay Programmer</b> — Unreal Engine 5 · C++</div>
+      <div class="cta">
+        <a class="btn primary" href="#projet">Découvrir mes projets ↓</a>
+        <a class="btn ghost" href="#contact">Me contacter</a>
+      </div>
+    </div>
+    <aside class="about-card">
+      <div class="top"><img src="image/web/profile.webp" alt="Ilyan Bendib"><div><span class="label">À propos</span><h3>Ilyan Bendib</h3></div></div>
+      <p>Développeur gameplay formé à l'École 42. Je conçois des systèmes de jeu en C++ sur Unreal Engine 5.</p>
+      <a class="more" href="#apropos">En savoir plus →</a>
+    </aside>
+  </div>
+  <a class="scroll-hint" href="#projet" aria-label="Défiler vers mes projets"><span class="mouse"></span><span>Découvrir mes projets</span><span class="chev"></span></a>
+</header>
 
-		<!-- <section id="website">
-			<h2>Website Design</h2>
-			<div class="project-details">
-				<p>2025</p>
-				<p>My Portfolio</p>
-				<div class="project-image">
-					<img src="image/my_portfolio.png" alt="Website Design Project">
-				</div>
-				<a class="more-info" href="https://ilyan42.github.io/ilbendib_portfolio/" target="_blank">
-					<img src="image/globe.svg" alt="Video Icon" class="more-info-icon">
-					Live Site
-				</a>
-			</div>
-			<div class="project-details">
-				<p>2025</p>
-				<p>Transcendence</p>
-				<div class="project-image">
-					<img src="image/transcendence.png" alt="Website Design Project">
-				</div>
-				<a class="more-info" href="https://www.youtube.com/watch?v=eY7Edc4XF4c" target="_blank">
-					<img src="image/youtube.svg" alt="Video Icon" class="more-info-icon">
-					Video
-				</a>
-			</div>
-		</section> -->
+<main>
+<section class="block wrap" id="projet">
+  <div class="intro reveal">
+    <span class="badge dev">Projet actuel · En développement</span>
+    <h2 class="h-xl">Tower Defense</h2>
+    <p>Un tower defense RTS au cœur de la forêt. <span class=hl>Le jour, bâtissez votre base ; la nuit, défendez le village.</span></p>
+    <div class="specs">Unreal Engine 5.5<i>·</i>C++<i>·</i>Tower Defense RTS</div>
+  </div>
+  <div class="video reveal"><div class="yt" data-id="5e5rp3I1k30" data-title="Tower Defense — présentation" role="button" tabindex="0" aria-label="Lire la vidéo : Tower Defense — présentation"><img alt="" loading="lazy"><div class="play"><i></i><span>Présentation du projet</span></div></div></div>
+  <div class="rows">
+    <div class="row reveal">
+      <div class="row-media"><div class="ph" data-ph="Image à venir"></div></div>
+      <div class="row-text"><span class="label">Le jour</span><h3>Bâtir sa base</h3><p>Récoltez le bois et la pierre, placez librement vos bâtiments et <span class=hl>étendez votre territoire en débloquant de nouvelles zones de construction.</span></p></div>
+    </div>
+    <div class="row rev reveal">
+      <div class="row-media"><div class="ph" data-ph="Image à venir"></div></div>
+      <div class="row-text"><span class="label">La nuit</span><h3>Défendre le village</h3><p>Quand la nuit tombe, les ennemis attaquent. <span class=hl>Tours, murs et troupes alliées contrôlables tiennent la ligne jusqu'à l'aube.</span></p></div>
+    </div>
+    <div class="row reveal">
+      <div class="row-media"><div class="ph" data-ph="Image à venir"></div></div>
+      <div class="row-text"><span class="label">Intelligence artificielle</span><h3>Des villageois autonomes</h3><p>Pilotés par Behavior Trees, <span class=hl>les villageois récoltent, déposent leurs ressources et construisent seuls</span>, en se réorganisant quand un chemin échoue.</p></div>
+    </div>
+  </div>
+</section>
 
+<section class="block wrap" id="jeux">
+  <div class="sec-title reveal"><span class="label">Portfolio</span><h2 class="h-xl">Autres jeux</h2></div>
+  <div class="covers reveal">
+    <a class="cover-card" href="projects/action-adventure.html" style="--pos:50% center"><div class="cover"><img src="image/web/aa-key.webp" alt="Action-Adventure" loading="lazy"></div><span class="cc-txt"><b>Action-Adventure</b><small>Action-aventure 3e personne · Unreal Engine 5</small></span></a><a class="cover-card" href="projects/road-to-temehani.html" style="--pos:12% center"><div class="cover"><img src="image/web/rtt-splash.webp" alt="RoadToTemehani" loading="lazy"></div><span class="cc-txt"><b>RoadToTemehani</b><small>Aventure 2D · Plateforme · Unreal Engine</small></span></a><a class="cover-card" href="projects/warfront-legacy.html" style="--pos:30% center"><div class="cover"><img src="image/web/wf-key.webp" alt="WarFront-Legacy" loading="lazy"></div><span class="cc-txt"><b>WarFront-Legacy</b><small>FPS multijoueur 3D · Unreal Engine</small></span></a>
+  </div>
+</section>
 
-		
+<section class="block wrap" id="apropos">
+  <div class="about">
+    <div class="reveal">
+      <span class="label">À propos</span>
+      <h2 class="h-xl">Créer des<br><span>systèmes</span><br>qui se jouent</h2>
+    </div>
+    <div class="about-body reveal">
+      <p>Je suis Ilyan, développeur gameplay. <span class=hl>Je crée des jeux sur Unreal Engine depuis 2022</span>, en parallèle de ma formation à l'École 42, où j'ai appris la programmation par projets et en peer-learning.</p>
+      <p>Aujourd'hui, <span class=hl>je développe un tower defense RTS en C++</span> : systèmes de jeu, IA, interface et outils. Je modélise aussi mes propres assets sous Blender.</p>
+      <div class="techs">
+        <span class="chip">Unreal Engine 5</span><span class="chip">C++</span><span class="chip">Blueprints</span>
+        <span class="chip">Behavior Trees</span><span class="chip">Blender</span><span class="chip">Unity · C#</span><span class="chip">Git</span>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
 
+<section class="contact" id="contact">
+  <span class="label reveal">Contact</span>
+  <h2 class="h-xl reveal">Travaillons<br><span>ensemble</span></h2>
+  <a class="mail reveal" href="mailto:ilyanbendib@gmail.com">ilyanbendib@gmail.com</a>
+  <div class="socials reveal">
+    <a class="btn ghost" href="https://www.linkedin.com/in/ilyan-bendib-6788b7332/" target="_blank" rel="noopener">LinkedIn</a>
+    <a class="btn ghost" href="https://github.com/ilyan42" target="_blank" rel="noopener">GitHub</a>
+    <a class="btn ghost" href="https://x.com/Ilbendib" target="_blank" rel="noopener">X / Twitter</a>
+  </div>
+  <footer class="footer"><span>© 2026 Ilyan Bendib</span><span>Gameplay Programmer · Unreal Engine 5</span></footer>
+</section>
 
-	<section id="contact">
-		<h2 data-i18n="contact.title">Contact</h2>
-		<div class="contact-info">
-			<form id="contact-form" class="contact-form">
-				<h3 data-i18n="contact.subtitle">Get In Touch With Me</h3>
-				
-				<div class="form-row">
-					<div class="form-group">
-						<label for="firstName" data-i18n="contact.firstname">First name *</label>
-						<input type="text" id="firstName" name="firstName" data-i18n-placeholder="contact.firstname_ph" placeholder="First name" required>
-					</div>
-					<div class="form-group">
-						<label for="lastName" data-i18n="contact.lastname">Last name</label>
-						<input type="text" id="lastName" name="lastName" data-i18n-placeholder="contact.lastname_ph" placeholder="Last name">
-					</div>
-				</div>
-
-				<div class="form-row">
-					<div class="form-group">
-						<label for="email" data-i18n="contact.email">Email *</label>
-						<input type="email" id="email" name="email" placeholder="Email" required>
-					</div>
-					<div class="form-group">
-						<label for="phone" data-i18n="contact.phone">Phone</label>
-						<div class="phone-input">
-							<input type="tel" id="phone" name="phone" data-i18n-placeholder="contact.phone_ph" placeholder="Phone">
-						</div>
-					</div>
-				</div>
-
-				<div class="form-group full-width">
-					<label for="message" data-i18n="contact.message">How can I help?</label>
-					<textarea id="message" name="message" data-i18n-placeholder="contact.message_ph" placeholder="Feel free to outline your ideas or needs..." required></textarea>
-				</div>
-
-				<button type="submit" data-i18n="contact.submit">Submit</button>
-			</form>
-		</div>
-	</section>
-
-	</main>
-	<footer>
-		<p data-i18n="footer.copyright">&copy; 2025 Ilbendib's Portfolio</p>
-	</footer>
+<script src="js/site.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

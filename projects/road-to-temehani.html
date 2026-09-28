@@ -1,255 +1,95 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="fr" class="is-loading">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-	<meta http-equiv="Pragma" content="no-cache">
-	<meta http-equiv="Expires" content="0">
-	<link rel="stylesheet" href="../css/index.css?v=6">
-	<link rel="stylesheet" href="../css/navigation.css?v=6">
-	<link rel="stylesheet" href="../css/responsive.css?v=6">
-	<link rel="stylesheet" href="../css/transition.css?v=4">
-	<link rel="stylesheet" href="../css/games.css?v=4">
-	<script src="../js/transition.js?v=4" defer></script>
-	<script src="../js/index.js?v=3" defer></script>
-	<title data-i18n="roadtotemehani.title">RoadToTemehani - Portfolio</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RoadToTemehani — Ilyan Bendib</title>
+<meta name="description" content="RoadToTemehani : Aventure 2D · Plateforme. Un jeu de Ilyan Bendib.">
+<meta property="og:title" content="RoadToTemehani — Ilyan Bendib">
+<meta property="og:description" content="RoadToTemehani : Aventure 2D · Plateforme. Un jeu de Ilyan Bendib.">
+<meta property="og:locale" content="fr_FR">
+<meta name="theme-color" content="#0a0a0a">
+<link rel="alternate" hreflang="fr" href="../projects/road-to-temehani.html">
+<link rel="alternate" hreflang="en" href="../en/projects/road-to-temehani.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" href="../image/favicon-64.png" type="image/png">
+<link rel="apple-touch-icon" href="../image/favicon-180.png">
+<link rel="preload" href="../fonts/cinzel-700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../css/site.css">
+<noscript><style>.loader{display:none} html.is-loading,html.is-loading body{overflow:auto}</style></noscript>
 </head>
-<body class="opening page-jeux theme-road-to-temehani">
-	<div class="page-transition">
-		<div class="transition-layer">
-			<span class="transition-text">ILBENDIB</span>
-		</div>
-	</div>
+<body>
+<div class="loader" id="loader" aria-hidden="true">
+  <svg class="ld-mono" viewBox="40 10 120 100"><g class="ld-g">
+    <text class="ld-txt ld-i" x="104" y="94" text-anchor="end">I</text>
+    <text class="ld-txt ld-b" x="94" y="94" text-anchor="start">B</text>
+  </g></svg>
+</div>
 
-	<!-- Hero Section -->
-	<section class="project-detail-hero">
-		<span class="back-link" onclick="navigateTo('Games.html')" data-i18n="back.projects">Back to Projects</span>
-		<span class="hero-badge finished" data-i18n="badge.finished">Finished</span>
-		<h1 class="hero-title-gradient">RoadToTemehani</h1>
-		<p class="hero-subtitle" data-i18n="roadtotemehani.subtitle">2D Adventure Game</p>
-		<div class="hero-tech">
-			<span>Unreal Engine</span>
-			<span>2D</span>
-			<span data-i18n="tech.adventure">Adventure</span>
-		</div>
-	</section>
+<nav class="nav" aria-label="Navigation principale">
+  <a href="../index.html" class="logo"><span class="logo-full">ILYAN<span>.</span>BENDIB</span><span class="logo-short">IB</span></a>
+  <div class="nav-links">
+    <button id="gamesBtn" aria-expanded="false" aria-controls="gamesPanel">Jeux<span class="caret">▼</span></button>
+    <a href="../index.html#apropos" class="hide-sm">À propos</a>
+    <a href="../index.html#contact" class="hide-xs">Contact</a>
+    <span class="lang-switch" role="group" aria-label="Langue"><a href="../projects/road-to-temehani.html" hreflang="fr" lang="fr" class=on aria-current=true>FR</a><a href="../en/projects/road-to-temehani.html" hreflang="en" lang="en">EN</a></span>
+  </div>
+</nav>
+<div class="panel" id="gamesPanel" aria-label="Mes jeux">
+  <div class="panel-row">
+    <a class="cover-card" href="../index.html#projet"><div class="cover"><div class="ph" data-ph="Jaquette à venir"></div></div><span class="cc-txt"><b>Tower Defense</b><small>Tower Defense RTS</small></span></a>
+    <a class="cover-card" href="../projects/action-adventure.html" style="--pos:50% center"><div class="cover"><img src="../image/web/aa-key.webp" alt="Action-Adventure" loading="lazy"></div><span class="cc-txt"><b>Action-Adventure</b><small>Action-aventure 3e personne</small></span></a>
+    <a class="cover-card" href="../projects/road-to-temehani.html" style="--pos:12% center"><div class="cover"><img src="../image/web/rtt-splash.webp" alt="RoadToTemehani" loading="lazy"></div><span class="cc-txt"><b>RoadToTemehani</b><small>Aventure 2D · Plateforme</small></span></a>
+    <a class="cover-card" href="../projects/warfront-legacy.html" style="--pos:30% center"><div class="cover"><img src="../image/web/wf-key.webp" alt="WarFront-Legacy" loading="lazy"></div><span class="cc-txt"><b>WarFront-Legacy</b><small>FPS multijoueur 3D</small></span></a>
+  </div>
+</div>
 
-	<!-- Project Content -->
-	<main class="project-content">
-		
-		<!-- Gallery -->
-		<section class="project-gallery">
-			<div class="gallery-main" id="galleryContainer">
-				<img src="../image/RTT_MainMenu.png" alt="RoadToTemehani Main" id="mainImage">
-			</div>
-			<div class="gallery-thumbnails">
-				<img src="../image/RTT_MainMenu.png" alt="Main Menu" class="active" onclick="changeImage(this)">
+<main>
+<header class="g-head wrap">
+  <a class="back" href="../index.html#jeux">← Tous les jeux</a>
+  <h1 class="h-xl">RoadToTemehani</h1>
+  <div class="specs">Unreal Engine<i>·</i>Blueprints<i>·</i>Aventure 2D · Plateforme</div>
+  <p>Un jeu d'aventure 2D sur une île mystérieuse, à la recherche de la légendaire Temehani.</p>
+</header>
 
-				<!-- Gameplay Split (3 images) -->
-				<div class="thumb-split" onclick="showGameplay(this)" title="Gameplay">
-					<div class="thumb-third" style="background-image: url('../image/RTT_gameplayBeach.png')"></div>
-					<div class="thumb-third" style="background-image: url('../image/RTT_GamplayJungle.png')"></div>
-					<div class="thumb-third" style="background-image: url('../image/RTT_GamplayLavalCave.png')"></div>
-					<span class="thumb-icon">🎮</span>
-				</div>
-                
-				<!-- Enemies Split (4 images) -->
-				<div class="thumb-split" onclick="showEnemies(this)" title="Enemies">
-                    <div class="thumb-quad" style="background-image: url('../image/RTT_Enemie-Bird.png')"></div>
-					<div class="thumb-quad" style="background-image: url('../image/Ape.png')"></div>
-					<div class="thumb-quad" style="background-image: url('../image/RTT_EnemieGecko.png')"></div>
-					<div class="thumb-quad" style="background-image: url('../image/RTT_Enemie_Plant.png')"></div>
-					<span class="thumb-icon">👾</span>
-				</div>
-                
-                <img src="../image/RTT_EndScreen.png" alt="End Screen" onclick="changeImage(this)">
-			</div>
-		</section>
+<section class="wrap">
+  <div class="video g-video"><div class="yt" data-id="o5g2i_TR0cs" data-title="RoadToTemehani — Gameplay" role="button" tabindex="0" aria-label="Lire la vidéo : RoadToTemehani — Gameplay"><img alt="" src="../image/web/rtt-key.webp" loading="lazy"><div class="play"><i></i><span>Gameplay</span></div></div></div>
+  <div class="rows">
+    <div class="row reveal">
+      <div class="row-media"><img src="../image/web/rtt-beach.webp" alt="Le voyage d'une mère" loading="lazy"></div>
+      <div class="row-text"><span class="label">L'histoire</span><h3>Le voyage d'une mère</h3><p>Le joueur incarne une mère qui se lance dans une aventure audacieuse à travers une île mystérieuse, avec un seul but : trouver la légendaire Temehani.</p></div>
+    </div>
+    <div class="row rev reveal">
+      <div class="row-media"><img src="../image/web/rtt-jungle.webp" alt="Une île à traverser" loading="lazy"></div>
+      <div class="row-text"><span class="label">Le périple</span><h3>Une île à traverser</h3><p>À travers des paysages luxuriants et des obstacles exigeants, le voyage devient une exploration du courage, de la persévérance et de la détermination.</p></div>
+    </div>
+  </div>
+</section>
 
-		<!-- Technical Details -->
-		<div class="tech-details">
-			<div class="tech-card">
-				<h4 data-i18n="tech.engine">Engine</h4>
-				<p>Unreal Engine</p>
-			</div>
-			<div class="tech-card">
-				<h4 data-i18n="tech.language">Language</h4>
-				<p>Blueprints</p>
-			</div>
-			<div class="tech-card">
-				<h4 data-i18n="tech.status">Status</h4>
-				<p data-i18n="status.finished">Finished</p>
-			</div>
-		</div>
+<section class="block wrap" style="padding-top:110px">
+  <div class="feat reveal"><div><small>Exploration</small><b>Aventure sur une île</b></div><div><small>Contrôles</small><b>Support manette</b></div><div><small>Mise en scène</small><b>Cinématiques</b></div><div><small>Interface</small><b>Menus complets</b></div></div>
+</section>
 
-		<!-- Description -->
-		<section class="project-description">
-			<h2 class="section-title-gradient" data-i18n="project.about">About This Project</h2>
-			<p data-i18n="roadtotemehani.desc1">
-				RoadToTemehani is a 2D adventure game built with Unreal Engine. 
-				The player takes on the role of a mother who embarks on a daring adventure across a mysterious island, 
-				driven by a single goal: to find the legendary Temehani.
-			</p>
-			<p data-i18n="roadtotemehani.desc2">
-				Through lush landscapes and challenging obstacles, the journey unfolds as an emotional and captivating 
-				exploration of courage, perseverance, and the unbreakable bond of a mother's determination.
-			</p>
-		</section>
+<section class="block wrap">
+  <div class="sec-title reveal"><span class="label">Portfolio</span><h2 class="h-xl">Autres jeux</h2></div>
+  <div class="covers reveal"><a class="cover-card" href="../index.html#projet"><div class="cover"><div class="ph" data-ph="Jaquette à venir"></div></div><span class="cc-txt"><b>Tower Defense</b><small>Tower Defense RTS</small></span></a><a class="cover-card" href="../projects/action-adventure.html" style="--pos:50% center"><div class="cover"><img src="../image/web/aa-key.webp" alt="Action-Adventure" loading="lazy"></div><span class="cc-txt"><b>Action-Adventure</b><small>Action-aventure 3e personne · Unreal Engine 5</small></span></a><a class="cover-card" href="../projects/warfront-legacy.html" style="--pos:30% center"><div class="cover"><img src="../image/web/wf-key.webp" alt="WarFront-Legacy" loading="lazy"></div><span class="cc-txt"><b>WarFront-Legacy</b><small>FPS multijoueur 3D · Unreal Engine</small></span></a></div>
+</section>
+</main>
 
-		<!-- Features -->
-		<section class="features-section">
-			<h2 class="section-title-gradient" data-i18n="project.features">Key Features</h2>
-			<div class="features-table">
-				<div class="feature-row">
-					<div class="feature-cell">
-						<span class="feature-label" data-i18n="feature.exploration">Exploration</span>
-						<span class="feature-value" data-i18n="roadtotemehani.feat.island">Island Adventure</span>
-					</div>
-					<div class="feature-cell">
-						<span class="feature-label" data-i18n="feature.controls">Controls</span>
-						<span class="feature-value" data-i18n="roadtotemehani.feat.controller">Full Controller Support</span>
-					</div>
-				</div>
-				<div class="feature-row">
-					<div class="feature-cell">
-						<span class="feature-label" data-i18n="feature.movement">Movement</span>
-						<span class="feature-value" data-i18n="roadtotemehani.feat.dynmovement">Dynamic Movement</span>
-					</div>
-					<div class="feature-cell">
-						<span class="feature-label" data-i18n="feature.collectibles">Collectibles</span>
-						<span class="feature-value" data-i18n="roadtotemehani.feat.collectibles">Collectible Items</span>
-					</div>
-				</div>
-				<div class="feature-row">
-					<div class="feature-cell">
-						<span class="feature-label" data-i18n="feature.cinematics">Cinematics</span>
-						<span class="feature-value" data-i18n="roadtotemehani.feat.cinematics">Cinematics</span>
-					</div>
-					<div class="feature-cell">
-						<span class="feature-label" data-i18n="feature.camera">Camera</span>
-						<span class="feature-value" data-i18n="roadtotemehani.feat.itemcamera">Item Camera Effects</span>
-					</div>
-				</div>
-				<div class="feature-row">
-					<div class="feature-cell">
-						<span class="feature-label" data-i18n="feature.camera">Camera</span>
-						<span class="feature-value">2D Side-View</span>
-					</div>
-					<div class="feature-cell">
-						<span class="feature-label" data-i18n="tech.engine">Engine</span>
-						<span class="feature-value">Unreal Engine</span>
-					</div>
-				</div>
-				<div class="feature-row">
-					<div class="feature-cell">
-						<span class="feature-label" data-i18n="feature.vfx">VFX</span>
-						<span class="feature-value" data-i18n="roadtotemehani.feat.vfx">Visual Effects</span>
-					</div>
-					<div class="feature-cell">
-						<span class="feature-label" data-i18n="feature.ui">UI & Menus</span>
-						<span class="feature-value" data-i18n="roadtotemehani.feat.menus">Complete Menu System</span>
-					</div>
-				</div>
-			</div>
-		</section>
+<section class="contact" id="contact">
+  <span class="label reveal">Contact</span>
+  <h2 class="h-xl reveal">Travaillons<br><span>ensemble</span></h2>
+  <a class="mail reveal" href="mailto:ilyanbendib@gmail.com">ilyanbendib@gmail.com</a>
+  <div class="socials reveal">
+    <a class="btn ghost" href="https://www.linkedin.com/in/ilyan-bendib-6788b7332/" target="_blank" rel="noopener">LinkedIn</a>
+    <a class="btn ghost" href="https://github.com/ilyan42" target="_blank" rel="noopener">GitHub</a>
+    <a class="btn ghost" href="https://x.com/Ilbendib" target="_blank" rel="noopener">X / Twitter</a>
+  </div>
+  <footer class="footer"><span>© 2026 Ilyan Bendib</span><span>Gameplay Programmer · Unreal Engine 5</span></footer>
+</section>
 
-		<!-- Video Section -->
-		<section class="video-section">
-			<h2 class="section-title-gradient" data-i18n="project.gameplay">Gameplay Video</h2>
-			<div class="video-container">
-				<iframe 
-					src="https://www.youtube.com/embed/o5g2i_TR0cs" 
-					title="RoadToTemehani Gameplay"
-					frameborder="0"
-					loading="lazy"
-					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-					referrerpolicy="strict-origin-when-cross-origin"
-					allowfullscreen>
-				</iframe>
-			</div>
-		</section>
-
-	</main>
-
-	<footer>
-		<p data-i18n="footer.copyright">&copy; 2025 Ilbendib's Portfolio</p>
-	</footer>
-
-	<script>
-		function changeImage(thumbnail) {
-			const container = document.getElementById('galleryContainer');
-			
-			// Si on vient d'une vue splitée, remettre l'image normale
-			if (!document.getElementById('mainImage')) {
-				container.innerHTML = '<img src="" alt="Main Image" id="mainImage">';
-			}
-			
-			const mainImage = document.getElementById('mainImage');
-			mainImage.src = thumbnail.src;
-			
-			document.querySelectorAll('.gallery-thumbnails > *').forEach(el => {
-				el.classList.remove('active');
-			});
-			thumbnail.classList.add('active');
-		}
-
-		function showGameplay(thumbnail) {
-			const container = document.getElementById('galleryContainer');
-			
-			container.innerHTML = `
-				<div class="gallery-split-view">
-					<div class="split-item">
-						<img src="../image/RTT_gameplayBeach.png" alt="Beach">
-						<span class="split-label">Beach</span>
-					</div>
-					<div class="split-item">
-						<img src="../image/RTT_GamplayJungle.png" alt="Jungle">
-						<span class="split-label">Jungle</span>
-					</div>
-					<div class="split-item">
-						<img src="../image/RTT_GamplayLavalCave.png" alt="Lava Cave">
-						<span class="split-label">Lava Cave</span>
-					</div>
-				</div>
-			`;
-
-			document.querySelectorAll('.gallery-thumbnails > *').forEach(el => {
-				el.classList.remove('active');
-			});
-			thumbnail.classList.add('active');
-		}
-
-		function showEnemies(thumbnail) {
-			const container = document.getElementById('galleryContainer');
-			
-			container.innerHTML = `
-				<div class="gallery-split-view gallery-split-quad">
-					<div class="split-item">
-						<img src="../image/RTT_Enemie-Bird.png" alt="Bird">
-						<span class="split-label">Bird</span>
-					</div>
-					<div class="split-item">
-						<img src="../image/RTT_EnemieApe.png" alt="Ape">
-						<span class="split-label">Ape</span>
-					</div>
-					<div class="split-item">
-						<img src="../image/RTT_EnemieGecko.png" alt="Gecko">
-						<span class="split-label">Gecko</span>
-					</div>
-					<div class="split-item">
-						<img src="../image/RTT_Enemie_Plant.png" alt="Plant">
-						<span class="split-label">Plant</span>
-					</div>
-				</div>
-			`;
-
-			document.querySelectorAll('.gallery-thumbnails > *').forEach(el => {
-				el.classList.remove('active');
-			});
-			thumbnail.classList.add('active');
-		}
-	</script>
-	<script src="../js/lang.js?v=6"></script>
+<script src="../js/site.js"></script>
 </body>
 </html>
