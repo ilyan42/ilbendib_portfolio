@@ -124,6 +124,16 @@
     document.body.appendChild(scrim);
     scrim.addEventListener('click', () => setPanel(false));
     btn.addEventListener('click', () => setPanel(!panel.classList.contains('show')));
+    // fermeture : clic n'importe où en dehors du menu, ou scroll de la page
+    let openY = 0;
+    document.addEventListener('click', e => {
+      if (panel.classList.contains('show') && !panel.contains(e.target) && !btn.contains(e.target)) setPanel(false);
+    });
+    addEventListener('scroll', () => {
+      if (panel.classList.contains('show') && Math.abs(scrollY - openY) > 40) setPanel(false);
+    }, { passive: true });
+    ['wheel', 'touchmove'].forEach(ev => scrim.addEventListener(ev, () => setPanel(false), { passive: true }));
+    btn.addEventListener('click', () => { openY = scrollY; });
     $$('a', panel).forEach(a => a.addEventListener('click', () => setPanel(false)));
   }
 
@@ -132,6 +142,81 @@
     if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
   }), { threshold: .12 });
   $$('.reveal').forEach(el => io.observe(el));
+
+  /* ---- Clips de gameplay : se lancent quand ils sont à l'écran, en pause sinon ---- */
+  const clips = $$('video.clip');
+  if (clips.length && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const cio = new IntersectionObserver(es => es.forEach(e => {
+      const v = e.target;
+      if (e.isIntersecting) {
+        if (!v.getAttribute('src')) v.src = v.dataset.src;
+        v.play().catch(() => {});
+      } else if (!v.paused) v.pause();
+    }), { rootMargin: '150px 0px' });
+    clips.forEach(v => cio.observe(v));
+  }
+
+  /* ---- Vidéo de l'accueil en plein écran (mode immersif) ---- */
+  const vfull = $('.vfull'), heroEl = $('.hero');
+  if (vfull && heroEl) {
+    const reelEl = $('.reel', heroEl), root = document.documentElement;
+    const backdrop = document.createElement('div');
+    backdrop.className = 'imm-backdrop';
+    document.body.appendChild(backdrop);
+    let idleT = null;
+    const wake = () => {
+      heroEl.classList.remove('idle');
+      clearTimeout(idleT);
+      idleT = setTimeout(() => heroEl.classList.add('idle'), 2200);
+    };
+    // animation FLIP : la vidéo part de sa place actuelle et grandit jusqu'au plein écran (et inversement)
+    const flip = change => {
+      const a = reelEl.getBoundingClientRect();
+      change();
+      const b = reelEl.getBoundingClientRect();
+      reelEl.classList.remove('flip');
+      reelEl.style.transform = `translate(${a.left - b.left}px, ${a.top - b.top}px) scale(${a.width / b.width}, ${a.height / b.height})`;
+      reelEl.offsetHeight;
+      reelEl.classList.add('flip');
+      reelEl.style.transform = '';
+      setTimeout(() => reelEl.classList.remove('flip'), 750);
+    };
+    const setLabel = on => {
+      const l = on ? vfull.dataset.close : vfull.dataset.open;
+      vfull.setAttribute('aria-label', l); vfull.title = l; vfull.setAttribute('aria-pressed', on);
+    };
+    const enter = () => {
+      if (heroEl.classList.contains('immersive')) return;
+      scrollTo({ top: 0, behavior: 'instant' });
+      heroEl.classList.remove('leaving');
+      nav.classList.add('imm-hide');
+      setPanel(false);
+      heroEl.style.minHeight = heroEl.offsetHeight + 'px';   // garde la place : rien ne bouge derrière
+      flip(() => { heroEl.classList.add('immersive'); root.classList.add('immersive'); });
+      setLabel(true);
+      const bgv = $('.reel-video'); if (bgv && bgv.paused) bgv.play().catch(() => {});
+      if (root.requestFullscreen && !matchMedia('(pointer: coarse)').matches) root.requestFullscreen().catch(() => {});
+      wake();
+      ['mousemove', 'touchstart', 'keydown'].forEach(ev => addEventListener(ev, wake, { passive: true }));
+    };
+    const exit = () => {
+      if (!heroEl.classList.contains('immersive')) return;
+      ['mousemove', 'touchstart', 'keydown'].forEach(ev => removeEventListener(ev, wake));
+      clearTimeout(idleT);
+      heroEl.classList.remove('idle');
+      heroEl.classList.add('leaving');
+      flip(() => { heroEl.classList.remove('immersive'); root.classList.remove('immersive'); });
+      nav.classList.remove('imm-hide');
+      setLabel(false);
+      if (document.fullscreenElement && document.exitFullscreen) document.exitFullscreen().catch(() => {});
+      setTimeout(() => { heroEl.classList.remove('leaving'); heroEl.style.minHeight = ''; }, 900);
+    };
+    vfull.addEventListener('click', e => { e.stopPropagation(); heroEl.classList.contains('immersive') ? exit() : enter(); });
+    addEventListener('keydown', e => { if (e.key === 'Escape') exit(); });
+    document.addEventListener('fullscreenchange', () => { if (!document.fullscreenElement) exit(); });
+    // un clic sur la vidéo en plein écran la referme aussi
+    reelEl.addEventListener('click', () => { if (heroEl.classList.contains('immersive')) exit(); });
+  }
 
   /* ---- Vidéo de fond de l'accueil ---- */
   const bg = $('.reel-video');

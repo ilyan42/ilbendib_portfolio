@@ -39,7 +39,7 @@
 </nav>
 <div class="panel" id="gamesPanel" aria-label="My games">
   <div class="panel-row">
-    <a class="cover-card" href="#projet"><div class="cover"><div class="ph" data-ph="Cover coming soon"></div></div><span class="cc-txt"><b>Tower Defense</b><small>Tower Defense RTS</small></span></a>
+    <a class="cover-card" href="#projet"><div class="cover"><img src="../image/web/td-cover.webp" alt="Tower Defense" loading="lazy"></div><span class="cc-txt"><b>Tower Defense</b><small>Tower Defense RTS</small></span></a>
     <a class="cover-card" href="../en/projects/action-adventure.html" style="--pos:50% center"><div class="cover"><img src="../image/web/aa-key.webp" alt="Action-Adventure" loading="lazy"></div><span class="cc-txt"><b>Action-Adventure</b><small>Third-person action-adventure</small></span></a>
     <a class="cover-card" href="../en/projects/road-to-temehani.html" style="--pos:12% center"><div class="cover"><img src="../image/web/rtt-splash.webp" alt="RoadToTemehani" loading="lazy"></div><span class="cc-txt"><b>RoadToTemehani</b><small>2D Adventure · Platformer</small></span></a>
     <a class="cover-card" href="../en/projects/warfront-legacy.html" style="--pos:30% center"><div class="cover"><img src="../image/web/wf-key.webp" alt="WarFront-Legacy" loading="lazy"></div><span class="cc-txt"><b>WarFront-Legacy</b><small>3D multiplayer FPS</small></span></a>
@@ -66,6 +66,10 @@
       <a class="more" href="#apropos">Learn more →</a>
     </aside>
   </div>
+  <button class="vfull" type="button" aria-pressed="false" data-open="Watch the video full screen" data-close="Exit full screen" aria-label="Watch the video full screen" title="Watch the video full screen">
+    <svg class="i-open" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg>
+    <svg class="i-close" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4v5H4M15 4v5h5M9 20v-5H4M15 20v-5h5"/></svg>
+  </button>
   <a class="scroll-hint" href="#projet" aria-label="Scroll to my projects"><span class="mouse"></span><span>Discover my projects</span><span class="chev"></span></a>
 </header>
 
@@ -74,22 +78,22 @@
   <div class="intro reveal">
     <span class="badge dev">Current project · In development</span>
     <h2 class="h-xl">Tower Defense</h2>
-    <p>A tower defense RTS set deep in the forest. <span class=hl>By day, build your base; by night, defend the village.</span></p>
+    <p>A tower defense RTS set in a forest. <span class=hl>Gather and build during the day, defend the village at night.</span></p>
     <div class="specs">Unreal Engine 5.5<i>·</i>C++<i>·</i>Tower Defense RTS</div>
   </div>
   <div class="video reveal"><div class="yt" data-id="5e5rp3I1k30" data-title="Tower Defense — overview" role="button" tabindex="0" aria-label="Play video : Tower Defense — overview"><img alt="" loading="lazy"><div class="play"><i></i><span>Project overview</span></div></div></div>
   <div class="rows">
     <div class="row reveal">
-      <div class="row-media"><div class="ph" data-ph="Image coming soon"></div></div>
-      <div class="row-text"><span class="label">By day</span><h3>Build your base</h3><p>Gather wood and stone, place your buildings freely and <span class=hl>expand your territory by unlocking new building zones.</span></p></div>
+      <div class="row-media"><video class="clip" muted loop playsinline preload="none" aria-hidden="true" poster="../video/gameplay/td-jour.webp" data-src="../video/gameplay/td-jour.mp4"></video></div>
+      <div class="row-text"><span class="label">Day</span><h3>Building the base</h3><p>Wood and stone gathering, free building placement. <span class=hl>Villagers gather, drop off resources and build autonomously.</span></p></div>
     </div>
     <div class="row rev reveal">
-      <div class="row-media"><div class="ph" data-ph="Image coming soon"></div></div>
-      <div class="row-text"><span class="label">By night</span><h3>Defend the village</h3><p>When night falls, the enemies attack. <span class=hl>Towers, walls and controllable allied troops hold the line until dawn.</span></p></div>
+      <div class="row-media"><video class="clip" muted loop playsinline preload="none" aria-hidden="true" poster="../video/gameplay/td-zones.webp" data-src="../video/gameplay/td-zones.mp4"></video></div>
+      <div class="row-text"><span class="label">Exploration</span><h3>Unlocking zones</h3><p>The map is divided into locked zones. <span class=hl>An unlock tower opens a new buildable zone.</span></p></div>
     </div>
     <div class="row reveal">
-      <div class="row-media"><div class="ph" data-ph="Image coming soon"></div></div>
-      <div class="row-text"><span class="label">Artificial intelligence</span><h3>Autonomous villagers</h3><p>Driven by Behavior Trees, <span class=hl>villagers gather, drop off their resources and build on their own</span>, reorganising whenever a path fails.</p></div>
+      <div class="row-media"><video class="clip" muted loop playsinline preload="none" aria-hidden="true" poster="../video/gameplay/td-nuit.webp" data-src="../video/gameplay/td-nuit.mp4"></video></div>
+      <div class="row-text"><span class="label">Night</span><h3>Defending the village</h3><p>Enemies attack at night. <span class=hl>Controllable allied troops and towers are used to defend the base.</span></p></div>
     </div>
   </div>
 </section>
@@ -105,11 +109,11 @@
   <div class="about">
     <div class="reveal">
       <span class="label">About</span>
-      <h2 class="h-xl">Crafting<br><span>systems</span><br>you can play</h2>
+      <h2 class="h-xl">Gameplay<br><span>developer</span></h2>
     </div>
     <div class="about-body reveal">
-      <p>I'm Ilyan, a gameplay developer. <span class=hl>I've been making games with Unreal Engine since 2022</span>, alongside my training at École 42, where I learned programming through projects and peer learning.</p>
-      <p>Today, <span class=hl>I'm developing a tower defense RTS in C++</span>: gameplay systems, AI, UI and tools. I also model my own assets in Blender.</p>
+      <p>I'm Ilyan, a gameplay developer. <span class=hl>I've been developing games with Unreal Engine since 2024</span>, alongside my studies at École 42 (project-based learning).</p>
+      <p>I'm currently working on <span class=hl>a tower defense RTS in C++</span>: gameplay, AI and UI. I also model my assets in Blender.</p>
       <div class="techs">
         <span class="chip">Unreal Engine 5</span><span class="chip">C++</span><span class="chip">Blueprints</span>
         <span class="chip">Behavior Trees</span><span class="chip">Blender</span><span class="chip">Unity · C#</span><span class="chip">Git</span>

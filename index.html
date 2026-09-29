@@ -39,7 +39,7 @@
 </nav>
 <div class="panel" id="gamesPanel" aria-label="Mes jeux">
   <div class="panel-row">
-    <a class="cover-card" href="#projet"><div class="cover"><div class="ph" data-ph="Jaquette à venir"></div></div><span class="cc-txt"><b>Tower Defense</b><small>Tower Defense RTS</small></span></a>
+    <a class="cover-card" href="#projet"><div class="cover"><img src="image/web/td-cover.webp" alt="Tower Defense" loading="lazy"></div><span class="cc-txt"><b>Tower Defense</b><small>Tower Defense RTS</small></span></a>
     <a class="cover-card" href="projects/action-adventure.html" style="--pos:50% center"><div class="cover"><img src="image/web/aa-key.webp" alt="Action-Adventure" loading="lazy"></div><span class="cc-txt"><b>Action-Adventure</b><small>Action-aventure 3e personne</small></span></a>
     <a class="cover-card" href="projects/road-to-temehani.html" style="--pos:12% center"><div class="cover"><img src="image/web/rtt-splash.webp" alt="RoadToTemehani" loading="lazy"></div><span class="cc-txt"><b>RoadToTemehani</b><small>Aventure 2D · Plateforme</small></span></a>
     <a class="cover-card" href="projects/warfront-legacy.html" style="--pos:30% center"><div class="cover"><img src="image/web/wf-key.webp" alt="WarFront-Legacy" loading="lazy"></div><span class="cc-txt"><b>WarFront-Legacy</b><small>FPS multijoueur 3D</small></span></a>
@@ -66,6 +66,10 @@
       <a class="more" href="#apropos">En savoir plus →</a>
     </aside>
   </div>
+  <button class="vfull" type="button" aria-pressed="false" data-open="Voir la vidéo en plein écran" data-close="Quitter le plein écran" aria-label="Voir la vidéo en plein écran" title="Voir la vidéo en plein écran">
+    <svg class="i-open" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg>
+    <svg class="i-close" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4v5H4M15 4v5h5M9 20v-5H4M15 20v-5h5"/></svg>
+  </button>
   <a class="scroll-hint" href="#projet" aria-label="Défiler vers mes projets"><span class="mouse"></span><span>Découvrir mes projets</span><span class="chev"></span></a>
 </header>
 
@@ -74,22 +78,22 @@
   <div class="intro reveal">
     <span class="badge dev">Projet actuel · En développement</span>
     <h2 class="h-xl">Tower Defense</h2>
-    <p>Un tower defense RTS au cœur de la forêt. <span class=hl>Le jour, bâtissez votre base ; la nuit, défendez le village.</span></p>
+    <p>Tower defense RTS en forêt. <span class=hl>Le jour, on récolte et on construit ; la nuit, on défend le village.</span></p>
     <div class="specs">Unreal Engine 5.5<i>·</i>C++<i>·</i>Tower Defense RTS</div>
   </div>
   <div class="video reveal"><div class="yt" data-id="5e5rp3I1k30" data-title="Tower Defense — présentation" role="button" tabindex="0" aria-label="Lire la vidéo : Tower Defense — présentation"><img alt="" loading="lazy"><div class="play"><i></i><span>Présentation du projet</span></div></div></div>
   <div class="rows">
     <div class="row reveal">
-      <div class="row-media"><div class="ph" data-ph="Image à venir"></div></div>
-      <div class="row-text"><span class="label">Le jour</span><h3>Bâtir sa base</h3><p>Récoltez le bois et la pierre, placez librement vos bâtiments et <span class=hl>étendez votre territoire en débloquant de nouvelles zones de construction.</span></p></div>
+      <div class="row-media"><video class="clip" muted loop playsinline preload="none" aria-hidden="true" poster="video/gameplay/td-jour.webp" data-src="video/gameplay/td-jour.mp4"></video></div>
+      <div class="row-text"><span class="label">Le jour</span><h3>Construire la base</h3><p>Récolte du bois et de la pierre, placement libre des bâtiments. <span class=hl>Les villageois récoltent, déposent les ressources et construisent de façon autonome.</span></p></div>
     </div>
     <div class="row rev reveal">
-      <div class="row-media"><div class="ph" data-ph="Image à venir"></div></div>
-      <div class="row-text"><span class="label">La nuit</span><h3>Défendre le village</h3><p>Quand la nuit tombe, les ennemis attaquent. <span class=hl>Tours, murs et troupes alliées contrôlables tiennent la ligne jusqu'à l'aube.</span></p></div>
+      <div class="row-media"><video class="clip" muted loop playsinline preload="none" aria-hidden="true" poster="video/gameplay/td-zones.webp" data-src="video/gameplay/td-zones.mp4"></video></div>
+      <div class="row-text"><span class="label">Exploration</span><h3>Débloquer des zones</h3><p>La carte est divisée en zones verrouillées. <span class=hl>Une tour de déblocage ouvre une nouvelle zone constructible.</span></p></div>
     </div>
     <div class="row reveal">
-      <div class="row-media"><div class="ph" data-ph="Image à venir"></div></div>
-      <div class="row-text"><span class="label">Intelligence artificielle</span><h3>Des villageois autonomes</h3><p>Pilotés par Behavior Trees, <span class=hl>les villageois récoltent, déposent leurs ressources et construisent seuls</span>, en se réorganisant quand un chemin échoue.</p></div>
+      <div class="row-media"><video class="clip" muted loop playsinline preload="none" aria-hidden="true" poster="video/gameplay/td-nuit.webp" data-src="video/gameplay/td-nuit.mp4"></video></div>
+      <div class="row-text"><span class="label">La nuit</span><h3>Défendre le village</h3><p>Les ennemis attaquent la nuit. <span class=hl>Troupes alliées contrôlables et tours servent à défendre la base.</span></p></div>
     </div>
   </div>
 </section>
@@ -105,11 +109,11 @@
   <div class="about">
     <div class="reveal">
       <span class="label">À propos</span>
-      <h2 class="h-xl">Créer des<br><span>systèmes</span><br>qui se jouent</h2>
+      <h2 class="h-xl">Développeur<br><span>gameplay</span></h2>
     </div>
     <div class="about-body reveal">
-      <p>Je suis Ilyan, développeur gameplay. <span class=hl>Je crée des jeux sur Unreal Engine depuis 2022</span>, en parallèle de ma formation à l'École 42, où j'ai appris la programmation par projets et en peer-learning.</p>
-      <p>Aujourd'hui, <span class=hl>je développe un tower defense RTS en C++</span> : systèmes de jeu, IA, interface et outils. Je modélise aussi mes propres assets sous Blender.</p>
+      <p>Je m'appelle Ilyan, je suis développeur gameplay. <span class=hl>Je développe des jeux sur Unreal Engine depuis 2024</span>, en parallèle de ma formation à l'École 42 (pédagogie par projets).</p>
+      <p>Je travaille actuellement sur <span class=hl>un tower defense RTS en C++</span> : gameplay, IA et interface. Je modélise aussi mes assets sous Blender.</p>
       <div class="techs">
         <span class="chip">Unreal Engine 5</span><span class="chip">C++</span><span class="chip">Blueprints</span>
         <span class="chip">Behavior Trees</span><span class="chip">Blender</span><span class="chip">Unity · C#</span><span class="chip">Git</span>
