@@ -133,6 +133,17 @@
   }), { threshold: .12 });
   $$('.reveal').forEach(el => io.observe(el));
 
+  /* ---- Vidéo de fond de l'accueil ---- */
+  const bg = $('.reel-video');
+  if (bg) {
+    const small = matchMedia('(max-width: 900px)').matches || (navigator.connection && navigator.connection.saveData);
+    const still = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    bg.src = small ? bg.dataset.sd : bg.dataset.hd;
+    bg.addEventListener('playing', () => bg.classList.add('ready'), { once: true });
+    if (still) { bg.removeAttribute('autoplay'); bg.addEventListener('loadeddata', () => bg.classList.add('ready'), { once: true }); }
+    else bg.play().catch(() => bg.classList.add('ready'));   // lecture auto refusée : on affiche l'image d'attente
+  }
+
   /* ---- Showreel (défilé d'images en attendant la vidéo) ---- */
   const reel = $$('.reel img');
   if (reel.length > 1 && !matchMedia('(prefers-reduced-motion: reduce)').matches) {

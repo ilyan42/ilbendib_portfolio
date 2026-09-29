@@ -170,16 +170,26 @@ html.is-loading, html.is-loading body { overflow: hidden; }
 
 /* ---------- HERO ---------- */
 .hero { position: relative; height: 100vh; min-height: 620px; overflow: hidden; display: flex; align-items: flex-end; }
-.reel { position: absolute; inset: 0; background: #000; }
+.reel { position: absolute; inset: 0; background: var(--bg); display: flex; align-items: center; justify-content: center; }
 .reel img, .reel video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .reel img { opacity: 0; transition: opacity 2s ease; }
 .reel img.on { opacity: 1; }
+/* Vidéo affichée en entier (jamais recadrée) : elle prend la plus grande taille 16:9 qui tient dans l'écran,
+   et ses bords se fondent dans le noir du site */
+.reel .reel-video {
+  position: relative; inset: auto; width: min(100%, calc(100vh * 16 / 9)); height: auto; aspect-ratio: 16 / 9; object-fit: contain;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 7%, #000 93%, transparent 100%), linear-gradient(180deg, transparent 0, #000 6%, #000 94%, transparent 100%);
+  -webkit-mask-composite: source-in; mask-image: linear-gradient(90deg, transparent 0, #000 7%, #000 93%, transparent 100%), linear-gradient(180deg, transparent 0, #000 6%, #000 94%, transparent 100%);
+  mask-composite: intersect;
+}
+.reel-video { opacity: 0; transition: opacity 1.2s ease; }
+.reel-video.ready { opacity: 1; }
 @keyframes kenburns { from { transform: scale(1.08); } to { transform: scale(1.18) translate(-2%, -1%); } }
 .hero::after {
   content: ''; position: absolute; inset: 0; pointer-events: none;
   background:
-    linear-gradient(180deg, rgba(10,10,10,.6) 0%, rgba(10,10,10,0) 22%, rgba(10,10,10,.2) 55%, rgba(10,10,10,.97) 100%),
-    linear-gradient(90deg, rgba(10,10,10,.7), transparent 60%);
+    linear-gradient(180deg, rgba(10,10,10,.45) 0%, rgba(10,10,10,0) 18%, rgba(10,10,10,0) 50%, rgba(10,10,10,.92) 100%),
+    linear-gradient(90deg, rgba(10,10,10,.6), transparent 55%);
 }
 .hero-in {
   position: relative; z-index: 2; width: 100%; padding: 0 var(--pad) 150px;
@@ -385,4 +395,13 @@ html.is-loading, html.is-loading body { overflow: hidden; }
 @media (max-width: 380px) {
   .nav-links > a.hide-xs { display: none; }
   .lang-switch { padding-left: 12px; }
+}
+@media (max-width: 760px), (max-aspect-ratio: 1/1) {
+  .hero { height: auto; min-height: 0; flex-direction: column; align-items: stretch; padding-top: var(--nav-h); }
+  .reel { position: relative; inset: auto; aspect-ratio: 16 / 9; }
+  .reel .reel-video { width: 100%; -webkit-mask-image: linear-gradient(180deg, #000 80%, transparent 100%); mask-image: linear-gradient(180deg, #000 80%, transparent 100%); }
+  .hero::after { display: none; }
+  .hero-in { padding: 18px var(--pad) 40px; }
+  .hero h1 { margin-top: 10px; }
+  .scroll-hint { position: relative; left: auto; bottom: auto; transform: none; margin: 0 auto 30px; animation: none; }
 }
